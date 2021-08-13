@@ -78,12 +78,17 @@ function calculateTip(tip, bill) {
  * prompt the user for the bill total and a percentage they would like to tip,
  * then display the dollar amount they should tip
  */
-alert("Thank you for dining at our restaurant! Now it is time to pay for your visit.");
+let mealTotal = prompt("How much was your meal?");
+let percentageTip = prompt("What percentage would you like to tip?")/100;
+alert("Your suggested tip amount is $" + calculateTip(mealTotal, percentageTip) + ".");
+
+alert("This section is a lil extra and redundant and not exactly what was asked for but done anyway... Thank you for dining at our restaurant! Now it is time to pay for your visit.");
 let food = prompt("How much was the cost of your food?");
 let tip = (prompt("What percentage would you like to tip?"))/100;
 let total = calculateTip(tip, food) + Number(food);
 total = total.toFixed(2);
-alert("Excellent! The total cost of your visit is $" + total + ". Thank you for your patronage!")
+alert("Excellent! The total cost of your tip is $" + calculateTip(tip, food) + ".");
+alert("The total cost of your visit is $" + total + ". Thank you for your patronage!");
 /**
  * TODO:
  * Create a function named `applyDiscount`. This function should accept a price
@@ -98,7 +103,17 @@ alert("Excellent! The total cost of your visit is $" + total + ". Thank you for 
  *
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
-function applyDiscount() {
+function applyDiscount(x, y) {
+    if ((y >= 1) || (y <= 0)) {
+        alert("No. Wrong. Try again.");
+        return;
+    } else
+        total = x - (x * y);
+        console.log("Your discounted amount is $" + total + ".");
+        return total;
+}
+
+function applyDiscountExtra() {
     let price = prompt("What is the original cost of your purchase?");
     let discountPercent = (prompt("What is the discount percentage available to you?"))/100;
     let discountAmount = price * discountPercent;
