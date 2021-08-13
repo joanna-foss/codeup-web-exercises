@@ -80,3 +80,5 @@ if ((moreThan2 == true || premium == true) && (offerExpired == false)) {
 else {
     alert("Darn! You can NOT use the product offer. :'(")
 }
+
+alert("Thank you for visiting! See you again next time!!!");
