@@ -108,3 +108,14 @@ function doMath(x, a, b) {
 }
 //08.13.2021
 
+function makeAdder(x) {
+    return function(y) {
+        return x + y;
+    };
+}
+
+let add15 = makeAdder(15);
+let add100 = makeAdder(100);
+
+alert(add15(1));
+console.log(add100(151));

@@ -28,11 +28,10 @@ console.log(helloMessage + ".");
  * console.
  */
 let myName = "Joanna";
-sayHello(myName);
+console.log(sayHello(myName));
 // Don't modify the following line, it generates a random number between 1 and 3
 // and stores it in a variable named random
 var random = Math.floor((Math.random() * 3) + 1);
-
 /**
  * TODO:
  * Create a function called 'isTwo' that takes a number as a parameter.
@@ -50,10 +49,11 @@ var random = Math.floor((Math.random() * 3) + 1);
  * number)
  */
 function isTwo(x) {
-    if (x !== 2) {
-        return false;
-    } else
-        return true;
+    // if (x !== 2) {
+    //     return false;
+    // } else
+    //     return true;
+    return x === 2;
 }
 
 isTwo(random);
