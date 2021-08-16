@@ -21,8 +21,8 @@ var broBear = prompt('How many days would you like to rent Brother Bear?');
 var herc = prompt('How many days would you like to rent Hercules?');
 var totalPay = (Number(lilMer) + Number(broBear) + Number(herc)) * 3;
 
-alert("You will have to pay $" + totalPay + " for your kid's movies.");
-console.log("You will have to pay $" + totalPay + " for your kid's movies.");
+alert("You will have to pay $" + totalPay.toFixed(2) + " for your kid's movies.");
+console.log("You will have to pay $" + totalPay.toFixed(2) + " for your kid's movies.");
 
 
 //Suppose you're working as a contractor for 3 companies:
@@ -46,8 +46,8 @@ var facebookHrs = Number(prompt('How many hours did you work for Facebook?'));
 console.log("You worked " + facebookHrs + " FB hours this week! Wow!");
 
 var howMuchGet = (google * googleHrs) + (amazon * amazonHrs) + (facebook * facebookHrs);
-alert("You will receive $" + howMuchGet + " this week! Holy Guacamole! $.$");
-console.log("You will receive $" + howMuchGet + " this week.");
+alert("You will receive $" + howMuchGet.toFixed(2) + " this week! Holy Guacamole! $.$");
+console.log("You will receive $" + howMuchGet.toFixed(2) + " this week.");
 
 
 //A student can be enrolled in a class only if the class is not full
@@ -68,13 +68,13 @@ else {
 //A product offer can be applied only if a person buys more than 2 items,
 //and the offer has not expired. Premium members do not need to buy
 //a specific amount of products.
-var moreThan2 = confirm("Are you buying more than 2 items today?");
-if (moreThan2 == false) {
+var moreThan2 = prompt("How many items are you buying today?");
+if (moreThan2 < 2) {
     var premium = confirm("Are you a Premium member?");
 }
 var offerExpired = confirm("Is the offer expired?");
 
-if ((moreThan2 == true || premium == true) && (offerExpired == false)) {
+if ((moreThan2 >= 2 || premium == true) && (offerExpired == false)) {
     alert("Congrats you can use the product offer! :D");
 }
 else {
