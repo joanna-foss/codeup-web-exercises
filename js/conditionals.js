@@ -213,8 +213,11 @@ function letsPlayNumGame() {
         alert("Your number plus 100 is " + (Number(numberChosen) + 100) + ".");
         if(numberChosen < 0) {
             alert("Your number is a negative number. Oof.");
-        } else
+        } else if (numberChosen > 0) {
             alert("Your number is a positive number. Woot.");
+        } else {
+            alert("Your number is ZERO and zero is a neutral non-positive, non-negative number.");
+        }
     } else
     alert("Welp. Bye.");
 }
