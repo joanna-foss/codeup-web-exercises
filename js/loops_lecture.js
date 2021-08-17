@@ -4,12 +4,15 @@
 //
 
 //are we there yet?
+console.log("Let's goooooo...");
+
 var areWeThereYet;
 
 while(!areWeThereYet) {
     areWeThereYet = confirm("Are we there yet?");
 }
 
+console.log("STEP 1? Done!");
 // In the above example, we'll continue to prompt the user asking if we're there yet until we finally get
 // a positive confirmation. While the condition is not true (!areWeThereYet), do some stuff (from the body of the loop)
 
@@ -26,20 +29,24 @@ while(!haveToy) {
 }
 
 if(haveToy) {
-    alert("Thanks Mommy! Iloveyousomuchyou'rethebest :)))))");
+    console.log("Thanks Mommy! Iloveyousomuchyou'rethebest :)))))");
 }
 
+console.log("STEP 2? Done!");
 // Notice that much like an if statement, our while loop will only run if the initial condition is met.
 // If we give Codie the toy from the get go, we won't see the behavior in the loop at all.
 
 // TODO: Quasar~ create a WHILE loop that runs as long as i is less than 10;
+
 let i = 0;
 while(i < 10){
     console.log("Your i value is " + i + ".");
     i++;
 }
 
-alert("Your i value finally reached " + i + ". Congratulations!!");
+console.log("Your i value finally reached " + i + ". Congratulations!!");
+
+console.log("STEP 3? Done!");
 
 //~*~ Do-While Loops ~*~
 
@@ -53,26 +60,48 @@ alert("Your i value finally reached " + i + ". Congratulations!!");
 
 // Consider:
 
-// while (false) {
-//     console.log("will you ever see me?");
-// }
-//
-// do {
-//     console.log("But what about me?");
-// } while (false);
+while (false) {
+    console.log("will you ever see me?");
+}
+
+do {
+    console.log("But what about me?");
+} while (false);
+
+console.log("STEP 4? Done!");
 
 // Notice that even with a condition that has a boolean value of false, the do while loop will run one time be for stopping.
 
+do {
+    var secret = prompt("Password?");
+} while (secret !== "");
 
+console.log("STEP 5? Done!");
 
 // We can also use what we've learned above within the body of your functions:
 
+//Multiply by two. . until it is greater than 100.
+//Parameter to accept a num argument when calling - this parameter will be our starting point.
+
+function multiplyByTwoUntilGreaterThan100(num) {
+    while (num < 100) {
+        console.log("Your number is " + num + ".");
+        num *= 2;
+    }
+    return num;
+}
+
+console.log(multiplyByTwoUntilGreaterThan100(5));
+
+console.log("STEP 6? Done!");
 
 // For loops: Loops that are designed to run a given number of times. Think more math thinking.
 
-// for (var incrementer = 1; incrementer <= 10; incrementer++) {
-//     console.log("This loop has run " + incrementer + " time(s).");
-// }
+for (var incrementer = 1; incrementer <= 5; incrementer++) {
+    console.log("This loop has run " + incrementer + " time(s).");
+}
+
+console.log("STEP 8? Done!")
 
 // The for loop has more to it as you can see. Let's break down the arguments:
 
@@ -84,14 +113,29 @@ alert("Your i value finally reached " + i + ". Congratulations!!");
 
 // Once again, we can use this in a function.
 
-// And we can use this with conditionals!
+function sayHelloXTimes(num) {
+    for (num; num >= 0; num--) {
+        if (num % 5 === 0) {
+            console.log("Howdy number " + num);
+        } else {
+            console.log("Hello number " + num);
+        }
+    } return num;
+}
 
-// for (var i = 1; i < 25; i++){
-//     if (i % 6 == 0) console.log("Codeup");
-//     else if (i % 2 == 0) console.log("Code");
-//     else if (i % 3 == 0) console.log("Up");
-//     else console.log(i);
-// }
+sayHelloXTimes(5);
+
+
+// And we can use this with conditionals! This is a semi famous for loop from Fizz Buzz.
+
+for (var a = 0; a < 6; a++){
+    if (a % 6 == 0) console.log("Codeup");
+    else if (a % 2 == 0) console.log("Code");
+    else if (a % 3 == 0) console.log("Up");
+    else console.log(a);
+}
+
+console.log("STEP 9? Done!");
 
 // TODO: Quasar, how would we refactor the above back into a WHILE loop as we saw earlier?
 
