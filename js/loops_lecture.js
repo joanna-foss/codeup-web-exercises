@@ -12,7 +12,7 @@ while(!areWeThereYet) {
     areWeThereYet = confirm("Are we there yet?");
 }
 
-console.log("STEP 1? Done!");
+alert("STEP 1? Done!");
 // In the above example, we'll continue to prompt the user asking if we're there yet until we finally get
 // a positive confirmation. While the condition is not true (!areWeThereYet), do some stuff (from the body of the loop)
 
@@ -32,7 +32,7 @@ if(haveToy) {
     console.log("Thanks Mommy! Iloveyousomuchyou'rethebest :)))))");
 }
 
-console.log("STEP 2? Done!");
+alert("STEP 2? Done!");
 // Notice that much like an if statement, our while loop will only run if the initial condition is met.
 // If we give Codie the toy from the get go, we won't see the behavior in the loop at all.
 
@@ -46,7 +46,7 @@ while(i < 10){
 
 console.log("Your i value finally reached " + i + ". Congratulations!!");
 
-console.log("STEP 3? Done!");
+alert("STEP 3? Done!");
 
 //~*~ Do-While Loops ~*~
 
@@ -68,7 +68,7 @@ do {
     console.log("But what about me?");
 } while (false);
 
-console.log("STEP 4? Done!");
+alert("STEP 4? Done!");
 
 // Notice that even with a condition that has a boolean value of false, the do while loop will run one time be for stopping.
 
@@ -76,7 +76,7 @@ do {
     var secret = prompt("Password?");
 } while (secret !== "");
 
-console.log("STEP 5? Done!");
+alert("STEP 5? Done!");
 
 // We can also use what we've learned above within the body of your functions:
 
@@ -93,7 +93,7 @@ function multiplyByTwoUntilGreaterThan100(num) {
 
 console.log(multiplyByTwoUntilGreaterThan100(5));
 
-console.log("STEP 6? Done!");
+alert("STEP 6? Done!");
 
 // For loops: Loops that are designed to run a given number of times. Think more math thinking.
 
@@ -101,7 +101,7 @@ for (var incrementer = 1; incrementer <= 5; incrementer++) {
     console.log("This loop has run " + incrementer + " time(s).");
 }
 
-console.log("STEP 8? Done!")
+alert("STEP 8? Done!");
 
 // The for loop has more to it as you can see. Let's break down the arguments:
 
@@ -135,35 +135,42 @@ for (var a = 0; a < 6; a++){
     else console.log(a);
 }
 
-console.log("STEP 9? Done!");
+alert("STEP 9? Done!");
 
 // TODO: Quasar, how would we refactor the above back into a WHILE loop as we saw earlier?
 
 // Below is a funky example that works, but will rely on moving between different data types.
-// for (var i = "A"; i.length < 8; i = i + "A") {
-//     console.log("This is a bit of a tricky way to run a for loop, but hey, it works...");
-// }
+for (var b = "A"; b.length < 8; b = b + "A") {
+    console.log("This is a bit of a tricky way to run a for loop, but hey, it works... This is what i looks like right now: " + b);
+}
+
+alert("STEP 10? Done!");
+
+//BREAK AND CONTINUE: Ways to manipulate the behavior of your loop [stop vs skip].
 
 // We can get a loop to stop using break;
 
-// var x = 0;
-//
-// while (true) {
-//     alert("This is the song that never ends. It just goes on and on my friends. Somebody started singing not knowing what it was, and now we'll all just keep on singing this because");
-//     x++;
-//     if (x === 5) {
-//         alert("LambChop, cut it out!!")
-//         break;
-//     }
-// }
+var x = 0;
 
+while (true) {
+   console.log("This is the song that never ends. It just goes on and on my friends. Somebody started singing not knowing what it was, and now we'll all just keep on singing this because");
+    x++;
+    if (x === 5) {
+        console.log("LambChop, cut it out!!");
+        break;
+    }
+}
 
-// for (var j = 5; j < 100000; j += 5) {
-//     if (j === 25) {
-//         break;
-//     }
-//     console.log(j);
-// }
+alert("STEP 11? Done!");
+
+for (var j = 5; j < 100000; j += 5) {
+    if (j === 25) {
+        break;
+    }
+    console.log(j);
+}
+
+alert("STEP 12? Done!");
 
 // Notice that by having the break, we're able to get out of the loop that would otherwise run forever.
 
@@ -171,17 +178,18 @@ console.log("STEP 9? Done!");
 // we can also use continue to allow a loop to skip an iteration.
 
 function allOddNumbersToX (x) {
-    for (var i = 0; i <= x; i++) {
-        if (i % 2 === 0) {
+    for (var c = 0; c <= x; c++) {
+        if (c % 2 === 0) {
             continue;
         }
-        console.log(i);
+        console.log(c);
     }
-    return x;
+    // return x;
 }
 
-// allOddNumbersToX(17);
-// allOddNumbersToX(18);
+allOddNumbersToX(17);
+allOddNumbersToX(18);
 
+alert("STEP 13? Done!");
 
 // The above function will only log the odd numbers until the argument passed.
