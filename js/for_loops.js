@@ -1,5 +1,7 @@
 "use script";
 
+alert("This is the for loops javascript!");
+
 //Q1. Create a file named for_loops.js inside the js directory and link it to your loops.html file.
 console.log("Question 1")
 //Q2. Create a function named showMultiplicationTable that accepts a number and console.logs the multiplication table for that number (just multiply by the numbers 1 through 10)
