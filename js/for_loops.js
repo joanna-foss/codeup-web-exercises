@@ -1,9 +1,15 @@
-"use script";
+"use strict";
 
-alert("This is the for loops javascript!");
+
+//For your situational awareness...
+alert("This alert starts the for loops javascript!");
+console.log("FOR LOOPS JAVASCRIPT:");
+
 
 //Q1. Create a file named for_loops.js inside the js directory and link it to your loops.html file.
-console.log("Question 1")
+console.log("Question 1");
+
+
 //Q2. Create a function named showMultiplicationTable that accepts a number and console.logs the multiplication table for that number (just multiply by the numbers 1 through 10)
 console.log("Question 2");
 function showMultiplicationTable(x) {
@@ -16,6 +22,7 @@ function showMultiplicationTable(x) {
 showMultiplicationTable(1);
 showMultiplicationTable(10);
 
+
 //Q3. Use a for loop and the code from the previous lessons to generate 10 random numbers between 20 and 200 and output to the console whether each number is odd or even.
 console.log("Question 3");
 for (let a = 1; a <= 10; a++) {
@@ -26,6 +33,7 @@ for (let a = 1; a <= 10; a++) {
         console.log(random + " is an odd number.");
     }
 }
+
 
 //Q4. Create a for loop that uses console.log to create the output shown below.
 // 1
@@ -43,6 +51,7 @@ for (let a = 1; a <= 9; a++) {
     let item = a.toString();
     console.log(item.repeat(a));
 }
+
 
 //Q5. Create a for loop that uses console.log to create the output shown below.
 // 100

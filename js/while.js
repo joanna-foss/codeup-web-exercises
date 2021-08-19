@@ -1,6 +1,9 @@
 "use strict";
 
-alert("This is the while javascript!");
+
+//For your situational awareness...
+alert("This alert starts the while javascript!");
+console.log("WHILE JAVASCRIPT:");
 
 function multiplyBy2() {
     let x = 2;
@@ -13,6 +16,7 @@ function multiplyBy2() {
 multiplyBy2();
 
 console.log("DONSIES!");
+
 
 //Do While Loop Exercise below While exercise:
 

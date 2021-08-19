@@ -19,9 +19,12 @@
  * Test your function by passing various string literals to it and
  * console.logging the function's return value
  */
+
 var aColor = prompt("Type in a color below.").toLowerCase()
+//Exercise review notes: **
 
 function analyzeColor1(input) {
+    //**Shanshan recommends using triple equals below instead of double equals to create a conditional that is more strict.
     if (input == "blue") {
         return "(analyzeColor1) An ingestible item that correlates with your color is BLUEBERRIES";
     } else if (input == "green") {
@@ -41,7 +44,7 @@ function analyzeColor1(input) {
     } else if (input == "orange") {
         return "(analyzeColor1) An ingestible item that correlates with your color is ORANGES";
     } else {
-        return "NO!";
+        return "I haven't been updated in a while and don't know any ingestible item that correlates with " + input;
     }
 }
 
@@ -54,18 +57,23 @@ console.log(analyzeColor1(aColor));
 // - `colors`: a list of the colors of the rainbow
 // - `randomColor`: contains a single random color value from the list (this
 //                  will contain a different color every time the page loads)
+
 var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
 var randomColor = colors[Math.floor(Math.random() * colors.length)];
+
 /**
  * TODO:
  * Pass the `randomColor` variable to your function and console.log the results.
  * You should see a different message every time you refresh the page
  */
+
 console.log("(RANDOM) " + analyzeColor1(randomColor));
+
 /**
  * TODO:
  * Refactor your above function to use a switch-case statement
  */
+
 function analyzeColor2(input) {
     switch(input) {
         case "blue":
@@ -112,13 +120,14 @@ function analyzeColor2(input) {
 
 analyzeColor2(randomColor);
 analyzeColor2(aColor);
+
 // /**
 //  * TODO:
 //  * Prompt the user for a color when the page loads, and pass the input from the
 //  * user to your `analyzeColor` function. Alert the return value from your
 //  * function to show it to the user.
 //  */
-//DID ABOVE. NEED TO DO AGAIN?? ASK KENNETH
+//~~~~~DID ABOVE. NEED TO DO AGAIN?? ASK KENNETH~~~~~
 
 /* ########################################################################## */
 
@@ -166,6 +175,7 @@ function calculateTotal(luckyNum, totalNum) {
  * and alerts to display to the user what their lucky number was, what their
  * price before the discount was, and what their price after the discount is.
  */
+
 // Generate a random number between 0 and 6
 var luckyNumber = Math.floor(Math.random() * 6);
 
@@ -186,6 +196,7 @@ function letsPlay(input) {
 let luckyNumPlay = confirm("Do you want to play the Lucky Number Discount Game? You'll receive a percentage amount off of your total purchase if you do!");
 
 letsPlay(luckyNumPlay);
+
 /**
  * TODO:
  * Write some JavaScript that uses a `confirm` dialog to ask the user if they
@@ -202,6 +213,7 @@ letsPlay(luckyNumPlay);
  * Can you refactor your code to use functions?
  * HINT: The way we prompt for a value could be improved
  */
+
 function letsPlayNumGame() {
     let wouldYou = confirm("Would you like to play a game and enter a number?");
     if (wouldYou == true) {

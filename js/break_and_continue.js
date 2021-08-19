@@ -1,6 +1,9 @@
-console.log("TEST");
+"use strict";
 
-alert("This is the break and continue javascript!")
+
+//For your situational awareness...
+alert("This alert starts the break and continue javascript!");
+console.log("BREAK AND CONTINUE JAVASCRIPT:");
 
 function oddNum() {
     let chosenNum = ""
