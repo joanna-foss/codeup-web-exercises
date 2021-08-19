@@ -22,30 +22,37 @@ console.log("DONSIES!");
 // Math.floor(Math.random() * 5) + 1;
 
 function letsSellSomeIceCREAM() {
-    let randomNumConesToSell = ''
+    let randomNumConesToSell;
     let cones = Math.floor(Math.random() * 50) + 50;
     console.log("I have " + cones + " ice cream cones to sell!");
-    //first round of selling cones as long as total cones is greater than random num cones to sell
+    //loop selling cones as long as total cones is greater than random num cones to sell
     do {
         randomNumConesToSell = Math.floor(Math.random() * 5) + 1;
-        console.log("I'm selling you " + randomNumConesToSell + " whether you like it or not. HAHAHAHA!");
-        if (cones > randomNumConesToSell){
+        if (cones > randomNumConesToSell) {
             cones = (cones - randomNumConesToSell);
+            console.log("#1 I'm selling you " + randomNumConesToSell + " cone(s) whether you like it or not. HA!");
+        } else if (cones == randomNumConesToSell) {
+            console.log("#1 You've just bought the last of my cones! I had " + cones + " cone(s) and you bought all " + randomNumConesToSell + ". Thanks! Cone again soon!");
+            cones = (cones - randomNumConesToSell);
+        } else {
+            console.log("#1 I can't sell you " + randomNumConesToSell + " cone(s) because I only have " + cones + " cone(s) left. But...")
         }
     } while (cones > randomNumConesToSell);
-    //once total cones drops below random num cones to sell
-    console.log("GAH! I cannot sell you " + randomNumConesToSell + " because I only have " + cones + " cones left to sell.");
-    do {
+    //loop once total cones drops below random num cones to sell
+    while (cones > 0) {
         randomNumConesToSell = Math.floor(Math.random() * cones) + 1;
-        if (randomNumConesToSell > cones) {
-            console.log("GAH! I cannot sell you " + randomNumConesToSell + " because I only have " + cones + " cones left to sell.");
+        if (cones == randomNumConesToSell) {
+            console.log("#2 You've just bought the last of my cones! I had " + cones + " cone(s) and you bought " + randomNumConesToSell + " cone(s). Thanks! Cone again soon!");
+            cones = (cones - randomNumConesToSell);
         } else {
-            console.log("I'm selling you " + randomNumConesToSell + " whether you like it or not. HAHAHAHA!");
+            if (randomNumConesToSell > cones) {
+                console.log("#2 GAH! I cannot sell you " + randomNumConesToSell + " cone(s) because I have " + cones + " cone(s) left to sell.");
+            } else {
+                console.log("#2 I'm selling you " + randomNumConesToSell + " cone(s), kay?");
+                cones = (cones - randomNumConesToSell);
+            }
         }
-        cones = (cones - randomNumConesToSell);
-    } while (cones >= 0);
-    //cones sold out
-    console.log("Alright y'all! Thanks for another great day of selling cones. See ya later!")
+    }
 }
 
 letsSellSomeIceCREAM();
