@@ -218,17 +218,21 @@ function letsPlayNumGame() {
     let wouldYou = confirm("Would you like to play a game and enter a number?");
     if (wouldYou == true) {
         let numberChosen = prompt("Now is your moment. Enter in a number!");
-        if(numberChosen % 2 == 0) {
-            alert("Your number is even!");
-        } else
-            alert("Your number is odd!");
-        alert("Your number plus 100 is " + (Number(numberChosen) + 100) + ".");
-        if(numberChosen < 0) {
-            alert("Your number is a negative number. Oof.");
-        } else if (numberChosen > 0) {
-            alert("Your number is a positive number. Woot.");
+        if (isFinite(numberChosen) !== true) {
+            alert("That is not a number and you cannot play the number game.")
         } else {
-            alert("Your number is ZERO and zero is a neutral non-positive, non-negative number.");
+            if (numberChosen % 2 == 0) {
+                alert("Your number is even!");
+            } else
+                alert("Your number is odd!");
+            alert("Your number plus 100 is " + (Number(numberChosen) + 100) + ".");
+            if (numberChosen < 0) {
+                alert("Your number is a negative number. Oof.");
+            } else if (numberChosen > 0) {
+                alert("Your number is a positive number. Woot.");
+            } else {
+                alert("Your number is ZERO and zero is a neutral non-positive, non-negative number.");
+            }
         }
     } else
     alert("Welp. Bye.");
