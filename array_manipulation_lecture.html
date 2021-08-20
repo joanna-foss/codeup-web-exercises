@@ -15,13 +15,13 @@
 
     // ============================= Array Iteration
 
-    // var pies = [
-    //     "apple",
-    //     "cherry",
-    //     "key lime",
-    //     "huckleberry",
-    //     "rhubarb"
-    // ];
+    var pies = [
+        "apple",
+        "cherry",
+        "key lime",
+        "huckleberry",
+        "rhubarb"
+    ];
 
     // for loop
 
@@ -52,13 +52,21 @@
     // array iteration
 
     // push
+    console.log(pies); //will log the array in the console
+    pies.push("banana"); //will add "banana" to the end of the array
+    console.log(pies);
 
     // pop
+    let lastPie = pies.pop();
+    console.log(lastPie);
 
     // shift
+    let loseFirstPie = pies.shift();
+    console.log(pies);
 
     // unshift
-
+    let addPieFront = pies.unshift("pecan");
+    console.log(pies);
 
 
     // ============================= Slicing
@@ -73,37 +81,40 @@
 
      */
 
-    // var pies = [
-    //     "apple",
-    //     "cherry",
-    //     "key lime",
-    //     "huckleberry",
-    //     "rhubarb"
-    // ];
+    var newPies = [
+        "apple",
+        "cherry",
+        "key lime",
+        "huckleberry",
+        "rhubarb"
+    ];
+
+    var somePie = newPies.slice(0, -3);
+    console.log(somePie);
+    console.log(newPies);
 
 
     // ** create a function that takes in an array of pies baked and return the 3 most recently baked pies
 
+    function last3Baked(array) {
+        let baked = array.slice(-3);
+        return baked;
+    }
 
-
-
-
-
-
-
+    console.log(last3Baked(newPies));
 
 
     // ============================= Sorting
 
-    // var pies = [
-    //     "apple",
-    //     "cherry",
-    //     "key lime",
-    //     "huckleberry",
-    //     "rhubarb"
-    // ];
+    var piesAgain = [
+        "apple",
+        "cherry",
+        "key lime",
+        "huckleberry",
+        "rhubarb"
+    ];
 
-    // pies.sort(); // change the original value
+    // piesAgain.sort(); // change the original value
 
 
 
@@ -127,7 +138,7 @@
 
     // splitting string into and array
 
-    // var names = "Bob Sally Mary";
+    var names = "Bob Sally Mary";
     //
     // var namesArr = names.split(" ");
     //
@@ -176,12 +187,24 @@
 
     */
 
-    // var phoneNumbers = '210-555-2020\n230-555-2020\n512-555-3030';
+    //The exercise below was too much for us to do within a 10 minutes timeframe.
 
+    var phoneNumbers = '210-555-2020\n230-555-2020\n512-555-3030';
 
+    function extractPhoneNums(input) {
+        let cleanedPhoneNums = [];
 
+        let phoneNumbersArr = input.split("\n");
 
+        phoneNumbersArr.forEach(function (phoneNumber) {
+            //remove dashes from each phone number;
+            let cleanedPhoneNum = phoneNumber.split("-");
+            cleanedPhoneNum = cleanedPhoneNums.join('');
+            console.log(cleanedPhoneNum)
+        });
+    }
 
+console.log(extractPhoneNums(phoneNumbers));
 
 
 
