@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
+    <title>Array Manipulation Lecture</title>
+</head>
+<body>
+<main class="container">
+    <h1>Array Manipulation Lecture</h1>
+</main>
+<script>
+    "use strict";
+
+    // ============================= Array Iteration
+
+    var pies = [
+        "apple",
+        "cherry",
+        "key lime",
+        "huckleberry",
+        "rhubarb"
+    ];
+
+    // for loop
+
+    // forEach loop
+
+
+    // ============================= Adding and Removing Elements
+
+    /*
+
+        // The following array methods change the original array value!
+
+        someArray.shift()   = removes first element
+        someArray.unshift() = adds new first element
+        someArray.pop()     = removes last element
+        someArray.push()    = adds new last element
+
+     */
+
+    // var pies = [
+    //     "apple",
+    //     "cherry",
+    //     "key lime",
+    //     "huckleberry",
+    //     "rhubarb"
+    // ];
+
+    // array iteration
+
+    // push
+    console.log(pies); //will log the array in the console
+    pies.push("banana"); //will add "banana" to the end of the array
+    console.log(pies);
+
+    // pop
+    let lastPie = pies.pop();
+    console.log(lastPie);
+
+    // shift
+    let loseFirstPie = pies.shift();
+    console.log(pies);
+
+    // unshift
+    let addPieFront = pies.unshift("pecan");
+    console.log(pies);
+
+
+    // ============================= Slicing
+
+    // RETURNS A SUB ARRAY COPY OF THE ORIGINAL
+
+    /* SYNTAX
+
+       someArray.slice(startingIndex, startingIndexNotIncluded);
+
+       // one argument only will return a copy from the starting index to the end of the array
+
+     */
+
+    var newPies = [
+        "apple",
+        "cherry",
+        "key lime",
+        "huckleberry",
+        "rhubarb"
+    ];
+
+    var somePie = newPies.slice(0, -3);
+    console.log(somePie);
+    console.log(newPies);
+
+
+    // ** create a function that takes in an array of pies baked and return the 3 most recently baked pies
+
+    function last3Baked(array) {
+        let baked = array.slice(-3);
+        return baked;
+    }
+
+    console.log(last3Baked(newPies));
+
+
+    // ============================= Sorting
+
+    var piesAgain = [
+        "apple",
+        "cherry",
+        "key lime",
+        "huckleberry",
+        "rhubarb"
+    ];
+
+    // piesAgain.sort(); // change the original value
+
+
+
+
+
+    // ============================= Reversing
+
+    // var pies = [
+    //     "apple",
+    //     "cherry",
+    //     "key lime",
+    //     "huckleberry",
+    //     "rhubarb"
+    // ];
+
+
+
+
+    // ============================= Split / Join
+
+
+    // splitting string into and array
+
+    var names = "Bob Sally Mary";
+    //
+    // var namesArr = names.split(" ");
+    //
+    // var namesString = namesArr.join("");
+    //
+    // console.log(namesString);
+
+
+
+
+
+    // splitting on an empty string
+
+    // var everyCharacter = bondsString.split("");
+
+    // joining array into a string
+
+    // var bondsArray = ["Connery", "Lazenby", "Moore", "Dalton", "Brosnan", "Craig"];
+    // var bondsString = bondsArray.join("_");
+    //
+    //
+    // var output = "";
+    // for (var i = 0; i < bondsArray.length; i += 1) {
+    //     output += bondsArray[i];
+    //     output += ", ";
+    // }
+    //
+    // console.log(bondsString);
+
+
+
+    // ** Create a function that will take in a formatted string of numbers and return an array of phone numbers without any symbols. Console.log the output of the returned array.
+
+    /* EXAMPLE...
+
+        var phoneNumbers = '210-555-2020\n230-555-2020\n512-555-3030';
+
+        cleanPhoneNumbers(phoneNumbers);
+
+        the above code should output the following...
+
+           2105552020
+           2305552020
+           5125553030
+
+
+    */
+
+    //The exercise below was too much for us to do within a 10 minutes timeframe.
+
+    var phoneNumbers = '210-555-2020\n230-555-2020\n512-555-3030';
+
+    function extractPhoneNums(input) {
+        let cleanedPhoneNums = [];
+
+        let phoneNumbersArr = input.split("\n");
+
+        phoneNumbersArr.forEach(function (phoneNumber) {
+            //remove dashes from each phone number;
+            let cleanedPhoneNum = phoneNumber.split("-");
+            cleanedPhoneNum = cleanedPhoneNums.join('');
+            console.log(cleanedPhoneNum)
+        });
+    }
+
+console.log(extractPhoneNums(phoneNumbers));
+
+
+
+
+
+
+
+
+
+    // ============================= (EXTRA INFO) Splicing Elements
+
+    /*
+
+        someArray.splice(param1, param2, param3...);
+
+        param1 = which index to start from
+        param2 = how many elements to remove
+        param3 = from this parameter and onward, arguments passed in will be added as new elements at the end of the array
+
+     */
+
+    //
+    // // create new test array
+    //     var bonds = ["Craig", "Brosnan", "Dalton", "Moore", "Connery"];
+    //
+    //
+    // // removing elements splice
+    //     var missingBonds = bonds.splice(bonds.indexOf("Moore"), 2);
+    //     console.log(bonds);
+    //     console.log(missingBonds);
+    //
+    //
+    // // adding elements with splice
+    //     bonds.splice(1, 0, "Lazenby");
+    //     console.log(bonds);
+    //
+    //
+    // // replace elements
+    //     bonds.splice(bonds.indexOf("Craig"), 1, "Elba");
+    //     console.log(bonds);
+
+</script>
+
+</body>
+</html>
