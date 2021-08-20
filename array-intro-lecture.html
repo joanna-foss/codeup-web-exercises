@@ -42,49 +42,58 @@
         // ============================= Declaring/Initializing an Array with Array Literal Syntax
 
         // empty arrays may be declared
-            // var pies = [];
-            // console.log(pies);
+        //     var pies = [];
+        //     console.log(pies);
             //
-            // var pies = ["apple", "cherry", "key lime", "huckleberry"];
-            // console.log(pies);
+            var pies = ["apple", "cherry", "key lime", "huckleberry"];
 
+            console.log(pies);
+//~~~~~~Q1 - p67 in planner - Question Arrays~~~~~~~//
+//Rule of three for knowing when to create a variable for a value within an array: 1 time? Okay. 2 times? Coincidence, may not need to create a variable. 3 times? Definitely create a variable when referring to values within arrays. <-- Douglas's rule from field experience
+        //Replace a pie:
+        pies[3] = "banana cream";
+        console.log(pies);
         // declaring and initializing a large array
 
-            // var students = [
-            //     "Student 1",
-            //     "Student 2",
-            //     "Student 3",
-            //     "Student 4",
-            //     "Student 5",
-            //     "Student 6",
-            //     "Student 7",
-            //     "Student 8"
-            // ];
+            var students = [
+                "Student 1",
+                "Student 2",
+                "Student 3",
+                "Student 4",
+                "Student 5",
+                "Student 6",
+                "Student 7",
+                "Student 8"
+            ];
 
 
         // separate declaration and initialization
 
-            // var pies = [];
-            // pies[0] = "apple";
-            // pies[1] = "cherry";
+            var pies1 = [];
+            pies1[0] = "apple";
+            pies1[1] = "cherry";
 
         // declaring and initializing a high index number
-            // pies[10] = "huckleberry";
-            // console.log(pies);
-
+            pies1[10] = "huckleberry";
+            console.log(pies1);
+        //NEVER EVER DO THIS -Douglas
+        //Q4 Why would you ever do this?? Is there ever a case where this might be useful? ^ Question for Douglas or Kenneth.
 
 
         // ============================= Counting Array Items
 
-            // var pies = ["apple", "cherry", "key lime", "huckleberry"];
-            // var numberOfPies = pies.length;
-            // console.log(numberOfPies);
+            var pies2 = ["apple", "cherry", "key lime", "huckleberry"];
+            var numberOfPies = pies2.length;
+            console.log(numberOfPies);
+            var pies3 = "apple"
+            var numberOfPies3 = pies3.length;
+            console.log(numberOfPies3);
 
 
         // ============================= Accessing Array Elements
 
-            // console.log(pies[100]);
-            // console.log(pies[3]);
+            console.log(pies2[100]); //returns undefined
+            console.log(pies2[3]); //returns "huckleberry"
 
 
         // ============================= For Loop
@@ -105,20 +114,20 @@
 
         // example
 
-            // for (var i = 0; i < pies.length; i += 1) {
-            //     console.log("I like " + pies[i]);
-            // }
+            for (var i = 0; i < pies.length; i += 1) {
+                console.log("I like " + pies[i]);
+            }
 
         // backwards
 
-            // for (var i = pies.length - 1; i >= 0; i -= 1) {
-            //     console.log("I like " + pies[i]);
-            // }
-            //
-            // console.log(pies);
+            for (var i = pies.length - 1; i >= 0; i -= 1) {
+                console.log("I really like " + pies[i]);
+            }
 
+            console.log(pies);
 
-
+//"it's all numbers. everything is numbers." -douglas
+//"but wait there's more! there always is more in programming." -douglas
 
         // ============================= Foreach Loop
 
@@ -140,16 +149,16 @@
 
 
         // standard syntax
-            // var pies = ["apple", "cherry", "key lime", "huckleberry"];
+            var pies4 = ["apple", "cherry", "key lime", "huckleberry"];
 
         // defining all three parameters
-            // pies.forEach(function(element, index, array){
-            //
-            //     console.log("Element " + element + " is at index " + index);
-            //     console.log(pies);
-            //     console.log(array);
-            //
-            // });
+            pies4.forEach(function(element, index, array){
+
+                console.log("Element " + element + " is at index " + index);
+                console.log(pies4);
+                console.log(array);
+
+            });
 
 
         // with different parameter names
@@ -174,11 +183,11 @@
 
         // callback function syntax
 
-            // function logElements(element) {
-            //     console.log("Element " + element);
-            // }
-            //
-            // pies.forEach(logElements);
+            function logElements(element, index) {
+                console.log("Element " + element + " at index " + index);
+            }
+
+            pies4.forEach(logElements);
 
 
     </script>
