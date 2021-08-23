@@ -190,25 +190,22 @@
     //The exercise below was too much for us to do within a 10 minutes timeframe.
 
     var phoneNumbers = '210-555-2020\n230-555-2020\n512-555-3030';
+    let phoneNumberList;
 
-    function extractPhoneNums(input) {
-        let cleanedPhoneNums = [];
+function callThese(input) {
+    let phoneNumberList = input.split("\n");
 
-        let phoneNumbersArr = input.split("\n");
+    let newPhoneNumArray = [];
 
-        phoneNumbersArr.forEach(function (phoneNumber) {
-            //remove dashes from each phone number;
-            let cleanedPhoneNum = phoneNumber.split("-");
-            cleanedPhoneNum = cleanedPhoneNums.join('');
-            console.log(cleanedPhoneNum)
-        });
-    }
+    phoneNumberList.forEach(function(element) {
+        let oneNum = element.split("-").join('');
+        newPhoneNumArray.push(oneNum);
+    })
 
-console.log(extractPhoneNums(phoneNumbers));
+    console.log(newPhoneNumArray);
+}
 
-
-
-
+callThese(phoneNumbers);
 
 
 
@@ -228,23 +225,22 @@ console.log(extractPhoneNums(phoneNumbers));
 
     //
     // // create new test array
-    //     var bonds = ["Craig", "Brosnan", "Dalton", "Moore", "Connery"];
+        var bonds = ["Craig", "Brosnan", "Dalton", "Moore", "Connery"];
     //
     //
     // // removing elements splice
-    //     var missingBonds = bonds.splice(bonds.indexOf("Moore"), 2);
-    //     console.log(bonds);
-    //     console.log(missingBonds);
-    //
+        var missingBonds = bonds.splice(bonds.indexOf("Moore"), 2);
+        console.log(bonds);
+        console.log(missingBonds);
     //
     // // adding elements with splice
-    //     bonds.splice(1, 0, "Lazenby");
-    //     console.log(bonds);
+        bonds.splice(1, 0, "Lazenby");
+        console.log(bonds);
     //
     //
     // // replace elements
-    //     bonds.splice(bonds.indexOf("Craig"), 1, "Elba");
-    //     console.log(bonds);
+        bonds.splice(bonds.indexOf("Craig"), 1, "Elba");
+        console.log(bonds);
 
 </script>
 
