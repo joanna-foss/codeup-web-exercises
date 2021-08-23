@@ -26,7 +26,7 @@ showMultiplicationTable(10);
 //Q3. Use a for loop and the code from the previous lessons to generate 10 random numbers between 20 and 200 and output to the console whether each number is odd or even.
 console.log("Question 3");
 for (let a = 1; a <= 10; a++) {
-    let random = Math.floor((Math.random() * 200) + 20);
+    let random = Math.floor((Math.random() * 180) + 20);
     if(random % 2 == 0) {
         console.log(random + " is an even number.");
     } else {
@@ -34,6 +34,15 @@ for (let a = 1; a <= 10; a++) {
     }
 }
 
+/* tristan did:
+function randomNumsOddEven() {
+    for (var i = 0; i < 10; i++) {
+        var randNum = Math.floor((Math.random()* 180) + 20);
+        var OddorEven = getRandomNumber % 2 == 0 ? "even" : "odd;"
+        console.log(
+    }
+}
+*/
 
 //Q4. Create a for loop that uses console.log to create the output shown below.
 // 1
@@ -51,6 +60,19 @@ for (let a = 1; a <= 9; a++) {
     let item = a.toString();
     console.log(item.repeat(a));
 }
+
+/*Tristan did:
+function numTriangle() {
+    for(var i = 1; i < 10; i++) {
+        var output = "";
+
+        for (var j = 0; j < i; j++) {
+        output += 1;
+        }
+
+        console.log(output);
+}
+ */
 
 
 //Q5. Create a for loop that uses console.log to create the output shown below.
@@ -76,6 +98,6 @@ for (let a = 1; a <= 9; a++) {
 // 5
 console.log("Question 5");
 
-for (let i = 100; i >= 1; i -= 5) {
+for (let i = 100; i > 0; i -= 5) {
     console.log(i.toString());
 }

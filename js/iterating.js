@@ -59,11 +59,12 @@
     }
 
     function last(array) {
-        let i = 0;
-        while (i < (array.length - 1)) {
-            i++;
-        }
-        return array[i];
+        // let i = 0;
+        // while (i < (array.length - 1)) {
+        //     i++;
+        // }
+        // return array[i];
+        return array[array.length - 1];
     }
 
     console.log("function that returns first item in array logged: " + first(names));

@@ -1,4 +1,4 @@
-//(function(){
+(function(){
     "use strict";
 
     var planetsString = "Mercury|Venus|Earth|Mars|Jupiter|Saturn|Uranus|Neptune";
@@ -31,4 +31,4 @@
     let stringEnd = "</li><br></ul>";
     console.log(stringBegin + planetsString2 + stringEnd);
     document.write(stringBegin + planetsString2 + stringEnd);
-//})();
+})();

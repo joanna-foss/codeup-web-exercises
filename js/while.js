@@ -60,3 +60,5 @@ function letsSellSomeIceCREAM() {
 }
 
 letsSellSomeIceCREAM();
+
+// check Tristan's version of solving this problem on Github.
