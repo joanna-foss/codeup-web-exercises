@@ -1,6 +1,5 @@
 (function() {
 	"use strict";
-
 	/**
 	 * TODO:
 	 * Create an object with firstName and lastName properties that are strings
@@ -59,9 +58,9 @@
 
 	shoppers.forEach(function(shopper) {
 		if (shopper.amount < twoHundy) {
-			console.log(shopper.name + ",  your amount before the discount is $" + shopper.amount.toFixed(2) + ". Unfortunately, you do not qualify for our discount today so your total will still be $" + shopper.amount.toFixed(2) + ".");
+			console.log(shopper.name + ", your amount before the discount is $" + shopper.amount.toFixed(2) + ". Unfortunately, you do not qualify for our discount today so your total will still be $" + shopper.amount.toFixed(2) + ".");
 		} else {
-			console.log(shopper.name + ",  your amount before the discount is $" + shopper.amount.toFixed(2) + ", and because that amount is greater than our spend $" + twoHundy.toFixed(2) + " discount offer, you are eligible to save " + (twelveOff * 100) + "% and your new total for your purchase today is " + (shopper.amount - (shopper.amount * twelveOff)).toFixed(2) + "!");
+			console.log(shopper.name + ", your amount before the discount is $" + shopper.amount.toFixed(2) + ", and because that amount is greater than our spend $" + twoHundy.toFixed(2) + " discount offer, you are eligible to save " + (twelveOff * 100) + "% and your new total for your purchase today is " + (shopper.amount - (shopper.amount * twelveOff)).toFixed(2) + "!");
 		}
 	});
 
@@ -115,13 +114,13 @@ let books = [
 	},
 	];
 
-	// console.log(books[0].title);
-	// console.log(books[0].author.firstName);
-	// console.log(books[0].author.lastName);
-	//
-	// console.log(books[1].title);
-	// console.log(books[1].author.firstName);
-	// console.log(books[1].author.lastName);
+	console.log(books[0].title);
+	console.log(books[0].author.firstName);
+	console.log(books[0].author.lastName);
+
+	console.log(books[1].title);
+	console.log(books[1].author.firstName);
+	console.log(books[1].author.lastName);
 
 	/**
 	 * TODO:
@@ -164,13 +163,44 @@ let books = [
 	 *   outputs the information described above. Refactor your loop to use your
 	 *   `showBookInfo` function.
 	 */
+	let newBooksArray = [];
 
-	 function createBook(title, author) {
+	 function createBook(title, authorName) {
+	 	let newBook = {};
+	 	let authorArray = authorName.split(" ");
+	 	let authorFirst = authorArray[0];
+	 	let authorLast = authorArray[1];
 
+	 	newBook.title = title;
+	 	newBook.author = {};
+	 	newBook.author.firstName = authorFirst;
+	 	newBook.author.lastName = authorLast;
+
+	 	// newBooksArray.push(newBook);
+	 	return newBook;
 	 }
+	 // createBook("Booky Book", "Booker Writington");
+	 //
+	 // console.log(newBooksArray);
+	 //
+	 // createBook("Another Lil Booky Book", "Booker2 WritingtonJR");
+	 //
+	 // console.log(newBooksArray);
 
-	 function showBookInfo(book) {
+	 let newUserBook = createBook("Booky Book", "Booker Writington");
+	 newBooksArray.push(newUserBook);
 
+	 let newUserBook2 = createBook("Another Lil Booky Book", "Booker2 WritingJR");
+	 newBooksArray.push(newUserBook2);
+
+	 console.log(newBooksArray);
+
+	 function showBookInfo(bookNumber) {
+	 		console.log("The book you've chosen is #" + bookNumber + " and the information for that book is as follows:")
+	 		console.log("Book title: " + newBooksArray[bookNumber-1].title);
+	 		console.log("Book author: " + newBooksArray[bookNumber-1].author.firstName + " " + newBooksArray[bookNumber-1].author.lastName + ".");
 	 }
+	 showBookInfo(2);
+	 showBookInfo(1);
 
 })();
