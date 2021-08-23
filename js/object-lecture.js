@@ -15,7 +15,7 @@ var myCounty = {
     currentPop: 2004000
 }
 
-console.log(myCounty);
+//console.log(myCounty);
 
 var myDog = {
     name: "Fenix",
@@ -23,7 +23,7 @@ var myDog = {
     breed: "Pembroke Welsh Corgi"
 }
 
-console.log(myDog);myDog
+//console.log(myDog);myDog
 
 //.log-ing the above gets us the object 'printed' or 'viewed' in the console where we can click into the object to see its shape [properties]
 
@@ -46,7 +46,7 @@ let myObject1 = new Object(); <--object instantiation
 //* TODO: Create a new Object and call it 'myCar' using either way to do so shown above (object instance or object literal)
 
 let myCar = new Object();
-console.log(myCar);
+//console.log(myCar);
 
 // That's great! But our car object doesn't have much going on, does it? There's no depth or meat to it - how can we fill our object in?
 
@@ -72,22 +72,20 @@ console.log(myCar);
 
 //We can also set up our objects and properties/methods during object creation:
 
-/*
-var signOtherCar = {
-       make: "Honda";
-       model: "Fit";
-       year: "2019";
-    }
-*/
+// let sigOtherCar = {
+//        make: "Honda",
+//        model: "Fit",
+//        year: "2019"
+//     }
 
 
 // TODO: Fill in your myCar object with properties of make, model, and year with the correct values. If you don't own a vehicle, fill in the details with your favorite vehicle.
 
-myCar.make = "Toyota";
-myCar.model = "Prius C";
-myCar.year = "2013";
+myCar.make = "Toyota",
+myCar.model = "Prius C",
+myCar.year = "2013"
 
-console.log(myCar);
+//console.log(myCar);
 
 //Now I have a completed example of the myCar object - the model and make were added above in prior examples
 
@@ -102,7 +100,7 @@ console.log(myCar);
 
 //Let's share some information about our cars :)
 
-alert("Hey y'all. I own a " + myCar.year + " " + myCar.make + " " + myCar.model + ".");
+//alert("Hey y'all. I own a " + myCar.year + " " + myCar.make + " " + myCar.model + ".");
 
 //We can tap into our prior understanding of assigning variables thus far and assign a property to a variable:
 
@@ -116,11 +114,11 @@ let myCarYear = myCar.year;
 
 myCar.features = ["Cruise Control", "Climate Control", "Automatic Locks"];
 
-console.log(myCar);
+//console.log(myCar);
 
-for (let i = 0; i <= myCar.features.length - 1; i++) {
-    console.log(myCar.features[i]);
-    }
+// for (let i = 0; i <= myCar.features.length - 1; i++) {
+//     console.log(myCar.features[i]);
+//     };
 
 //I already added an array of features above in the lecture, so I'm good to go.
 
@@ -129,19 +127,58 @@ for (let i = 0; i <= myCar.features.length - 1; i++) {
 
 // TODO: Nest a 'carOwner' object of your own into this growing myCar object and console.log the results!
 
+// myCar.carOwner = {
+//     firstName: "Joanna",
+//     middleName: "\"The Boss\"",
+//     lastName: "Foss",
+//     age: 190,
+//     zipCode: 12345,
+//     phoneNum: 5550101234
+// };
+
+// console.log("The owner of the car is " + myCar.carOwner.firstName + " " + myCar.carOwner.middleName + " " + myCar.carOwner.lastName + ".");
+
+//An object can also contain within itself a method (function). We can set it up similarly to our properties, but with a value that is the function expression
+
+/*
+property: num
+property: "string"
+property: function() {....} <--NOTE: no function name!
+ */
+
+let turnMyCarOn = function() {
+    alert("Putting the key in the ignition and fired up the " + this.make + " " + this.model);
+};
+
+
+let sigOtherCar = {
+       make: "Honda",
+       model: "Fit",
+       year: "2019",
+       turnOn: turnMyCarOn
+    }
+
+
 myCar.carOwner = {
     firstName: "Joanna",
     middleName: "\"The Boss\"",
     lastName: "Foss",
     age: 190,
     zipCode: 12345,
-    phoneNum: 5550101234
+    phoneNum: 5550101234,
+    turnOn: turnMyCarOn
 };
 
-console.log("The owner of the car is " + myCar.carOwner.firstName + " " + myCar.carOwner.middleName + " " + myCar.carOwner.lastName + ".");
+//Option A:
+// myCar.turnOn = turnMyCarOn;
+// sigOtherCar.turnOn = turnMyCarOn;
 
-//An object can also contain within itself a method (function). We can set it up similarly to our properties, but with a value that is the function expression
+//Option B:
+myCar.turnOn = function() {
+    alert("Putting the key in the ignition and fired up the " + this.make + " " + this.model);
+};
 
+myCar.turnOn();
 
 /*
 * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -151,7 +188,14 @@ console.log("The owner of the car is " + myCar.carOwner.firstName + " " + myCar.
 
 //Let's tie some things together: Let's make a garage with another car!
 
+var theGarage = [myCar, sigOtherCar]
+
 //Now: loop through an ARRAY of OBJECTS, accessing our turnOn function for our vehicles
+
+theGarage.forEach(function (car) {
+    car.turnOn();
+});
+
 //Also note: we used the keyword *this* on the other vehicle's turnOn function, so this will be a good experiment to see the results
 
 
@@ -166,11 +210,21 @@ let myCar2 = {
     carOwner: {
         firstName: "G",
         middleName: "N\/A",
-        lastName: "S"
+        lastName: "S",
+    turnOn: turnMyCarOn
     }
 };
-garage.car1 = myCar;
-garage.car2 = myCar2;
+// You inadvertently created an array of key:value pairs for your 'garage' array which is something you CAN do but likely should not and will not be doing in the future.
+// garage.car1 = myCar;
+// garage.car2 = sigOtherCar;
+// garage.car3 = myCar2;
 
-console.log(garage);
+garage.push(myCar, sigOtherCar, myCar2);
 
+//console.log(garage);
+
+garage.forEach(function (car) {
+    console.log(car.year + " " + car.make + " " + car.model + ".");
+});
+
+//these notes look yucky. fix me please.
