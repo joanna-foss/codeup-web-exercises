@@ -9,10 +9,10 @@
 <script>
     function rollSixSided(number) {
         for (i = 0; i < number; i++) {
-            sixSidedDice = Math.floor((Math.random() * 6) + 1);
+            sixSidedDice = Math.ceil((Math.random() * 6));
             console.log("You rolled a " + sixSidedDice + "!");
-        }
-    }
+        };
+    };
 </script>
 </body>
 </html>
