@@ -12,15 +12,11 @@
  */
 
 function minMax(array) {
-	let newArray = [];
-	for(let i = 0; i < array.length; i++) {
-		newArray.push(array[i]);
-	}
-	newArray.sort(function(a, b) {
+	array = array.sort(function(a, b) {
 		return a - b;
 	});
 	minAndMaxOnly = Array();
-	minAndMaxOnly.push(newArray[0], newArray[newArray.length-1]);
+	minAndMaxOnly.push(array[0], array[array.length-1]);
 	return minAndMaxOnly;
 }
 
@@ -309,22 +305,23 @@ console.log("Sum of budget amounts: $" + getBudgets([
 
 function isSpecialArray(array) {
 	for(let i = 0; i < array.length; i++) {
-		if (i % 2 === 0) {
-			if(array[i] % 2 === 0) {
-				continue;
-			} else {
-				break;
-			}
-		} else if (i % 2 !== 0) {
-			if (array[i] % 2 !== 0) {
-				continue;
-			} else {
-				return false;
-			}
+		//if index # & element are both even numbers, skip number and loop
+		if (i % 2 === 0 && array[i] % 2 === 0) {
+			continue;
+		//if index # & element are both odd numbers, skip number and loop
+		} else if (i % 2 !== 0 && array[i] % 2 !== 0) {
+			continue;
+		//if index # & element are a combination of one even and one odd #, return false
+		} else {
+			return false;
 		}
-	}
+	//if all elements of the array are checked for even match or odd match and none return false, return true
+	} return true;
 }
 
+console.log(isSpecialArray([2, 7, 4, 9, 6, 1, 6, 3])); //true
+console.log(isSpecialArray([2, 7, 9, 1, 6, 1, 6, 3])); //false
+console.log(isSpecialArray([2, 7, 8, 8, 6, 1, 6, 3])); //false
 
 
 /**
