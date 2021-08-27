@@ -242,7 +242,17 @@ console.log(toArray({}));
  * Notes
  * Notice that num is also included in the returned array.
  */
+function arrayOfMultiples(num, length) {
+	let multiplesArr = [];
+	for(let i = 0; i < length; i++) {
+		multiplesArr.push((i+1) * num);
+	};
+	return multiplesArr;
+}
 
+console.log(arrayOfMultiples(7, 5));
+console.log(arrayOfMultiples(12, 10));
+console.log(arrayOfMultiples(17, 6));
 
 /**
  * Get Sum of People's Budget
@@ -262,10 +272,29 @@ console.log(toArray({}));
  *    ]) ➞ 62600
  */
 
+function getBudgets(array) {
+	let total = 0;
+	for(let i = 0; i < array.length; i++) {
+		total += array[i].budget;
+	}
+	return total;
+}
+
+console.log("Sum of budget amounts: $" + getBudgets([
+	{ name: "John", age: 21, budget: 23000 },
+	{ name: "Steve",  age: 32, budget: 40000 },
+	{ name: "Martin",  age: 16, budget: 2700 }
+]));
+
+console.log("Sum of budget amounts: $" + getBudgets([
+	{ name: "John",  age: 21, budget: 29000 },
+	{ name: "Steve",  age: 32, budget: 32000 },
+	{ name: "Martin",  age: 16, budget: 1600 }
+]));
 
 /**
  * Special Arrays
- * An array is special if every even index contains an even number and every odd index contains an odd number.
+ * An array is special if every even index that contains an even number and every odd index contains an odd number.
  * Create a function named isSpecialArray that returns true if an array is special, and false otherwise.
  *
  * Examples
@@ -277,6 +306,25 @@ console.log(toArray({}));
  * >> isSpecialArray([2, 7, 8, 8, 6, 1, 6, 3]) ➞ false
  *    // Index 3 has an even number 8.
  */
+
+function isSpecialArray(array) {
+	for(let i = 0; i < array.length; i++) {
+		if (i % 2 === 0) {
+			if(array[i] % 2 === 0) {
+				continue;
+			} else {
+				break;
+			}
+		} else if (i % 2 !== 0) {
+			if (array[i] % 2 !== 0) {
+				continue;
+			} else {
+				return false;
+			}
+		}
+	}
+}
+
 
 
 /**
