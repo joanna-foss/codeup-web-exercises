@@ -106,8 +106,11 @@ console.log(isAvgWhole([9, 2, 2, 5]));
  */
 
 function sortDrinkByPrice(drinks) {
-	let arrObj = Object.entries(drinks);
-	return arrObj;
+	// let arrObj = Object.entries(drinks);
+	let drinksArr = drinks.sort(function(a, b) {
+		return a.price - b.price;
+	})
+	return drinksArr;
 }
 
 drinks = [
@@ -161,6 +164,47 @@ console.log(sortDrinkByPrice(drinks));
  * Each tile is represented as an object with two keys: tile and score.
  */
 
+function maxScore(tileArray) {
+	let total = 0;
+	for(let i = 0; i < tileArray.length; i++) {
+		total += tileArray[i].score;
+	}
+	return total;
+}
+
+let scrabbleTiles1 = [
+	{ tile: "N", score: 1 },
+	{ tile: "K", score: 5 },
+	{ tile: "Z", score: 10 },
+	{ tile: "X", score: 8 },
+	{ tile: "D", score: 2 },
+	{ tile: "A", score: 1 },
+	{ tile: "E", score: 1 }
+]
+
+let scrabbleTiles2 = [
+	{ tile: "B", score: 2 },
+	{ tile: "V", score: 4 },
+	{ tile: "F", score: 4 },
+	{ tile: "U", score: 1 },
+	{ tile: "D", score: 2 },
+	{ tile: "O", score: 1 },
+	{ tile: "U", score: 1 }
+]
+
+let scrabbleTiles3 = [
+	{ tile: "N", score: 1 },
+	{ tile: "K", score: 5 },
+	{ tile: "Z", score: 10 },
+	{ tile: "X", score: 8 },
+	{ tile: "D", score: 2 },
+	{ tile: "A", score: 1 },
+	{ tile: "E", score: 1 }
+]
+
+console.log(maxScore(scrabbleTiles1));
+console.log(maxScore(scrabbleTiles2));
+console.log(maxScore(scrabbleTiles3));
 
 /**
  * Converting Objects to Arrays
@@ -176,6 +220,14 @@ console.log(sortDrinkByPrice(drinks));
  * Return an empty array if the object is empty.
  */
 
+function toArray(object) {
+	let objToArr = Object.entries(object);
+	return objToArr;
+}
+
+console.log(toArray({a: 1, b: 2}));
+console.log(toArray({shrimp: 15, tots: 12}));
+console.log(toArray({}));
 
 /**
  * Array of Multiples
