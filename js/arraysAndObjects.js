@@ -12,21 +12,21 @@
  */
 
 function minMax(array) {
-	let newArray = [];
-	for(let i = 0; i < array.length; i++) {
-		newArray.push(array[i]);
-	}
-	newArray.sort(function(a, b) {
+	//sort the array in ascending order
+	array = array.sort(function(a, b) {
 		return a - b;
 	});
+	//create new array
 	minAndMaxOnly = Array();
-	minAndMaxOnly.push(newArray[0], newArray[newArray.length-1]);
+	//add first element of array to minAndMaxOnly, then add last element
+	minAndMaxOnly.push(array[0], array[array.length-1]);
+	//return new 2 element array
 	return minAndMaxOnly;
 }
 
-console.log(minMax([1, 2, 3, 4, 5]));
-console.log(minMax([2334454, 5]));
-console.log(minMax([1]));
+console.log(minMax([1, 2, 3, 4, 5])); // [1, 5]
+console.log(minMax([2334454, 5])); // [5, 2334434]
+console.log(minMax([1])); // [1, 1]
 
 /**
  * Filter out Strings from an Array
@@ -46,20 +46,25 @@ console.log(minMax([1]));
  */
 
 function filterArray(array) {
+	//create new array
 	let filteredArray = Array();
+	//check each item of input
 	for(let i = 0; i < array.length; i++) {
+		//if element is a string, skip
 		if (typeof array[i] === 'string') {
 			continue;
+		//if element is not a string, add it to new array
 		} else {
 			filteredArray.push(array[i]);
 		}
 	}
+	// return new array with no strings
 	return filteredArray;
 }
 
-console.log(filterArray([1, 2, "a", "b"]));
-console.log(filterArray([1, "a", "b", 0, 15]));
-console.log(filterArray([1, 2, "aasf", "1", "123", 123]));
+console.log(filterArray([1, 2, "a", "b"])); // [1, 2]
+console.log(filterArray([1, "a", "b", 0, 15])); // [1, 0, 15]
+console.log(filterArray([1, 2, "aasf", "1", "123", 123])); // [1, 2, 123]
 
 /**
  * Is the Average of All Elements a Whole Number?
@@ -75,20 +80,25 @@ console.log(filterArray([1, 2, "aasf", "1", "123", 123]));
  */
 
 function isAvgWhole(array) {
+	//create variable to add to
 	let sum = 0;
+	//check each item of input and add that value to the above variable
 	for(let i = 0; i < array.length; i++) {
 		sum += array[i];
 	};
+	//reassign the value of sum to equal the old value of sum divided by # of elements
 	sum = sum / array.length;
+	//create a variable that will be the sum rounded to the nearest integer
 	let sumParsed = parseInt(sum);
+	//if sum was already an integer not needing to be rounded, return true
 	return sum === sumParsed;
 }
 
-console.log(isAvgWhole([1, 3]));
-console.log(isAvgWhole([1, 2, 3, 4]));
-console.log(isAvgWhole([1, 5, 6]));
-console.log(isAvgWhole([1, 1, 1]));
-console.log(isAvgWhole([9, 2, 2, 5]));
+console.log(isAvgWhole([1, 3])); //true
+console.log(isAvgWhole([1, 2, 3, 4])); //false
+console.log(isAvgWhole([1, 5, 6])); //true
+console.log(isAvgWhole([1, 1, 1])); //true
+console.log(isAvgWhole([9, 2, 2, 5])); //false
 
 /**
  * Drink Sorting
@@ -106,8 +116,12 @@ console.log(isAvgWhole([9, 2, 2, 5]));
  */
 
 function sortDrinkByPrice(drinks) {
-	let arrObj = Object.entries(drinks);
-	return arrObj;
+	//create new array with drinks sorted by cheapest price
+	let drinksArr = drinks.sort(function(a, b) {
+		return a.price - b.price;
+	})
+	//return new array
+	return drinksArr;
 }
 
 drinks = [
@@ -161,6 +175,50 @@ console.log(sortDrinkByPrice(drinks));
  * Each tile is represented as an object with two keys: tile and score.
  */
 
+function maxScore(tileArray) {
+	//create new variable to add score values to
+	let total = 0;
+	//check each object in the array and add the score property value to the above variable;
+	for(let i = 0; i < tileArray.length; i++) {
+		total += tileArray[i].score;
+	}
+	//return the new total
+	return total;
+}
+
+let scrabbleTiles1 = [
+	{ tile: "N", score: 1 },
+	{ tile: "K", score: 5 },
+	{ tile: "Z", score: 10 },
+	{ tile: "X", score: 8 },
+	{ tile: "D", score: 2 },
+	{ tile: "A", score: 1 },
+	{ tile: "E", score: 1 }
+]
+
+let scrabbleTiles2 = [
+	{ tile: "B", score: 2 },
+	{ tile: "V", score: 4 },
+	{ tile: "F", score: 4 },
+	{ tile: "U", score: 1 },
+	{ tile: "D", score: 2 },
+	{ tile: "O", score: 1 },
+	{ tile: "U", score: 1 }
+]
+
+let scrabbleTiles3 = [
+	{ tile: "N", score: 1 },
+	{ tile: "K", score: 5 },
+	{ tile: "Z", score: 10 },
+	{ tile: "X", score: 8 },
+	{ tile: "D", score: 2 },
+	{ tile: "A", score: 1 },
+	{ tile: "E", score: 1 }
+]
+
+console.log(maxScore(scrabbleTiles1)); //28
+console.log(maxScore(scrabbleTiles2)); //15
+console.log(maxScore(scrabbleTiles3)); //28
 
 /**
  * Converting Objects to Arrays
@@ -176,6 +234,14 @@ console.log(sortDrinkByPrice(drinks));
  * Return an empty array if the object is empty.
  */
 
+function toArray(object) {
+	let objToArr = Object.entries(object);
+	return objToArr;
+}
+
+console.log(toArray({a: 1, b: 2}));
+console.log(toArray({shrimp: 15, tots: 12}));
+console.log(toArray({}));
 
 /**
  * Array of Multiples
@@ -190,7 +256,17 @@ console.log(sortDrinkByPrice(drinks));
  * Notes
  * Notice that num is also included in the returned array.
  */
+function arrayOfMultiples(num, length) {
+	let multiplesArr = [];
+	for(let i = 0; i < length; i++) {
+		multiplesArr.push((i+1) * num);
+	};
+	return multiplesArr;
+}
 
+console.log(arrayOfMultiples(7, 5));
+console.log(arrayOfMultiples(12, 10));
+console.log(arrayOfMultiples(17, 6));
 
 /**
  * Get Sum of People's Budget
@@ -210,10 +286,29 @@ console.log(sortDrinkByPrice(drinks));
  *    ]) ➞ 62600
  */
 
+function getBudgets(array) {
+	let total = 0;
+	for(let i = 0; i < array.length; i++) {
+		total += array[i].budget;
+	}
+	return total;
+}
+
+console.log("Sum of budget amounts: $" + getBudgets([
+	{ name: "John", age: 21, budget: 23000 },
+	{ name: "Steve",  age: 32, budget: 40000 },
+	{ name: "Martin",  age: 16, budget: 2700 }
+]));
+
+console.log("Sum of budget amounts: $" + getBudgets([
+	{ name: "John",  age: 21, budget: 29000 },
+	{ name: "Steve",  age: 32, budget: 32000 },
+	{ name: "Martin",  age: 16, budget: 1600 }
+]));
 
 /**
  * Special Arrays
- * An array is special if every even index contains an even number and every odd index contains an odd number.
+ * An array is special if every even index that contains an even number and every odd index contains an odd number.
  * Create a function named isSpecialArray that returns true if an array is special, and false otherwise.
  *
  * Examples
@@ -225,6 +320,26 @@ console.log(sortDrinkByPrice(drinks));
  * >> isSpecialArray([2, 7, 8, 8, 6, 1, 6, 3]) ➞ false
  *    // Index 3 has an even number 8.
  */
+
+function isSpecialArray(array) {
+	for(let i = 0; i < array.length; i++) {
+		//if index # & element are both even numbers, skip number and loop
+		if (i % 2 === 0 && array[i] % 2 === 0) {
+			continue;
+		//if index # & element are both odd numbers, skip number and loop
+		} else if (i % 2 !== 0 && array[i] % 2 !== 0) {
+			continue;
+		//if index # & element are a combination of one even and one odd #, return false
+		} else {
+			return false;
+		}
+	//if all elements of the array are checked for even match or odd match and none return false, return true
+	} return true;
+}
+
+console.log(isSpecialArray([2, 7, 4, 9, 6, 1, 6, 3])); //true
+console.log(isSpecialArray([2, 7, 9, 1, 6, 1, 6, 3])); //false
+console.log(isSpecialArray([2, 7, 8, 8, 6, 1, 6, 3])); //false
 
 
 /**
@@ -242,6 +357,14 @@ console.log(sortDrinkByPrice(drinks));
  * Each array item is unique.
  */
 
+function removeDuplicates(array) {
+	let noDupesArr = [...new Set(array)];
+	return noDupesArr;
+}
+
+console.log(removeDuplicates([1, 0, 1, 0]));
+console.log(removeDuplicates(["The", "big", "cat"]));
+console.log(removeDuplicates(["John", "Taylor", "John"]));
 
 /**
  * Lowercase and Uppercase Map
@@ -257,6 +380,9 @@ console.log(sortDrinkByPrice(drinks));
  * All of the letters in the input list will always be lowercase.
  */
 
+function mapping(letters) {
+
+}
 
 /**
  * Can You Spare a Square?
