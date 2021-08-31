@@ -381,8 +381,10 @@ console.log(removeDuplicates(["John", "Taylor", "John"]));
  */
 
 function mapping(letters) {
-
+	let lettersObjArr = Object.fromEntries()
 }
+
+console.log(mapping(["p", "s"]));
 
 /**
  * Can You Spare a Square?
