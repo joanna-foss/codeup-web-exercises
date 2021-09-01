@@ -1,9 +1,63 @@
 .header1 {
-    color: pink;
+    color: white;
     text-decoration: italic;
+    text-align: center;
 }
 
 .header2 {
     color: lightblue;
-    text-decoration: italic;
+    text-decoration: underline;
+}
+
+body {
+    background-color: azure;
+    background-image: url("/img/microsoft_azure.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: Arial;
+}
+
+h4 {
+    color: pink;
+    text-decoration: bold;
+    text-align: center;
+}
+
+ul {
+    list-style:circle;
+}
+
+div.transparentBox {
+    background-color: white;
+    opacity: .75;
+}
+
+table.programs {
+    font-family: Georgia, serif;
+    font-size: 2em;
+    border-spacing: 2em;
+    color: cornsilk;
+    background-color: black;
+}
+
+table tr th {
+    color: mediumpurple;
+    text-align: left;
+}
+
+em {
+    color: orangered;
+}
+
+a {
+    color: white;
+}
+
+a:visited {
+    color: lightgreen;
+}
+
+a:hover {
+    color: firebrick;
 }
