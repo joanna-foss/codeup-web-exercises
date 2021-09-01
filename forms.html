@@ -4,56 +4,74 @@
 	<meta charset="UTF-8">
 	<title>Register With Us</title>
 </head>
-<body style="background-color:black">
-<h1 style="color:darkred">All of your cool stuff</h1><br>
+<body style="background-color:beige">
+	<header>
+		<nav>
 
+		</nav>
+	</header>
+	<main>
+		<h1 style="color:darkred">Veridian Dynamics Registration Form</h1><br>
 
-<form method="POST" action="https://request-inspector.glitch.me/" style="color: deeppink">
-	<label for="username">Username
-		<input id="username" name="username" type="text" placeholder="Enter username here">
-	</label><br>
+		<form method="POST" action="https://request-inspector.glitch.me/" style="color: deeppink">
 
-	<label for="password">Password
-		<input id="password" name="password" type="password" placeholder="Enter password here">
-	</label><br><br>
+		<section>
+			<label for="username">Username
+				<input id="username" name="username" type="text" placeholder="Enter username here">
+			</label><br>
 
+			<label for="password">Password
+				<input id="password" name="password" type="password" placeholder="Enter password here">
+			</label>
+		</section>
 
-	<h3>Enter stuff about yourself below:</h3>
+		<section>
+			<h3>Enter stuff about yourself below:</h3>
 
-	<label for="bio">
-		<textarea id="bio" name="bio" placeholder="Tell us about yourself!"></textarea>
-	</label><br><br>
+			<label for="bio">
+				<textarea id="bio" name="bio" placeholder="Tell us about yourself!"></textarea>
+			</label>
+		</section>
 
+		<section>
+			<h3>HOW DID YOU HEAR ABOUT US?!</h3>
 
-	<h3>HOW DID YOU HEAR ABOUT US?!</h3>
+			<label for="billboard">
+				<input id="billboard" type="radio" name="howHearBoutUs" value="Billboard" checked>Billboard
+			</label><br>
+			<label for="youtube">
+				<input id="youtube" type="radio" name="howHearBoutUs" value="YouTube">YouTube
+			</label><br>
+			<label for="google">
+				<input id="google" type="radio" name="howHearBoutUs" value="Google">Google
+			</label><br>
+			<label for="WOM">
+				<input id="WOM" type="radio" name="howHearBoutUsWOM" value="Word of Mouth">Word of Mouth
+			</label>
+		</section>
 
-	<label for="billboard">
-		<input id="billboard" type="radio" name="howHearBoutUs" value="Billboard" checked>
-		Billboard
-	</label><br>
-	<label for="youtube">
-		<input id="billboard" type="radio" name="howHearBoutUs" value="YouTube">
-		YouTube
-	</label><br>
-	<label for="google">
-		<input type="radio" name="howHearBoutUs" value="Google">
-		Google
-	</label><br>
-	<label for="WOM">
-		<input type="radio" name="howHearBoutUsWOM" value="Word of Mouth">
-		Word of Mouth
-	</label><br><br><br>
+		<section>
+			<h3>Which WEB BROWSER are you using?</h3>
+			<label for="browser">
+			<select id="browser" name="webBrowser">
+				<option value="" disabled selected>Select from the following:</option>
+				<option value="safari">Safari</option>
+				<option value="safari">Mozilla</option>
+				<option value="safari">Chrome</option>
+				<option value="safari">Internet Explorer</option>
+			</select>
+			</label>
+		</section><br>
 
-	<h3>Which WEB BROWSER are you using?</h3>
-	<select name="webBrowser">
-		<option value="safari">Safari</option>
-		<option value="safari">Mozilla</option>
-		<option value="safari">Chrome</option>
-		<option value="safari">Internet Explorer</option>
-	</select><br><br>
+		<section>
+			<button type="submit">Submit</button>
+		</section>
 
-	<button type="submit">Submit</button>
+		</form>
+		<!--<iframe src="https://codeup.com/" width="1500" height="500">Sorry</iframe>-->
+	</main>
+	<footer>
 
-</form>
+	</footer>
 </body>
 </html>
