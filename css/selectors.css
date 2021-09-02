@@ -28,3 +28,7 @@ em {
 .article>a {
     float:right;
 }
+
+.article p>em {
+    text-decoration: line-through;
+}
