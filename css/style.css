@@ -1,3 +1,12 @@
+html {
+    background-color: azure;
+    background-image: url("/img/microsoft_azure.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: Arial;
+}
+
 .header1 {
     color: white;
     text-decoration: italic;
@@ -6,16 +15,9 @@
 
 .header2 {
     color: lightblue;
-    text-decoration: underline;
-}
-
-body {
-    background-color: azure;
-    background-image: url("/img/microsoft_azure.jpeg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    font-family: Arial;
+    font-family: Georgia, serif;
+    background-color: cadetblue;
+    text-align: center;
 }
 
 h4 {
@@ -26,6 +28,11 @@ h4 {
 
 ul {
     list-style:circle;
+    font-size: 2em;
+}
+
+ol {
+    font-size: 1.5em;
 }
 
 div.transparentBox {
@@ -50,7 +57,7 @@ em {
     color: orangered;
 }
 
-a {
+a:link {
     color: white;
 }
 
@@ -60,4 +67,14 @@ a:visited {
 
 a:hover {
     color: firebrick;
+}
+
+section {
+    color: deeppink;
+}
+
+#photocube, .programs {
+    background-color:yellow;
+    margin-right: auto;
+    margin-left: auto;
 }
