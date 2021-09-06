@@ -83,6 +83,7 @@
 	 * Input always contains a vowel.
 	 */
 
+//There's got to be a better way to write the below function...
 	function firstVowel(inputs) {
 		let inputsArr = inputs.toLowerCase().split("");
 		for (let i = 0; i < inputsArr.length; i++) {
@@ -98,7 +99,7 @@
 	console.log(firstVowel("STRAWBERRY")); // a, 3
 	console.log(firstVowel("hello")); // e, 1
 	console.log(firstVowel("pInEaPPLe")); // i, 1
-	console.log(firstVowel("sdfghjkl"));
+	console.log(firstVowel("sdfghjkl")); // no vowels try again
 
 	/**
 	 * TODO:
@@ -118,6 +119,28 @@
 	 * For an added challenge, try to solve this without using strings.
 	 */
 
+	function count(integer) {
+		if(integer === undefined) { //if nothing is input into function
+			return "Nothing inputted. Try again."
+		}
+		integer = Math.abs(integer);
+		let counter = 0;
+		if(integer !== 0) { //if any number besides 0 is input into function
+			counter += 1; //counter will start at 1
+		}
+		while (integer/10 >= 1) { //checks if number divided by 10 is greater than/equal to 1 and if so continue;
+			integer /= 10; //divide number by 10 and set integer to new number
+			++counter; //add 1 to counter and set counter
+		}
+		return counter;
+	}
+
+	console.log(count()); //nothing input
+	console.log(count(0)); //0
+	console.log(count(1)); //1
+	console.log(count(10)); //2
+	console.log(count(234)); //3
+	console.log(count(-149582215)); //9
 
 	/**
 	 * TODO:
@@ -133,6 +156,16 @@
 	 * If the given string does not contain "a", "b", or "c", return null.
 	 */
 
+	function removeABC(anyString) {
+		if(anyString.search(/[abc]/) === -1) { //.search is a method that searches anyString for the argument passed through. In this case, the argument is a RegEx essentially stating that anyString will be searched for the first occurrence (absence of a g following the /[abc]/ means search only for first occurrence) of any of the characters: a, b, or c. If a, b, or c is not found in anyString, a -1 will be output and the body of this if will activate.
+			return null;
+		}
+		return anyString.replace(/[abc]/g, ''); //.replace is a method that will take the first argument passed through and replace it with the second argument passed through. Here the first argument is a RegEx calling for a search/replace of every (g means "Global" search aka search entirety of anyString) with '' aka nothing.
+	}
+
+	console.log(removeABC("This might be a bit hard")); //This might e  it hrd
+	console.log(removeABC("hello world!")); // null
+	console.log(removeABC("")); // null
 
 	/**
 	 * TODO:
@@ -149,6 +182,25 @@
 	 * Should work with empty string.
 	 * Should work with only one word.
 	 */
+
+	function reverseOdd(string) {
+		newArr = string.split(" ");
+		arrToAddTo = [];
+		newArr.forEach(function(element) {
+			if(element.length % 2 === 0) {
+				arrToAddTo.push(element);
+			} else {
+				let reversedElem = [...element].reverse().join('');
+				arrToAddTo.push(reversedElem);
+			}
+		});
+		return arrToAddTo.toString().replaceAll(',', ' ');
+
+	}
+
+	console.log(reverseOdd("Bananas"));
+	console.log(reverseOdd("One two three four"));
+	console.log(reverseOdd("Make sure uoy only esrever sdrow of ddo length"));
 
 
 	/**
@@ -169,6 +221,10 @@
 	 * The strings will always go to the length at which the most left bit's value gets bigger than the number in decimal.
 	 * If a binary conversion for 0 is attempted, return "0".
 	 */
+
+	function binary(decimal) {
+
+	}
 </script>
 </body>
 </html>
