@@ -17,21 +17,21 @@ div {
 }
 
 .message-info {
-    color: darkblue;
-    background-color: lightblue;
+    color: #4F4AA4;
+    background-color: #CCDEFF;
 }
 
 .message-success {
-    color: darkgreen;
-    background-color: palegreen;
+    color: #4D8E61;
+    background-color: #CFF3DA;
 }
 
 .message-warning {
-    color: darkgoldenrod;
-    background-color: #fcfcab;
+    color: #917E20;
+    background-color: #FCFBC9;
 }
 
 .message-error {
-    color: maroon;
-    background-color: lightpink;
+    color: #75011E;
+    background-color: #FAD2D6;
 }
