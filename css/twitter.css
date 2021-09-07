@@ -72,7 +72,7 @@ a {
 
 .profile-items {
     list-style-type: none;
-    padding: none;
+    padding: 0px;
 }
 
 .profile-entry {
@@ -113,7 +113,7 @@ a {
 }
 
 .container {
-    margin: 2em;
+    border: 2em;
 }
 
 .media {
