@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flexbox Basics Examples</title>
+    <style>
+.flex-container {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    border: 5px solid goldenrod;
+    height: 100vh;
+}
+
+.flex-container>div {
+	border: 1px solid brown;
+	background-color: lightpink;
+	margin: .5em .1em 0 .1em;
+}
+.box1 {
+    font-size: 15px;
+}
+.box2 {
+    font-size: 30px;
+}
+.box3 {
+    font-size: 45px;
+}
+.box4 {
+    font-size: 60px;
+}
+.box5 {
+    font-size: 75px;
+}
+    </style>
+</head>
+<body>
+
+<div class="flex-container">
+    <div class="box1">Item 1</div>
+    <div class="box2">Item 2</div>
+    <div class="box3">Item 3</div>
+    <div class="box4">Item 4</div>
+    <div class="box5">Item 5</div>
+</div>
+
+</body>
+</html>
