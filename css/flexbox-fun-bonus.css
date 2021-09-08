@@ -1,0 +1,71 @@
+* {
+    box-sizing: border-box;
+}
+
+div {
+    border: .15em solid black;
+}
+
+section {
+    margin: 1em;
+    display: flex;
+    flex-direction: row;
+}
+section:nth-of-type(1) {
+    background-color: lightgreen;
+}
+
+section:last-child {
+    background-color: palegoldenrod;
+    flex-wrap: wrap;
+}
+
+.greenB {
+    background-color: green;
+    height: 1em;
+    width: 2em;
+}
+
+.pinkB {
+    background-color: deeppink;
+    height: 1em;
+}
+
+.bigBlueB {
+    background-color: blue;
+    height: 50em;
+    width: 100%;
+}
+
+h1, h3 {
+    font-family: "Comic Sans MS", sans-serif;
+}
+
+.orangeC {
+    background-color: orange;
+    height: 3em;
+    width: 3em;
+    border-radius: 100%;
+    border: 0px;
+}
+
+.maroonB {
+    background-color: maroon;
+    height: 10em;
+}
+
+.yellowB {
+    background-color: yellow;
+    height: 2em;
+    width: 2em;
+}
+
+.grayB {
+    background-color: gray;
+    width: 4em;
+    height: 4em;
+}
+
+.grayB:nth-child(odd) {
+    height: 3em;
+}
