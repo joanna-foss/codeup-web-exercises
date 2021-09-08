@@ -28,14 +28,16 @@ a {
 .top-nav {
     background: var(--light-bg);
     width: 100%;
-    /*z-index: 1000;*/
+    z-index: 1000;
     position: fixed;
 }
+/*like tristan's but still don't understand z-index*/
 
 .nav-item {
     display: inline-block;
     padding: 1.5em;
 }
+/*exactly like tristan's*/
 
 .nav {
     list-style-type: none;
@@ -62,7 +64,7 @@ a {
 }
 
 .profile-form {
-    line-height: 5em;
+    line-height: 80px;
 }
 
 
@@ -77,17 +79,20 @@ a {
 
 .profile-details {
     float: left;
-    width: calc(25% - .5em);
+    width: calc(25% - 1em);
+    margin: 0 0.5em;
 }
 
 .timeline {
     float: left;
-    width: calc(50% - .5em);
+    width: calc(50% - 1em);
+    margin: 0 0.5em;
 }
 
 .who-to-follow {
-    float: right;
-    width: calc(25% - .5em);
+    float: left;
+    width: calc(25% - 1em);
+    margin 0 0.5em;
 }
 
 .btn {
@@ -114,16 +119,15 @@ a {
 }
 
 .container {
-    margin-right: 2em;
-    padding-top: 1.5em;
+    margin-top: 2em;
 }
 
 .media {
     width: 100%;
     background-color: var(--light-bg);
-    border: solid 1px var(--separator-color);
+    border-bottom: solid 1px var(--separator-color);
     padding: .5em;
-    overflow: auto;
+    overflow: hidden;
 }
 
 .media-image {
