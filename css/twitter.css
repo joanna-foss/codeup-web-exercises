@@ -70,7 +70,7 @@ a {
 
 .profile-items {
     list-style-type: none;
-    padding: 0px;
+    padding: 0;
 }
 
 .profile-entry {
@@ -92,7 +92,7 @@ a {
 .who-to-follow {
     float: left;
     width: calc(25% - 1em);
-    margin 0 0.5em;
+    margin: 0 0.5em;
 }
 
 .btn {
