@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Flexbox In Practice</title>
+	<style>
+		#container {
+			/*height: 100vh;*/
+			display: flex;
+			background-color: lawngreen;
+			border: 1px solid black;
+			/*justify-content: center;*/
+			/*align-items: center;*/
+        }
+
+		.box {
+			background-color: rebeccapurple;
+			color:antiquewhite;
+			padding: 1em;
+        }
+
+	</style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">News</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+    </nav>
+    <h1>Flexbox In Practice</h1>
+	<div id="container">
+		<div class="box">Flex Item</div>
+		<div class="box">Flex Item</div>
+		<div class="box">Flex Item</div>
+	</div>
+<script src=""></script>
+</body>
+</html>
