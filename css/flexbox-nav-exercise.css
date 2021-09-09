@@ -6,33 +6,30 @@
     background-color: beige;
     color: deeppink;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    padding: 0;
 }
 
-nav:nth-of-type(1) {
-    flex-grow: 1;
+section {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3em;
+    padding: .2em 0;
 }
-
-nav:nth-of-type(2) {
-    flex-grow: 1;
-}
-
-ul {
-    display: flex;
-}
-
 li {
     list-style-type: none;
-    margin: .5em;
+    font-family: 'Work Sans', sans-serif;
+    display:inline-block;
 }
 
 a {
     color: black;
     text-decoration: none;
+    display:inline-block;
+    padding: 1em;
 }
 
 a:hover {
-    background-color: black;
-    color: pink;
+    background-color: #b4d455;
+    color: blue;
 }
