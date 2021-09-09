@@ -1,3 +1,38 @@
 * {
     box-sizing: border-box;
 }
+
+#navBar {
+    background-color: beige;
+    color: deeppink;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav:nth-of-type(1) {
+    flex-grow: 1;
+}
+
+nav:nth-of-type(2) {
+    flex-grow: 1;
+}
+
+ul {
+    display: flex;
+}
+
+li {
+    list-style-type: none;
+    margin: .5em;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+a:hover {
+    background-color: black;
+    color: pink;
+}
