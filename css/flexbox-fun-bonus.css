@@ -16,7 +16,7 @@ section {
     margin: 1em;
     display: flex;
     flex-direction: row;
-    width: calc(100%-2em);
+    width: calc(100% - 2em);
 }
 section:nth-of-type(1) {
     background-color: lightgreen;
@@ -26,11 +26,11 @@ section:nth-of-type(1) {
 }
 
 section:last-child {
-    background-color: palegoldenrod;
+    background-color: sandybrown;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    margin:
+    padding: .5em 0;
 }
 
 .greenB {
@@ -73,7 +73,7 @@ h1, h3 {
     height: 3em;
     width: 3em;
     border-radius: 100%;
-    border: 0px;
+    border: 0;
     margin: .5em;
 }
 
@@ -87,8 +87,8 @@ section:nth-of-type(7) {
 
 .maroonB {
     background-color: maroon;
-    height: 10em;
-    width: 12em;
+    height: 8em;
+    width: 9em;
 }
 
 .yellowB {
