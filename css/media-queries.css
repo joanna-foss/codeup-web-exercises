@@ -94,13 +94,13 @@ footer p {
 
     .main {
         float: left;
-        width: 30em;
+        width: 60%;
         margin: 1em;
     }
 
     .sub-section {
         float: right;
-        width: 20em;
+        width: 30%;
         margin: 1em;
     }
 
