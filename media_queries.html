@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Media Queries Lecture</title>
+	<style>
+		.box {
+			background-color: lawngreen;
+			width: 10em;
+			height: 10em;
+			border: 1px solid black;
+			margin: .5em;
+			display: none;
+        }
+
+        #box1 {
+			display: inline-block;
+        }
+
+		@media screen and (min-width:576px) {
+			#box1 {
+				background-color: mediumvioletred;
+            }
+
+			#box2 {
+				display: inline-block;
+			}
+		}
+
+		@media screen and (min-width:768px) {
+			#box1 {
+				background-color: deepskyblue;
+            }
+
+			#box2 {
+				background-color: mediumvioletred;
+				display: inline-block;
+			}
+
+			#box3 {
+				display: inline-block;
+            }
+		}
+
+		@media screen and (min-width:992px) {
+			#box1 {
+				background-color: beige;
+            }
+
+			#box2 {
+				background-color: deepskyblue;
+				display: inline-block;
+			}
+
+			#box3 {
+				background-color: mediumvioletred;
+				display: inline-block;
+            }
+
+            #box4 {
+				display: inline-block;
+            }
+		}
+
+		@media screen and (min-width:1200px) {
+			#box1 {
+				background-color: darkorange;
+            }
+
+			#box2 {
+				background-color: beige;
+				display: inline-block;
+			}
+
+			#box3 {
+				background-color: deepskyblue;
+				display: inline-block;
+            }
+
+            #box4 {
+            	background-color: mediumvioletred;
+				display: inline-block;
+            }
+
+            #box5 {
+				display: inline-block;
+            }
+		}
+
+
+	</style>
+</head>
+<body>
+	<h1>Hello World</h1>
+	<div id="box1" class="box"></div>
+	<div id="box2" class="box"></div>
+	<div id="box3" class="box"></div>
+	<div id="box4" class="box"></div>
+	<div id="box5" class="box"></div>
+</body>
+</html>
