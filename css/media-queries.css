@@ -1,4 +1,4 @@
-/*DEFAULT STYLING INFO BELOW*/
+/*DEFAULT STYLING INFO BELOW - MOBILE VIEW*/
 
 * {
     box-sizing: border-box;
@@ -6,7 +6,7 @@
 
 body {
     display: flex;
-    font-family: Arial, sans-serif;
+    font-family: Ubuntu, sans-serif;
     flex-direction: column;
 }
 
@@ -43,8 +43,8 @@ li {
     background-color: darkgrey;
     text-align: center;
     width: 100%;
-    padding: .75em;
-    margin: .2em 0;
+    padding: 1em 0;
+    margin: .5em 0;
 }
 
 .sub-section {
@@ -86,6 +86,7 @@ footer p {
         flex-direction: row;
         background-color: unset;
         margin-bottom: unset;
+        padding: 1em;
     }
 
     img {
