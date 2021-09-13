@@ -1,0 +1,46 @@
+.navbar {
+    justify-content: space-between;
+}
+
+.navbar>* {
+    margin: .2em;
+}
+
+.navbar>a {
+    padding: .5em;
+}
+
+.navbar>a:hover {
+    background-color: lightgray;
+}
+
+.navbar>div {
+    flex-grow: 2;
+}
+
+.welcome-to-pizza-world {
+    padding: 0;
+    background-image: url("../img/pizza.png");
+    background-size: 100%;
+    min-height: 10em;
+}
+
+.jumbotron>.container {
+    display: flex;
+    text-align: center;
+    margin: 0;
+    padding: 3em 0;
+}
+
+.jumbotron>.container>h1 {
+    opacity: 80%;
+    background-color: beige;
+    width: 100%;
+    font-size: xx-large;
+}
+
+@media screen and (max-width:576px) {
+    .welcome-to-pizza-world {
+        display: none;
+    }
+}
