@@ -22,21 +22,17 @@
     padding: 0;
     background-image: url("../img/pizza.png");
     background-size: 100%;
-    min-height: 10em;
-}
-
-.jumbotron>.container {
+    min-height: 8em;
     display: flex;
-    text-align: center;
-    margin: 0;
-    padding: 3em 0;
+    align-items: center;
 }
 
-.jumbotron>.container>h1 {
-    opacity: 80%;
+.jumbotron>h1 {
+    opacity: 75%;
     background-color: beige;
     width: 100%;
     font-size: xx-large;
+    text-align: center;
 }
 
 @media screen and (max-width:576px) {
