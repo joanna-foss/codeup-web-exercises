@@ -39,78 +39,164 @@
       <div class="tab-pane fade show active" id="nav-size" role="tabpanel" aria-labelledby="nav-size-tab">
 
           <div class="card">
-
-          <div class="card-body card-header size-and-crust-card">
-            <h5 class="card-title">Choose size and crust</h5>
-                <div class="card">
+          <div class="card-header size-and-crust-card bg-primary text-white">
+            Choose size and crust
+          </div>
+          <div class="card-body">
+              <div class="card">
+                <div class="card-header">Hand Tossed</div>
                   <ul class="list-group list-group-flush">
-                    <li class="list-group-item card-section-title">Hand Tossed</li>
+                    <li class="list-group-item card-header">Garlic seasoned crust with a rich, buttery taste.</li>
                     <li class="list-group-item card-section-radio-button"><input type="radio" name="size-crust" id="size-crust" value="handtossed_small"> Small (10")</li>
                     <li class="list-group-item card-section-radio-button"><input type="radio" name="size-crust" id="size-crust" value="handtossed_medium"> Medium (12")</li>
                   </ul>
                 </div>
-                <div class="card">
+                <br>
+              <div class="card">
+              <div class="card-header">Thin Crust</div>
                   <ul class="list-group list-group-flush">
-                    <li class="list-group-item card-section-title">Thin Crust</li>
+                    <li class="list-group-item card-section-title">Thin enough for optimum crispy to crunchy ratio.</li>
                     <li class="list-group-item"><input type="radio" name="size-crust" id="size-crust" value="thin_medium"> Medium (12")</li>
                     <li class="list-group-item"><input type="radio" name="size-crust" id="size-crust" value="thin_large"> Large (14")</li>
                   </ul>
                 </div>
           </div>
           <div class="card-footer size-footer">
-            <a id="nav-cheese-tab" data-toggle="tab" href="#nav-cheese" role="tab" aria-controls="nav-cheese" class="card-link btn btn-primary">Next</a>
+            <a id="nav-cheese-tab" data-toggle="tab" href="#nav-cheese" role="tab" aria-controls="nav-cheese" class="card-link btn btn-primary">Next Step</a>
           </div>
           </div>
 
       </div>
       <div class="tab-pane fade" id="nav-cheese" role="tabpanel" aria-labelledby="nav-cheese-tab">
-          <div class="card">
 
-          <div class="card-body card-header size-and-crust-card">
-            <h5 class="card-title">Choose Cheese and Sauce</h5>
-                <div class="card">
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item card-section-title">Cheese</li>
-                    <li class="list-group-item card-section-radio-button"><input type="radio" name="size-crust" id="size-crust" value="handtossed_small"> Small (10")</li>
-                    <li class="list-group-item card-section-radio-button"><input type="radio" name="size-crust" id="size-crust" value="handtossed_medium"> Medium (12")</li>
-                  </ul>
-                </div>
-                <div class="card">
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item card-section-title">Sauce</li>
-                    <li class="list-group-item"><input type="radio" name="size-crust" id="size-crust" value="thin_medium"> Medium (12")</li>
-                    <li class="list-group-item"><input type="radio" name="size-crust" id="size-crust" value="thin_large"> Large (14")</li>
-                  </ul>
-                </div>
+          <div class="card">
+          <div class="card-header size-and-crust-card bg-primary text-white">
+            Choose cheese and sauce
+          </div>
+          <div class="card-body">
+              <div class="card">
+                <div class="card-header">Cheese</div>
+                  <div class="card-body">How much?
+                    <select class="custom-select" id="cheeseSelect">
+                        <option selected>Choose...</option>
+                        <option value="cheese-light">Light</option>
+                        <option value="cheese-regular">Regular</option>
+                        <option value="cheese-heavy">Heavy</option>
+                      </select>
+                  </div>
+              </div>
+                <br>
+              <div class="card">
+                <div class="card-header">Sauce</div>
+                  <div class="card-body">What type?
+                    <select class="custom-select" id="sauceSelect">
+                        <option selected>Choose...</option>
+                        <option value="sauce-robust">Robust Inspired Tomato Sauce</option>
+                      </select>
+                  </div>
+                  <div class="card-body">How much?
+                    <select class="custom-select" id="sauceSelect">
+                        <option selected>Choose...</option>
+                        <option value="sauceAmount-light">Light</option>
+                        <option value="sauceAmount-regular">Regular</option>
+                        <option value="sauceAmount-extra">Extra</option>
+                      </select>
+                  </div>
+              </div>
           </div>
           <div class="card-footer size-footer">
-            <a href="#" class="card-link">Another link</a>
+            <a id="" data-toggle="tab" href="#" aria-controls="nav-cheese" class="card-link btn btn-primary">Previous Step</a>
+            <a id="" data-toggle="tab" href="#" aria-controls="nav-cheese" class="card-link btn btn-primary">Next Step</a>
           </div>
           </div>
+
       </div>
       <div class="tab-pane fade" id="nav-toppings" role="tabpanel" aria-labelledby="nav-toppings-tab">
-          <div class="card">
 
-          <div class="card-body card-header size-and-crust-card">
-            <h5 class="card-title">Choose Toppings</h5>
-                <div class="card">
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item card-section-title">Hand Tossed</li>
-                    <li class="list-group-item card-section-radio-button"><input type="radio" name="size-crust" id="size-crust" value="handtossed_small"> Small (10")</li>
-                    <li class="list-group-item card-section-radio-button"><input type="radio" name="size-crust" id="size-crust" value="handtossed_medium"> Medium (12")</li>
-                  </ul>
-                </div>
-                <div class="card">
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item card-section-title">Thin Crust</li>
-                    <li class="list-group-item"><input type="radio" name="size-crust" id="size-crust" value="thin_medium"> Medium (12")</li>
-                    <li class="list-group-item"><input type="radio" name="size-crust" id="size-crust" value="thin_large"> Large (14")</li>
-                  </ul>
-                </div>
+          <div class="card">
+          <div class="card-header size-and-crust-card bg-primary text-white">
+            Choose toppings
           </div>
-          <div class="card-footer size-footer">
-            <a href="#" class="card-link">Another link</a>
+          <div class="card-body">
+              <div class="card">
+                <div class="card-header">Choose Meats</div>
+                    <div class="card-body">
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <div class="input-group-text">
+                              <input type="checkbox" aria-label="Checkbox for following text input">
+                            </div>
+                          </div>
+                          <input type="text" class="form-control" aria-label="Text input with checkbox">
+                        </div>
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <div class="input-group-text">
+                              <input type="checkbox" aria-label="Checkbox for following text input">
+                            </div>
+                          </div>
+                          <input type="text" class="form-control" aria-label="Text input with checkbox">
+                        </div>
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <div class="input-group-text">
+                              <input type="checkbox" aria-label="Checkbox for following text input">
+                            </div>
+                          </div>
+                          <input type="text" class="form-control" aria-label="Text input with checkbox">
+                        </div>
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <div class="input-group-text">
+                              <input type="checkbox" aria-label="Checkbox for following text input">
+                            </div>
+                          </div>
+                          <input type="text" class="form-control" aria-label="Text input with checkbox">
+                        </div>
+                    </div>
+                </div>
+                <br>
+              <div class="card">
+              <div class="card-header">Choose Non-Meats</div>
+                    <div class="card-body">
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <div class="input-group-text">
+                              <input type="checkbox" aria-label="Checkbox for following text input">
+                            </div>
+                          </div>
+                          <input type="text" class="form-control" aria-label="Text input with checkbox">
+                        </div>
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <div class="input-group-text">
+                              <input type="checkbox" aria-label="Checkbox for following text input">
+                            </div>
+                          </div>
+                          <input type="text" class="form-control" aria-label="Text input with checkbox">
+                        </div>
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <div class="input-group-text">
+                              <input type="checkbox" aria-label="Checkbox for following text input">
+                            </div>
+                          </div>
+                          <input type="text" class="form-control" aria-label="Text input with checkbox">
+                        </div>
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <div class="input-group-text">
+                              <input type="checkbox" aria-label="Checkbox for following text input">
+                            </div>
+                          </div>
+                          <input type="text" class="form-control" aria-label="Text input with checkbox">
+                        </div>
+              </div>
           </div>
+          </div>
+              <div class="card-footer size-footer">
+                <a id="nav-cheese-tab" data-toggle="tab" href="#nav-cheese" role="tab" aria-controls="nav-cheese" class="card-link btn btn-primary">Checkout</a>
+              </div>
           </div>
       </div>
     </div>
