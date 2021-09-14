@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kenneth Exercises</title>
+</head>
+<body>
+
+<script>
+    //08.25.2021
+    function rollSixSided(number) {
+        for (let i = 0; i < number; i++) {
+            sixSidedDice = Math.ceil((Math.random() * 6));
+            console.log("You rolled a " + sixSidedDice + "!");
+        };
+    };
+
+    //09.14.2021
+    function tacoTuesday(array) {
+        let taco = "taco";
+        for (let i = 0; i < array.length; i++) {
+            if (array[i].includes(taco)) {
+                return array[i].includes(taco);
+            }
+        } return false;
+    }
+
+    var hasTacos = ["blueberry muffin", "banana", "yogurt", "cereal", "brisket and egg taco"]
+    var noTacos = ["parfait", "omlette de frumage", "protein shake", "fasting"]
+
+    console.log(tacoTuesday(hasTacos));; //true
+    console.log(tacoTuesday(noTacos));; //false
+</script>
+</body>
+</html>
