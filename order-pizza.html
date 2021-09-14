@@ -30,19 +30,95 @@
 
     <nav>
       <div class="nav nav-tabs" id="nav-tab" role="tablist">
-        <a class="nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Home</a>
-        <a class="nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Profile</a>
-        <a class="nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</a>
+        <a class="nav-link active" id="nav-size-tab" data-toggle="tab" href="#nav-size" role="tab" aria-controls="nav-size" aria-selected="true"><span class="badge badge-secondary">1</span> Size and Crust</a>
+        <a class="nav-link" id="nav-cheese-tab" data-toggle="tab" href="#nav-cheese" role="tab" aria-controls="nav-cheese" aria-selected="false"><span class="badge badge-secondary">2</span> Cheese and Sauce</a>
+        <a class="nav-link" id="nav-toppings-tab" data-toggle="tab" href="#nav-toppings" role="tab" aria-controls="nav-toppings" aria-selected="false"><span class="badge badge-secondary">3</span> Toppings</a>
       </div>
     </nav>
     <div class="tab-content" id="nav-tabContent">
-      <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">...</div>
-      <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">...</div>
-      <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">...</div>
+      <div class="tab-pane fade show active" id="nav-size" role="tabpanel" aria-labelledby="nav-size-tab">
+
+          <div class="card">
+
+          <div class="card-body card-header size-and-crust-card">
+            <h5 class="card-title">Choose size and crust</h5>
+                <div class="card">
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item card-section-title">Hand Tossed</li>
+                    <li class="list-group-item card-section-radio-button"><input type="radio" name="size-crust" id="size-crust" value="handtossed_small"> Small (10")</li>
+                    <li class="list-group-item card-section-radio-button"><input type="radio" name="size-crust" id="size-crust" value="handtossed_medium"> Medium (12")</li>
+                  </ul>
+                </div>
+                <div class="card">
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item card-section-title">Thin Crust</li>
+                    <li class="list-group-item"><input type="radio" name="size-crust" id="size-crust" value="thin_medium"> Medium (12")</li>
+                    <li class="list-group-item"><input type="radio" name="size-crust" id="size-crust" value="thin_large"> Large (14")</li>
+                  </ul>
+                </div>
+          </div>
+          <div class="card-footer size-footer">
+            <a href="#" class="card-link">Next</a>
+          </div>
+          </div>
+
+      </div>
+      <div class="tab-pane fade" id="nav-cheese" role="tabpanel" aria-labelledby="nav-cheese-tab">
+          <div class="card">
+
+          <div class="card-body card-header size-and-crust-card">
+            <h5 class="card-title">Choose Cheese and Sauce</h5>
+                <div class="card">
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item card-section-title">Cheese</li>
+                    <li class="list-group-item card-section-radio-button"><input type="radio" name="size-crust" id="size-crust" value="handtossed_small"> Small (10")</li>
+                    <li class="list-group-item card-section-radio-button"><input type="radio" name="size-crust" id="size-crust" value="handtossed_medium"> Medium (12")</li>
+                  </ul>
+                </div>
+                <div class="card">
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item card-section-title">Sauce</li>
+                    <li class="list-group-item"><input type="radio" name="size-crust" id="size-crust" value="thin_medium"> Medium (12")</li>
+                    <li class="list-group-item"><input type="radio" name="size-crust" id="size-crust" value="thin_large"> Large (14")</li>
+                  </ul>
+                </div>
+          </div>
+          <div class="card-footer size-footer">
+            <a href="#" class="card-link">Another link</a>
+          </div>
+          </div>
+      </div>
+      <div class="tab-pane fade" id="nav-toppings" role="tabpanel" aria-labelledby="nav-toppings-tab">
+          <div class="card">
+
+          <div class="card-body card-header size-and-crust-card">
+            <h5 class="card-title">Choose Toppings</h5>
+                <div class="card">
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item card-section-title">Hand Tossed</li>
+                    <li class="list-group-item card-section-radio-button"><input type="radio" name="size-crust" id="size-crust" value="handtossed_small"> Small (10")</li>
+                    <li class="list-group-item card-section-radio-button"><input type="radio" name="size-crust" id="size-crust" value="handtossed_medium"> Medium (12")</li>
+                  </ul>
+                </div>
+                <div class="card">
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item card-section-title">Thin Crust</li>
+                    <li class="list-group-item"><input type="radio" name="size-crust" id="size-crust" value="thin_medium"> Medium (12")</li>
+                    <li class="list-group-item"><input type="radio" name="size-crust" id="size-crust" value="thin_large"> Large (14")</li>
+                  </ul>
+                </div>
+          </div>
+          <div class="card-footer size-footer">
+            <a href="#" class="card-link">Another link</a>
+          </div>
+          </div>
+      </div>
     </div>
 
 </div>
-
+<footer>
+    <div style="height: 5em"></div>
+</footer>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://unpkg.com/@popperjs/core@2"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
