@@ -86,6 +86,30 @@
 
     console.log(thaiThursday(order));
 
+    //Dorian's exercise for BOM:
+    //TODO: Finish coding this program. You need to stop the setInterval() method after the showTime() function has run five times.
+
+    let count = 0;
+
+    function showTime() {
+        // returns new date and time
+        let dateTime = new Date();
+        // returns the time
+        let time = dateTime.toLocaleTimeString();
+
+        //if the count reaches 5, stop the program.
+        count += 1;
+
+        if(count >= 5) {
+            console.log("last time")
+            clearInterval(display);
+        }
+
+        console.log(time);
+    }
+
+    let display = setInterval(showTime, 2000);
+    console.log(display);
 
 </script>
 </body>
