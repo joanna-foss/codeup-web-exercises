@@ -12,31 +12,43 @@
 
     <hr>
 
-    <form>
-        <label for="roast-selection"></label>
-        <select id="roast-selection">
+    <div class="row">
+
+    <div id="coffees" class="col-6"></div>
+    <div class="col-6">
+    <form class="">
+        <label for="roast-selection" class="">Roast</label>
+        <select id="roast-selection" class="form-select">
+            <option selected>all</option>
             <option>light</option>
             <option>medium</option>
             <option>dark</option>
         </select>
+
+        <label for="coffee-search" class="">Search</label>
+        <input class="form-control" id="coffee-search" type="search" value="type here">
         <input id="submit" type="submit" />
     </form>
 
-    <div id="coffees"></div>
+    <hr>
 
-    <input type="search" value="search type">
-    <input type="submit" value="search">
+    <h2 class="">Add a Coffee</h2>
 
-<!--    <table>-->
-<!--        <thead>-->
-<!--            <tr>-->
-<!--                <th>ID</th>-->
-<!--                <th>NAME</th>-->
-<!--                <th>ROAST</th>-->
-<!--            </tr>-->
-<!--        </thead>-->
-<!--        <tbody id="coffees"></tbody>-->
-<!--    </table>-->
+    <form class="">
+        <label for="roast-selection" class="">Roast</label>
+        <select id="roast-selection" class="form-select">
+            <option>light</option>
+            <option>medium</option>
+            <option selected>dark</option>
+        </select>
+
+        <label for="coffee-search" class="">Search</label>
+        <input class="form-control" id="coffee-search" type="search" value="type here">
+        <input id="add" type="submit" />
+    </form>
+    </div>
+
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
     <script src="js/main.js"></script>
