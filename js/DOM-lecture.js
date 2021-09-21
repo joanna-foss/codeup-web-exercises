@@ -43,3 +43,22 @@
 // We had to use [] syntax since the property name has a dash
 
 // Replace dashes with camelCase to use standard . syntax
+
+//09.21.2021 exercise in lecture
+
+var button1 = document.getElementById("btn1");
+var button2 = document.getElementById("btn2");
+
+let rebeccaPurple = function(){
+	let listItems = document.getElementsByTagName("li");
+
+	for(let i = 0; i<listItems.length; i++){
+		listItems[i].style.backgroundColor = 'rebeccapurple'
+	}
+}
+
+button1.addEventListener('click', rebeccaPurple);
+
+button2.addEventListener('click', function(){
+	button1.removeEventListener('click', rebeccaPurple);
+});
