@@ -7,150 +7,166 @@
 <body>
 
 <script>
-    // //08.25.2021
-    // function rollSixSided(number) {
-    //     for (let i = 0; i < number; i++) {
-    //         sixSidedDice = Math.ceil((Math.random() * 6));
-    //         console.log("You rolled a " + sixSidedDice + "!");
-    //     };
-    // };
-	//
-    // //09.14.2021
-    // function tacoTuesday(array) {
-    //     let taco = "taco";
-    //     for (let i = 0; i < array.length; i++) {
-    //         if (array[i].includes(taco)) {
-    //             return array[i].includes(taco);
-    //         }
-    //     } return false;
-    // }
-	//
-    // var hasTacos = ["blueberry muffin", "banana", "yogurt", "cereal", "brisket and egg taco"]
-    // var noTacos = ["parfait", "omlette de frumage", "protein shake", "fasting"]
-	//
-    // console.log(tacoTuesday(hasTacos)); //true
-    // console.log(tacoTuesday(noTacos)); //false
-	//
-    // // 09.17.2021
-    // // Write a function named whatAWednesday that takes in an array of strings representing sandwiches ordered - it’s a busy Wednesday, so we’re getting in tons of orders for burgers and chicken like so:
-    // var customer1Order = ["what-a-burger", "what-a-burger", "what-a-chicken", "what-a-chicken"];
-    // var customer2Order = ["what-a-burger", "fries", "what-a-burger"];
-    // // whatAWednesday should return to me a formatted string that counts the number of burgers and chicken sandwiches respectively and lets me know if that order had any chicken in it.
-    // // whatAWednesday(customer1Order) // “Your order included chicken sandwiches, so we’re getting those made for you! You ordered a total of 2 burgers and 2 chicken sandwiches.”
-    // // whatAWednesday(customer2Order) // “Your order did not include any chicken sandwiches - s'alright, our burgers are cooked fresh too! You ordered a total of 2 burgers.”
-	//
-    // function whatAWednesday(array) {
-    //     let totalBurgers = 0;
-    //     let totalChickens = 0;
-    //     for (let i = 0; i < array.length; i++) {
-    //         if (array[i].includes("burger")) {
-    //             totalBurgers += 1;
-    //         }
-    //         if (array[i].includes("chicken")) {
-    //             totalChickens += 1;
-    //         }
-    //     }
-    //     if (totalChickens === 0) {
-    //         return "Your order did not include any chicken sandwiches - s'alright, our burgers are cooked fresh too! You ordered a total of " + totalBurgers + " burgers."
-    //     } else {
-    //         return "Your order included chicken sandwiches, so we’re getting those made for you! You ordered a total of " + totalBurgers + " burgers and " + totalChickens + " chicken sandwiches."
-    //     }
-    // }
-	//
-    // console.log(whatAWednesday(customer1Order));
-    // console.log(whatAWednesday(customer2Order));
-	//
-    // // 09.17.2021
-    // // Thai Thursday
-    // // I’ve got an ISSUE - I’m running my food truck [‘Thai Me’] and need a way to turn my customer’s run-on sentence of an order:
-    // var order = "nam khao, pad thai, spring rolls, 3 pieces house roll, iced tea, iced tea";
-    // // Into something more manageable for me to deal with:
-    // // var orderAsObject = {
-    // // 	orderContent: ["nam khao", "pad thai", "spring rolls", "3 piece house roll", "iced tea", "iced tea"],
-    // // 	orderUp: false;
+    // // //08.25.2021
+    // // function rollSixSided(number) {
+    // //     for (let i = 0; i < number; i++) {
+    // //         sixSidedDice = Math.ceil((Math.random() * 6));
+    // //         console.log("You rolled a " + sixSidedDice + "!");
+    // //     };
+    // // };
+	// //
+    // // //09.14.2021
+    // // function tacoTuesday(array) {
+    // //     let taco = "taco";
+    // //     for (let i = 0; i < array.length; i++) {
+    // //         if (array[i].includes(taco)) {
+    // //             return array[i].includes(taco);
+    // //         }
+    // //     } return false;
     // // }
-	//
-    // // Write a function named thaiThursday that takes in a single string with orders separated by
-    // // commas and returns an object in the shape demonstrated above.
-    // // thaiThursday(“nam khao, pad thai, spring rolls, 3 pieces house roll, iced tea, iced tea”)
-    // // { orderContent: [“nam khao”, “pad thai”, “spring rolls”, “3 pieces house roll”, “iced tea”, “iced tea”], orderUp: false}
-	//
-    // function thaiThursday(string) {
-    //     let newArr = string.split(", ");
-    //     const orderObj = {
-    //         orderContent: newArr,
-    //         orderUp: false
-    //     };
-    //     return orderObj;
-    // }
-	//
-    // console.log(thaiThursday(order));
-	//
-    // //Dorian's exercise for BOM:
-    // //TODO: Finish coding this program. You need to stop the setInterval() method after the showTime() function has run five times.
-	//
-    // let count = 0;
-	//
-    // function showTime() {
-    //     // returns new date and time
-    //     let dateTime = new Date();
-    //     // returns the time
-    //     let time = dateTime.toLocaleTimeString();
-	//
-    //     //if the count reaches 5, stop the program.
-    //     count += 1;
-	//
-    //     if(count >= 5) {
-    //         console.log("last time")
-    //         clearInterval(display);
-    //     }
-	//
-    //     console.log(time);
-    // }
-	//
-    // let display = setInterval(showTime, 2000);
-    // console.log(display);
+	// //
+    // // var hasTacos = ["blueberry muffin", "banana", "yogurt", "cereal", "brisket and egg taco"]
+    // // var noTacos = ["parfait", "omlette de frumage", "protein shake", "fasting"]
+	// //
+    // // console.log(tacoTuesday(hasTacos)); //true
+    // // console.log(tacoTuesday(noTacos)); //false
+	// //
+    // // // 09.17.2021
+    // // // Write a function named whatAWednesday that takes in an array of strings representing sandwiches ordered - it’s a busy Wednesday, so we’re getting in tons of orders for burgers and chicken like so:
+    // // var customer1Order = ["what-a-burger", "what-a-burger", "what-a-chicken", "what-a-chicken"];
+    // // var customer2Order = ["what-a-burger", "fries", "what-a-burger"];
+    // // // whatAWednesday should return to me a formatted string that counts the number of burgers and chicken sandwiches respectively and lets me know if that order had any chicken in it.
+    // // // whatAWednesday(customer1Order) // “Your order included chicken sandwiches, so we’re getting those made for you! You ordered a total of 2 burgers and 2 chicken sandwiches.”
+    // // // whatAWednesday(customer2Order) // “Your order did not include any chicken sandwiches - s'alright, our burgers are cooked fresh too! You ordered a total of 2 burgers.”
+	// //
+    // // function whatAWednesday(array) {
+    // //     let totalBurgers = 0;
+    // //     let totalChickens = 0;
+    // //     for (let i = 0; i < array.length; i++) {
+    // //         if (array[i].includes("burger")) {
+    // //             totalBurgers += 1;
+    // //         }
+    // //         if (array[i].includes("chicken")) {
+    // //             totalChickens += 1;
+    // //         }
+    // //     }
+    // //     if (totalChickens === 0) {
+    // //         return "Your order did not include any chicken sandwiches - s'alright, our burgers are cooked fresh too! You ordered a total of " + totalBurgers + " burgers."
+    // //     } else {
+    // //         return "Your order included chicken sandwiches, so we’re getting those made for you! You ordered a total of " + totalBurgers + " burgers and " + totalChickens + " chicken sandwiches."
+    // //     }
+    // // }
+	// //
+    // // console.log(whatAWednesday(customer1Order));
+    // // console.log(whatAWednesday(customer2Order));
+	// //
+    // // // 09.17.2021
+    // // // Thai Thursday
+    // // // I’ve got an ISSUE - I’m running my food truck [‘Thai Me’] and need a way to turn my customer’s run-on sentence of an order:
+    // // var order = "nam khao, pad thai, spring rolls, 3 pieces house roll, iced tea, iced tea";
+    // // // Into something more manageable for me to deal with:
+    // // // var orderAsObject = {
+    // // // 	orderContent: ["nam khao", "pad thai", "spring rolls", "3 piece house roll", "iced tea", "iced tea"],
+    // // // 	orderUp: false;
+    // // // }
+	// //
+    // // // Write a function named thaiThursday that takes in a single string with orders separated by
+    // // // commas and returns an object in the shape demonstrated above.
+    // // // thaiThursday(“nam khao, pad thai, spring rolls, 3 pieces house roll, iced tea, iced tea”)
+    // // // { orderContent: [“nam khao”, “pad thai”, “spring rolls”, “3 pieces house roll”, “iced tea”, “iced tea”], orderUp: false}
+	// //
+    // // function thaiThursday(string) {
+    // //     let newArr = string.split(", ");
+    // //     const orderObj = {
+    // //         orderContent: newArr,
+    // //         orderUp: false
+    // //     };
+    // //     return orderObj;
+    // // }
+	// //
+    // // console.log(thaiThursday(order));
+	// //
+    // // //Dorian's exercise for BOM:
+    // // //TODO: Finish coding this program. You need to stop the setInterval() method after the showTime() function has run five times.
+	// //
+    // // let count = 0;
+	// //
+    // // function showTime() {
+    // //     // returns new date and time
+    // //     let dateTime = new Date();
+    // //     // returns the time
+    // //     let time = dateTime.toLocaleTimeString();
+	// //
+    // //     //if the count reaches 5, stop the program.
+    // //     count += 1;
+	// //
+    // //     if(count >= 5) {
+    // //         console.log("last time")
+    // //         clearInterval(display);
+    // //     }
+	// //
+    // //     console.log(time);
+    // // }
+	// //
+    // // let display = setInterval(showTime, 2000);
+    // // console.log(display);
+    //
+    //
+    // // Good news! I caught a bunch of FISH, and I got them in my truck:
+    //
+	// var fish1 = { type: "channel catfish", sizeInches: 18, locationCaught: "Lions Park", color: "blue"};
+	// var fish2 = { type: "channel catfish", sizeInches: 19, locationCaught: "Lions Park", color: "blue"};
+	// var fish3 = { type: "redfish", sizeInches: 22, locationCaught: "Braunig Lake", color: "red"};
+	// var fish4 = { type: "redfish", sizeInches: 29, locationCaught: "Braunig Lake", color: "red"};
+	// var kensCatch = [fish1, fish2, fish3, fish4];
+    //
+    //
+	// // Also, well, I caught these - don't ask me where:
+    //
+	// var sewerFish1 = { type: "tropical and unknown", sizeInches: 6, locationCaught: "sewer", color: "green"};
+	// var sewerFish2 = { type: "tropical and unknown", sizeInches: 3, locationCaught: "sewer", color: "blue"};
+	// var strangeCatch = [sewerFish1, sewerFish2];
+    //
+	// // Bad news - I need some help with knowing what all I caught!
+	// // Write a function named fishingWeekend that takes in an array of fish objects.
+	// // fishingWeekend() will alert me with three separate alerts from that array of fish objects:
+	// // 1. First, program an alert letting me know if I caught a red fish, blue fish, both, or neither in my catch [my array].
+	// // 2. Second, an alert letting me know the average sizes of the total number of fish I caught [“That totals up to 4 fish with an average length of 22 inches.“];
+	// // 3. An alert letting me know if I got any catfish [“You caught some catfish tonight!“]
+    //
+	// // HINT: Do NOT try to do all of these in one go.
+	// // Write your function out incrementally, one alert at a time, piece by piece to eventually combine into the larger function desired.
+	// // Happy fishing!
+    //
+	// function fishingWeekend(array) {
+	// 	let blueFishCount = 0;
+	// 	let redFishCount = 0;
+	// 	for (let i = 0; i<array.length; i++) {
+	// 		if(array.at[i].color === "blue") {
+	// 			blueFishCount += 1;
+	// 		} else if(array.at[i].color === "red") {
+	// 			redFishCount += 1;
+	// 		}
+	// 	}
+	// }
+    //
+	// fishingWeekend(strangeCatch);
 
 
-    // Good news! I caught a bunch of FISH, and I got them in my truck:
+	//Write a function logEvens that will accept a number parameter as an argument - that number will indicate the amount of times to print out all even numbers up to the argument provided.
 
-	var fish1 = { type: "channel catfish", sizeInches: 18, locationCaught: "Lions Park", color: "blue"};
-	var fish2 = { type: "channel catfish", sizeInches: 19, locationCaught: "Lions Park", color: "blue"};
-	var fish3 = { type: "redfish", sizeInches: 22, locationCaught: "Braunig Lake", color: "red"};
-	var fish4 = { type: "redfish", sizeInches: 29, locationCaught: "Braunig Lake", color: "red"};
-	var kensCatch = [fish1, fish2, fish3, fish4];
-
-
-	// Also, well, I caught these - don't ask me where:
-
-	var sewerFish1 = { type: "tropical and unknown", sizeInches: 6, locationCaught: "sewer", color: "green"};
-	var sewerFish2 = { type: "tropical and unknown", sizeInches: 3, locationCaught: "sewer", color: "blue"};
-	var strangeCatch = [sewerFish1, sewerFish2];
-
-	// Bad news - I need some help with knowing what all I caught!
-	// Write a function named fishingWeekend that takes in an array of fish objects.
-	// fishingWeekend() will alert me with three separate alerts from that array of fish objects:
-	// 1. First, program an alert letting me know if I caught a red fish, blue fish, both, or neither in my catch [my array].
-	// 2. Second, an alert letting me know the average sizes of the total number of fish I caught [“That totals up to 4 fish with an average length of 22 inches.“];
-	// 3. An alert letting me know if I got any catfish [“You caught some catfish tonight!“]
-
-	// HINT: Do NOT try to do all of these in one go.
-	// Write your function out incrementally, one alert at a time, piece by piece to eventually combine into the larger function desired.
-	// Happy fishing!
-
-	function fishingWeekend(array) {
-		let blueFishCount = 0;
-		let redFishCount = 0;
-		for (let i = 0; i<array.length; i++) {
-			if(array.at[i].color === "blue") {
-				blueFishCount += 1;
-			} else if(array.at[i].color === "red") {
-				redFishCount += 1;
-			}
-		}
+	function logEvens(num) {
+	    let count = 0;
+	    for (let i = 0; i<=num; i++) {
+            if(i % 2===0) {
+                count += 0;
+                console.log(i);
+            }
+        }
 	}
 
-	fishingWeekend(strangeCatch);
+    logEvens(10);
+    logEvens(20);
 
 </script>
 </body>
