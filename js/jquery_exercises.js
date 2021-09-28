@@ -23,9 +23,30 @@
 // alert(h1alerts);
 
 //JQUERY MOUSE EVENTS CODE
-$('.nav-item').click(function(e) {
+$(document).ready(function() {
+	alert("Click on the elements of the navigation bar to change the page!");
+	alert("Double click on the center navigation bar element to reset to original!");
+	alert("Hover over the image to see some more changes!");
+});
+
+$('.nav-item:nth-child(1)').click(function(e) {
 	$('body').css('background-color', 'black');
 	$('*').css('color', 'white');
+});
+
+$('.nav-item:nth-child(2)').click(function(e) {
+	$('body').css('background-color', 'pink');
+	$('*').css('color', 'beige');
+});
+
+$('.nav-item:nth-child(4)').click(function(e) {
+	$('body').css('background-color', 'cyan');
+	$('*').css('color', 'darkorange');
+});
+
+$('.nav-item:nth-child(5)').click(function(e) {
+	$('body').css('background-color', '#75011E');
+	$('*').css('color', 'palegreen');
 });
 
 $('#nav-item-3').dblclick(function(e){
