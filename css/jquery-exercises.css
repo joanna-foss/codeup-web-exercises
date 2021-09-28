@@ -1,0 +1,17 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0px;
+}
+
+container {
+    align-self: center;
+}
+
+nav-item {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
