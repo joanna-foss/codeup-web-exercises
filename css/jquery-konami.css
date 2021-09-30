@@ -1,4 +1,18 @@
 .container {
-    height: 30em;
     width: auto;
+}
+
+#coolInfo {
+    background-color: rgba(245, 245, 220, 0.5);
+    border: 1px solid black;
+    border-radius: 5%;
+    font-size: 1.2em;
+    font-family: "Georgia", sans-serif;
+}
+
+#beasts {
+    font-size: 4em;
+    font-family: "Georgia", sans-serif;
+    color: white;
+    text-shadow: 2px 2px #75011E;
 }
