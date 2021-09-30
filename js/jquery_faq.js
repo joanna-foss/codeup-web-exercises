@@ -25,5 +25,5 @@ $('h3').click(function(){
 });
 
 $('li').click(function(){
-	$(this).parent().css('color', 'blue');
+	$(this).parent().children().first().css('color','blue');
 });
