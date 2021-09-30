@@ -3,49 +3,93 @@
 <head>
 	<meta charset="UTF-8">
 	<title>JQuery FAQ</title>
-<!--	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">-->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 	<link href="css/jquery_faq.css" rel="stylesheet">
 </head>
 <body>
 
-<div>
+<div class="m-5">
 
-	<h1>Some Chess FAQs</h1>
+	<h1 class="text-center m-5">Some Chess FAQs</h1>
 
 	<dl>
 		<dt>How old is the game of chess?</dt>
-		<dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur, autem consequuntur deserunt eum fuga in itaque minima nulla officia, pariatur sit, soluta sunt tempore velit.</dd>
+		<dd>The history of chess can be traced back <strong>nearly 1500 years</strong>, although its earliest origins are uncertain. The earliest predecessor of the game probably originated in India by the 7th century CE, from where it spread to Persia.</dd>
 
 		<dt>What is en passant?</dt>
-		<dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus eligendi excepturi harum incidunt maiores natus necessitatibus pariatur quaerat tempore voluptas! Dicta doloremque molestias repudiandae? Officiis!</dd>
+		<dd>En passant (French for 'in passing') is a special chess rule that gives pawns the option to capture a pawn which has just passed it.</dd>
 
 		<dt>What are the most popular openings for black?</dt>
-		<dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi culpa distinctio, enim fuga incidunt libero maxime necessitatibus nemo obcaecati officiis, optio reprehenderit suscipit ullam vero?</dd>
+		<dd>
+			<ul>
+				<li>Caro-Kann Defense</li>
+				<li>Sicilian Defense</li>
+				<li>French Defense</li>
+				<li>Pirc</li>
+				<li>Dutch Defense</li>
+				<li>Alekhine</li>
+				<li>Benoni</li>
+				<li>Slav Defense</li>
+				<li>Grunfeld Defense</li>
+				<li>King's Indian Defense</li>
+				<li>Benko Gambit</li>
+				<li>Budapest</li>
+				<li>Calabrese Counter Gambit</li>
+			</ul>
+		</dd>
 
 		<dt>What are the most popular openings for white?</dt>
-		<dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta facere iure laudantium officia reprehenderit saepe sint sit tempora! Incidunt, rerum?</dd>
+		<dd>
+			<ul>
+				<li>Vienna Game</li>
+				<li>Smith Morra Gambit</li>
+				<li>Scotch Game</li>
+				<li>Calabrese Counter Gambit</li>
+				<li>Bird's Opening</li>
+				<li>Lay down sacrifice</li>
+				<li>King's Gambit</li>
+				<li>Italian Game</li>
+				<li>Ruy Lopez</li>
+			</ul>
+		</dd>
 
 		<dt>How do I get better at chess?</dt>
-		<dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias architecto asperiores consequatur dolorem eaque fuga id magnam molestiae nam odit, quaerat, quam rem repudiandae saepe totam, veritatis voluptates. Laboriosam?</dd>
+		<dd>No matter where you are in chess, you can always get better. And with the right habits and attitude, getting better at chess can be both fun and simple. To get better at chess, you will need to learn the rules, play a lot of games, review your play, practice puzzles, study the endgame, not waste time on openings, and double-check your moves.</dd>
 
 		<dt>Who is Joanna's favorite chess streamer?</dt>
-		<dd>Lorem ipsum.</dd>
+		<dd>IM Eric Rosen</dd>
 
 		<dt>What is a chess tourist?</dt>
-		<dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur magni modi nam omnis perspiciatis vitae?</dd>
+		<dd>GM Gary Kasparov famously referred to someone as a "chess tourist" in his quote about some of the participants in one of the FIDE knockout WCs. I.e. being obviously very good players but still missing something fundamental.</dd>
 
 		<dt>What is the difference between minor pieces and major pieces?</dt>
-		<dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam at cupiditate dolorem ex itaque maiores maxime optio quod, tempore.</dd>
+		<dd>The major pieces are the queen and rooks. The minor pieces are the bishops and knights.</dd>
 
-		<dt>What are chess ratings?</dt>
-		<dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque hic in ipsa magni, maiores neque odit quis saepe sequi unde.</dd>
+		<dt>What are ratings in chess?</dt>
+		<dd>A chess rating system is a system used in chess to estimate the strength of a player, based on their performance versus other players.
+			<ul class="mt-3">
+				<li>1200-1399: Beginner</li>
+				<li>1400-1599: Average Club/Tournament Player</li>
+				<li>1600-1799: Above Average Club/Tournament Player</li>
+				<li>1800-1999: Strong Club Player</li>
+				<li>2000-2199: Expert</li>
+				<li>2200-2399: Master</li>
+				<li>2400-2499: International Master</li>
+				<li>2500 and above: Grandmaster</li>
+			</ul>
+		</dd>
 
 		<dt>Where can I play chess online?</dt>
-		<dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, recusandae.</dd>
+		<dd>The 2 most popular chess websites are:
+			<ul class="mt-3">
+				<li><a href="https://www.chess.com" target="_blank">Chess.com</a></li>
+				<li><a href="https://www.lichess.org" target="_blank">lichess.org</a></li>
+			</ul>
+		</dd>
 	</dl>
 
-	<h3>The Pieces</h3>
-	<ul id="chess-pieces">
+	<h3 class="text-center m-3">The Pieces</h3>
+	<ul class="list d-flex flex-column mx-auto align-items-center" id="chess-pieces">
 		<li>Pawn</li>
 		<li>Knight</li>
 		<li>Bishop</li>
@@ -54,8 +98,8 @@
 		<li>King</li>
 	</ul>
 
-	<h3>Popular Chess YouTubers</h3>
-	<ul id="chess-youtubers">
+	<h3 class="text-center">Popular Chess YouTubers</h3>
+	<ul class="list d-flex flex-column mx-auto align-items-center" id="chess-youtubers">
 		<li>Magnus Carlsen</li>
 		<li>Hikaru Nakamura</li>
 		<li>Gotham Chess</li>
@@ -63,12 +107,18 @@
 		<li>The Botez Sisters</li>
 	</ul>
 
-	<button type="submit">Last Items Yellow</button>
+	<div class="d-flex justify-content-center align-items-center"><button type="submit">Last List Items Yellow Please</button></div>
+
+	<div class="row d-flex justify-content-around m-5">
+		<div class="picture"></div>
+		<div class="picture"></div>
+		<div class="picture"></div>
+	</div>
 
 
 </div>
 
-<!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script src="js/jquery_faq.js"></script>
 </body>

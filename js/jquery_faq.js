@@ -17,7 +17,7 @@ $('dd').hover(function(){
 })
 
 $('button').click(function(){
-	$('li:last-child').css('background-color', 'yellow');
+	$('li:last-child').toggleClass('yellow-highlight');
 });
 
 $('h3').click(function(){

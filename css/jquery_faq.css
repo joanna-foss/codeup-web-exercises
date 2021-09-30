@@ -5,3 +5,23 @@
 .highlight {
     background-color: lightpink;
 }
+
+.yellow-highlight {
+    background-color: yellow;
+}
+
+.list {
+    list-style-type: none;
+    width: 15em;
+}
+
+.picture {
+    height: 100px;
+    width: 100px;
+    background-color: #4D8E61;
+    border: 1px solid red;
+}
+
+dl>* {
+    margin: 1em;
+}
