@@ -1,3 +1,7 @@
+"use strict";
+
+console.log("test");
+
 /**
  * Find the Smallest and Biggest Numbers
  * Create a function named minMax that takes an array of numbers and return both the minimum and maximum numbers, in that order.
@@ -11,6 +15,16 @@
  * All test arrays will have at least one element and are valid.
  */
 
+function minMax(array) {
+	array.sort(function(a, b){return a-b;}); //sorted from smallest to largest
+	let minAndMax = []; //empty array to push to
+	minAndMax.push(array[0], array[array.length-1]); //push first and last number of input array into empty array
+	return minAndMax;
+};
+
+// console.log(minMax([1, 2, 3, 4, 5]));
+// console.log(minMax([2334454, 5]));
+// console.log(minMax([1]));
 
 /**
  * Filter out Strings from an Array
@@ -29,6 +43,18 @@
  * The original order must be maintained.
  */
 
+function filterArray(array){
+	let newArr = array.filter(function(value){ //new variable that filters
+		if(typeof value !== 'string') { //checks value for type; if value NOT string
+			return value; //return value to the newArr
+		}
+	});
+	return newArr; //return all values of newArr
+};
+
+console.log(filterArray([1, 2, "a", "b"]));
+console.log(filterArray([1, "a", "b", 0, 15]));
+console.log(filterArray([1, 2, "aasf", "1", "123", 123]));
 
 /**
  * Is the Average of All Elements a Whole Number?
@@ -43,6 +69,17 @@
  * >> isAvgWhole([9, 2, 2, 5]) ➞ false
  */
 
+function isAvgWhole(array){
+	let addMach = function(prev, next){return prev + next;}; //this is the reducer that reduce() needs to calculate a total of all nums in array
+	let avgOfArr = array.reduce(addMach)/array.length; //sum of nums in array divided by num of nums in array
+	return Number.isInteger(avgOfArr); //checks for integer status & returns boolean
+};
+
+console.log(isAvgWhole([1, 3]));
+console.log(isAvgWhole([1, 2, 3, 4]));
+console.log(isAvgWhole([1, 5, 6]));
+console.log(isAvgWhole([1, 1, 1]));
+console.log(isAvgWhole([9, 2, 2, 5]));
 
 /**
  * Drink Sorting
@@ -59,6 +96,17 @@
  * >> sortDrinkByPrice(drinks) ➞ [{name: "lime", price: 10}, {name: "lemonade", price: 50}]
  */
 
+let drinks = [
+	{name: "lemonade", price: 50},
+	{name: "lime", price:10}
+]
+
+function sortDrinkByPrice(array){
+	array.sort(function(a, b){return a.price - b.price});
+	return array;
+};
+
+console.log(sortDrinkByPrice(drinks));
 
 /**
  * Scrabble Hand
@@ -103,7 +151,30 @@
  * Notes
  * Each tile is represented as an object with two keys: tile and score.
  */
+let tiles1 = [
+	{ tile: "N", score: 1 },
+	{ tile: "K", score: 5 },
+	{ tile: "Z", score: 10 },
+	{ tile: "X", score: 8 },
+	{ tile: "D", score: 2 },
+	{ tile: "A", score: 1 },
+	{ tile: "E", score: 1 }
+]
 
+console.log(tiles1[0].score);
+
+//START FROM HERE!!!!!!!!!!!!!!!!!
+
+function maximumScore(arrTiles){
+	let addMach = function(prev, next, currIndex, array){return prev + next};
+	let total;
+	arrTiles.reduce(addMach);
+	return total;
+}
+
+console.log(maximumScore(tiles1));
+console.log(maximumScore(tiles2));
+console.log(maximumScore(tiles3));
 
 /**
  * Converting Objects to Arrays
