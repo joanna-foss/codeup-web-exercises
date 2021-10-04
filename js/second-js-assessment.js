@@ -276,7 +276,7 @@ let tiles2 = [
 // 	{name: "Martin", age: 16, budget: 1600}
 // ])); //62600
 
-/** START HERE!!!!!
+/**
  * Special Arrays
  * An array is special if every even index contains an even number and every odd index contains an odd number.
  * Create a function named isSpecialArray that returns true if an array is special, and false otherwise.
@@ -291,20 +291,20 @@ let tiles2 = [
  *    // Index 3 has an even number 8.
  */
 
-function isSpecialArray(array){
-	console.log("new array!!!!");
-	for(let i = 0; i < array.length; i++){
-		if((i + array[i]) % 2 === 0){
-			continue;
-		} else {
-			return false;
-		}
-	} return true;
-}
+// function isSpecialArray(array){
+// 	for(let i = 0; i < array.length; i++){
+// 		if((i + array[i]) % 2 === 0){
+// 			continue;
+// 		} else {
+// 			return false;
+// 		}
+// 	} return true;
+// }
+//
+// console.log(isSpecialArray([2, 7, 4, 9, 6, 1, 6, 3]));
+// console.log(isSpecialArray([2, 7, 9, 1, 6, 1, 6, 3]));
+// console.log(isSpecialArray([2, 7, 8, 8, 6, 1, 6, 3]));
 
-console.log(isSpecialArray([2, 7, 4, 9, 6, 1, 6, 3]));
-console.log(isSpecialArray([2, 7, 9, 1, 6, 1, 6, 3]));
-console.log(isSpecialArray([2, 7, 8, 8, 6, 1, 6, 3]));
 /**
  * Remove Duplicates from an Array
  * Create a function named removeDuplicates that takes an array of items, removes all duplicate items and returns a new array in the same sequential order as the old array (minus duplicates).
@@ -320,6 +320,14 @@ console.log(isSpecialArray([2, 7, 8, 8, 6, 1, 6, 3]));
  * Each array item is unique.
  */
 
+// function removeDuplicates(array){
+// 	let newArr = [...new Set(array)];
+// 	return newArr;
+// }
+//
+// console.log(removeDuplicates([1, 0, 1, 0]));
+// console.log(removeDuplicates(["The", "big", "cat"]));
+// console.log(removeDuplicates(["John", "Taylor", "John"]));
 
 /**
  * Lowercase and Uppercase Map
@@ -334,9 +342,21 @@ console.log(isSpecialArray([2, 7, 8, 8, 6, 1, 6, 3]));
  * Notes
  * All of the letters in the input list will always be lowercase.
  */
+// revisit this exercise!!!
 
+// function mapping(array){
+// 	let newObj = Object.fromEntries(array.map(function(key){
+// 		return [key, key.toUpperCase()]
+// 	}));
+// 	// let newObj = array.reduce((ac,a) => ({...ac,[a]:''}),{});
+// 	return newObj;
+// }
+//
+// console.log(mapping(["p", "s"]));
+// console.log(mapping(["a", "b", "c"]));
+// console.log(mapping(["a", "v", "y", "z"]));
 
-/**
+/** START HERE!!!
  * Can You Spare a Square?
  * Try to imagine a world in which you might have to stay home for 14 days at any given time. Do you have enough TP to make it through?
  *
@@ -356,6 +376,13 @@ console.log(isSpecialArray([2, 7, 8, 8, 6, 1, 6, 3]));
  * >> tpChecker({ people: 4, tp: 12 }) ➞ "Your TP will last 26 days, no need to panic!"
  */
 
+function tpChecker(){
+
+}
+
+console.log(tpChecker({people: 4, tp: 1}));
+console.log(tpChecker({people: 3, tp: 20}));
+console.log(tpChecker({people: 4, tp: 12}));
 
 /**
  * Get Student Top Notes
