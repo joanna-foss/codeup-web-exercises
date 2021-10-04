@@ -15,12 +15,12 @@ console.log("test");
  * All test arrays will have at least one element and are valid.
  */
 
-function minMax(array) {
-	array.sort(function(a, b){return a-b;}); //sorted from smallest to largest
-	let minAndMax = []; //empty array to push to
-	minAndMax.push(array[0], array[array.length-1]); //push first and last number of input array into empty array
-	return minAndMax;
-};
+// function minMax(array) {
+// 	array.sort(function(a, b){return a-b;}); //sorted from smallest to largest
+// 	let minAndMax = []; //empty array to push to
+// 	minAndMax.push(array[0], array[array.length-1]); //push first and last number of input array into empty array
+// 	return minAndMax;
+// };
 
 // console.log(minMax([1, 2, 3, 4, 5]));
 // console.log(minMax([2334454, 5]));
@@ -43,18 +43,18 @@ function minMax(array) {
  * The original order must be maintained.
  */
 
-function filterArray(array){
-	let newArr = array.filter(function(value){ //new variable that filters
-		if(typeof value !== 'string') { //checks value for type; if value NOT string
-			return value; //return value to the newArr
-		}
-	});
-	return newArr; //return all values of newArr
-};
-
-console.log(filterArray([1, 2, "a", "b"]));
-console.log(filterArray([1, "a", "b", 0, 15]));
-console.log(filterArray([1, 2, "aasf", "1", "123", 123]));
+// function filterArray(array){
+// 	let newArr = array.filter(function(value){ //new variable that filters
+// 		if(typeof value !== 'string') { //checks value for type; if value NOT string
+// 			return value; //return value to the newArr
+// 		}
+// 	});
+// 	return newArr; //return all values of newArr
+// };
+//
+// console.log(filterArray([1, 2, "a", "b"]));
+// console.log(filterArray([1, "a", "b", 0, 15]));
+// console.log(filterArray([1, 2, "aasf", "1", "123", 123]));
 
 /**
  * Is the Average of All Elements a Whole Number?
@@ -69,17 +69,17 @@ console.log(filterArray([1, 2, "aasf", "1", "123", 123]));
  * >> isAvgWhole([9, 2, 2, 5]) ➞ false
  */
 
-function isAvgWhole(array){
-	let addMach = function(prev, next){return prev + next;}; //this is the reducer that reduce() needs to calculate a total of all nums in array
-	let avgOfArr = array.reduce(addMach)/array.length; //sum of nums in array divided by num of nums in array
-	return Number.isInteger(avgOfArr); //checks for integer status & returns boolean
-};
-
-console.log(isAvgWhole([1, 3]));
-console.log(isAvgWhole([1, 2, 3, 4]));
-console.log(isAvgWhole([1, 5, 6]));
-console.log(isAvgWhole([1, 1, 1]));
-console.log(isAvgWhole([9, 2, 2, 5]));
+// function isAvgWhole(array){
+// 	let addMach = function(prev, next){return prev + next;}; //this is the reducer that reduce() needs to calculate a total of all nums in array
+// 	let avgOfArr = array.reduce(addMach)/array.length; //sum of nums in array divided by num of nums in array
+// 	return Number.isInteger(avgOfArr); //checks for integer status & returns boolean
+// };
+//
+// console.log(isAvgWhole([1, 3]));
+// console.log(isAvgWhole([1, 2, 3, 4]));
+// console.log(isAvgWhole([1, 5, 6]));
+// console.log(isAvgWhole([1, 1, 1]));
+// console.log(isAvgWhole([9, 2, 2, 5]));
 
 /**
  * Drink Sorting
@@ -96,17 +96,17 @@ console.log(isAvgWhole([9, 2, 2, 5]));
  * >> sortDrinkByPrice(drinks) ➞ [{name: "lime", price: 10}, {name: "lemonade", price: 50}]
  */
 
-let drinks = [
-	{name: "lemonade", price: 50},
-	{name: "lime", price:10}
-]
-
-function sortDrinkByPrice(array){
-	array.sort(function(a, b){return a.price - b.price});
-	return array;
-};
-
-console.log(sortDrinkByPrice(drinks));
+// let drinks = [
+// 	{name: "lemonade", price: 50},
+// 	{name: "lime", price:10}
+// ]
+//
+// function sortDrinkByPrice(array){
+// 	array.sort(function(a, b){return a.price - b.price});
+// 	return array;
+// };
+//
+// console.log(sortDrinkByPrice(drinks));
 
 /**
  * Scrabble Hand
@@ -173,16 +173,16 @@ let tiles2 = [
 
 //START FROM HERE!!!!!!!!!!!!!!!!!
 
-function maximumScore(arrTiles){
-	let total = 0;
-	for(let i = 0; i < arrTiles.length; i++){
-		total += arrTiles[i].score;
-	};
-	return total;
-}
-
-console.log(maximumScore(tiles1)); //28
-console.log(maximumScore(tiles2)); //15
+// function maximumScore(arrTiles){
+// 	let total = 0;
+// 	for(let i = 0; i < arrTiles.length; i++){
+// 		total += arrTiles[i].score;
+// 	};
+// 	return total;
+// }
+//
+// console.log(maximumScore(tiles1)); //28
+// console.log(maximumScore(tiles2)); //15
 
 /**
  * Converting Objects to Arrays
@@ -198,19 +198,19 @@ console.log(maximumScore(tiles2)); //15
  * Return an empty array if the object is empty.
  */
 
-function toArray(obj){
-	let newArr = new Array(0);
-	for(let [key, value] of Object.entries(obj)){
-		newArr.push([key, value]);
-	}
-	return newArr;
-}
-
-//https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/entries
-
-console.log(toArray({a: 1, b: 2}));
-console.log(toArray({shrimp: 15, tots: 12}));
-console.log(toArray({}));
+// function toArray(obj){
+// 	let newArr = new Array(0);
+// 	for(let [key, value] of Object.entries(obj)){
+// 		newArr.push([key, value]);
+// 	}
+// 	return newArr;
+// }
+//
+// //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/entries
+//
+// console.log(toArray({a: 1, b: 2}));
+// console.log(toArray({shrimp: 15, tots: 12}));
+// console.log(toArray({}));
 
 /**
  * Array of Multiples
@@ -226,6 +226,18 @@ console.log(toArray({}));
  * Notice that num is also included in the returned array.
  */
 
+
+// function arrayOfMultiples(num, length){
+// 	let arr = [];
+// 	for(let i=1; i<=length; i++){
+// 		arr.push(num*i);
+// 	}
+// 	return arr;
+// }
+//
+// console.log(arrayOfMultiples(7, 5)); //[7, 14, 21, 28, 35]
+// console.log(arrayOfMultiples(12, 10)); //[12, 24, 36, 48, 60, 72, 84, 96, 108, 120]
+// console.log(arrayOfMultiples(17, 6)); //[17, 34, 51, 68, 85, 102]
 
 /** DO THIS BEFORE THE ASSESSMENT
  * Get Sum of People's Budget
@@ -245,6 +257,24 @@ console.log(toArray({}));
  *    ]) ➞ 62600
  */
 
+function getBudgets(arrOfObjs){
+	let pplsBudgets=0;
+	for(let key in object){
+		
+	}
+	return pplsBudgets
+}
+
+console.log(getBudgets([
+	{name: "John", age: 21, budget: 23000},
+	{name: "Steve", age: 32, budget: 40000},
+	{name: "Martin", age: 16, budget: 2700}
+]));
+console.log(getBudgets([
+	{name: "John", age: 21, budget: 29000},
+	{name: "Steve", age: 32, budget: 32000},
+	{name: "Martin", age: 16, budget: 1600}
+]));
 
 /**
  * Special Arrays
