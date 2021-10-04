@@ -291,15 +291,20 @@ let tiles2 = [
  *    // Index 3 has an even number 8.
  */
 
-// function isSpecialArray(array){
-// 	if(){
-//
-// 		return true;
-// 	} else {
-// 		return false;
-// 	}
-// }
+function isSpecialArray(array){
+	console.log("new array!!!!");
+	for(let i = 0; i < array.length; i++){
+		if((i + array[i]) % 2 === 0){
+			continue;
+		} else {
+			return false;
+		}
+	} return true;
+}
 
+console.log(isSpecialArray([2, 7, 4, 9, 6, 1, 6, 3]));
+console.log(isSpecialArray([2, 7, 9, 1, 6, 1, 6, 3]));
+console.log(isSpecialArray([2, 7, 8, 8, 6, 1, 6, 3]));
 /**
  * Remove Duplicates from an Array
  * Create a function named removeDuplicates that takes an array of items, removes all duplicate items and returns a new array in the same sequential order as the old array (minus duplicates).
