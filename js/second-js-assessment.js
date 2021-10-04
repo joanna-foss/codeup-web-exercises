@@ -257,26 +257,26 @@ let tiles2 = [
  *    ]) ➞ 62600
  */
 
-function getBudgets(arrOfObjs){
-	let pplsBudgets=0;
-	for(let key in object){
-		
-	}
-	return pplsBudgets
-}
+// function getBudgets(arrOfObjs){
+// 	let pplsBudgets=0;
+// 	for(let i=0; i < arrOfObjs.length; i++){
+// 		pplsBudgets += arrOfObjs[i].budget;
+// 	}
+// 	return pplsBudgets
+// }
+//
+// console.log(getBudgets([
+// 	{name: "John", age: 21, budget: 23000},
+// 	{name: "Steve", age: 32, budget: 40000},
+// 	{name: "Martin", age: 16, budget: 2700}
+// ])); //65700
+// console.log(getBudgets([
+// 	{name: "John", age: 21, budget: 29000},
+// 	{name: "Steve", age: 32, budget: 32000},
+// 	{name: "Martin", age: 16, budget: 1600}
+// ])); //62600
 
-console.log(getBudgets([
-	{name: "John", age: 21, budget: 23000},
-	{name: "Steve", age: 32, budget: 40000},
-	{name: "Martin", age: 16, budget: 2700}
-]));
-console.log(getBudgets([
-	{name: "John", age: 21, budget: 29000},
-	{name: "Steve", age: 32, budget: 32000},
-	{name: "Martin", age: 16, budget: 1600}
-]));
-
-/**
+/** START HERE!!!!!
  * Special Arrays
  * An array is special if every even index contains an even number and every odd index contains an odd number.
  * Create a function named isSpecialArray that returns true if an array is special, and false otherwise.
@@ -291,6 +291,14 @@ console.log(getBudgets([
  *    // Index 3 has an even number 8.
  */
 
+// function isSpecialArray(array){
+// 	if(){
+//
+// 		return true;
+// 	} else {
+// 		return false;
+// 	}
+// }
 
 /**
  * Remove Duplicates from an Array

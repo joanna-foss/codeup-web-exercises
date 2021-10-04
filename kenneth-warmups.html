@@ -6,10 +6,23 @@
 </head>
 <body>
 
-<p id="ptag" style="font-size: 5em; margin: auto;">This is the text inside of paragraph element.</p>
+<p id="ptag" style="font-size: 5em; margin: auto;">The text inside of the ptag paragraph element.</p>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script>
+	"use strict";
+    
+    console.log("test");
+    
+	$(document).ready(function(){
+	
+	$('p').click(function(e) {
+	    alert("The following is the text from the paragraph element: " + $(this).text());
+    });
+	
+	})
+
+	
 	// 08.25.2021
     // function rollSixSided(number) {
     //     for (let i = 0; i < number; i++) {
@@ -17,14 +30,9 @@
     //         console.log("You rolled a " + sixSidedDice + "!");
     //     };
     // };
-    "use strict";
     
-    console.log("test");
+    //10.04.2021
     
-    $('p').click(function(e) {
-        let pStuff = document.getElementById('ptag');
-	    alert("This is the text from the paragraph element: " + pStuff.innerHTML);
-    });
 </script>
 </body>
 </html>
