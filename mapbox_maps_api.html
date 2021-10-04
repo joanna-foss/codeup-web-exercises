@@ -23,25 +23,32 @@
 	
 
 <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
-<script src="mapbox-geocoder-utils.js"></script>
+<script src="js/mapbox-geocoder-utils.js"></script>
 <script src="keys.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
 <!-- Custom JS -->
 <script>
-    var accessToken = mapboxAPIKey;
+    let accessToken = mapboxAPIKey;
     mapboxgl.accessToken = accessToken;
-    var map = new mapboxgl.Map({
+    let map = new mapboxgl.Map({
         container: 'map',
-        style: 'mapbox://styles/mapbox/streets-v9',
-        zoom: 10,
-        center: [-98.4916, 29.4252]
+        style: 'mapbox://styles/mapbox/outdoors-v11',
+        zoom: 18,
+        center: [-88.93682, 30.4030],
+        pitch: 50
     });
+    
+    let markerRC = new mapboxgl.Marker();
 
     // reverse geocode method from mapbox-geocoder-utils.js
-    reverseGeocode({lng: -98.4861, lat: 29.4260}, accessToken).then(function(results) {
-        // logs the address for The Alamo
-        console.log(results);
-    });
+    // reverseGeocode({lng: -98.4861, lat: 29.4260}, accessToken).then(function(results) {
+    //     // logs the address for The Alamo
+    //     console.log(results);
+    // });
+    
+    // geocode("Commerce Court Shopping Center, 1670 Pass Rd, Biloxi, MS 39531", mapboxAPIKey).then(function(results){
+    //     console.log(results);
+    // });
 
 </script>
 </body>
