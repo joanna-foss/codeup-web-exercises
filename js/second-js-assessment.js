@@ -161,20 +161,28 @@ let tiles1 = [
 	{ tile: "E", score: 1 }
 ]
 
-console.log(tiles1[0].score);
+let tiles2 = [
+	{ tile: "B", score: 2 },
+	{ tile: "V", score: 4 },
+	{ tile: "F", score: 4 },
+	{ tile: "U", score: 1 },
+	{ tile: "D", score: 2 },
+	{ tile: "O", score: 1 },
+	{ tile: "U", score: 1 }
+]
 
 //START FROM HERE!!!!!!!!!!!!!!!!!
 
 function maximumScore(arrTiles){
-	let addMach = function(prev, next, currIndex, array){return prev + next};
-	let total;
-	arrTiles.reduce(addMach);
+	let total = 0;
+	for(let i = 0; i < arrTiles.length; i++){
+		total += arrTiles[i].score;
+	};
 	return total;
 }
 
-console.log(maximumScore(tiles1));
-console.log(maximumScore(tiles2));
-console.log(maximumScore(tiles3));
+console.log(maximumScore(tiles1)); //28
+console.log(maximumScore(tiles2)); //15
 
 /**
  * Converting Objects to Arrays
@@ -190,6 +198,19 @@ console.log(maximumScore(tiles3));
  * Return an empty array if the object is empty.
  */
 
+function toArray(obj){
+	let newArr = new Array(0);
+	for(let [key, value] of Object.entries(obj)){
+		newArr.push([key, value]);
+	}
+	return newArr;
+}
+
+//https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/entries
+
+console.log(toArray({a: 1, b: 2}));
+console.log(toArray({shrimp: 15, tots: 12}));
+console.log(toArray({}));
 
 /**
  * Array of Multiples
