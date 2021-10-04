@@ -2,17 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Kenneth Exercise 08.25.2021</title>
+    <title>Kenneth Exercises</title>
 </head>
 <body>
 
+<p id="ptag" style="font-size: 5em;">This is a paragraph element.</p>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script>
-    function rollSixSided(number) {
-        for (let i = 0; i < number; i++) {
-            sixSidedDice = Math.ceil((Math.random() * 6));
-            console.log("You rolled a " + sixSidedDice + "!");
-        };
-    };
+	// 08.25.2021
+    // function rollSixSided(number) {
+    //     for (let i = 0; i < number; i++) {
+    //         sixSidedDice = Math.ceil((Math.random() * 6));
+    //         console.log("You rolled a " + sixSidedDice + "!");
+    //     };
+    // };
+    "use strict";
+    
+    console.log("test");
+    
+    $('p').click(function(e) {
+        let pStuff = document.getElementById('ptag');
+	    alert("This is the text from the paragraph element: " + pStuff.innerHTML);
+    });
 </script>
 </body>
 </html>
