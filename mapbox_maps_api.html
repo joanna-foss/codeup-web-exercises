@@ -40,9 +40,9 @@
     
     let markerRC = new mapboxgl.Marker({color: 'yellow'}).setLngLat([-88.93682, 30.4030]).addTo(map);
     
-    // markerRC.addEventListener('click', function(){
-	// 	window.alert(marker.properties.message);
-	// });
+    // markerRC.on("click", function(){
+	// 	let popup = new mapboxgl.Popup().setLngLat([-88.93682, 30.4030]).setHTML("<h4>Codeup Rocks!</h4>").addTo(map);
+	// })
     
     // reverse geocode method from mapbox-geocoder-utils.js
     // reverseGeocode({lng: -98.4861, lat: 29.4260}, accessToken).then(function(results) {
