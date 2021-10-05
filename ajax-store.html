@@ -48,7 +48,7 @@
 				'<td>' + data[i].title + '</td>' +
 				'<td>' + data[i].quantity + '</td>' +
 				'<td>' + data[i].price + '</td>' +
-				'<td>' + data[i].categories + '</td>' +
+				'<td>' + data[i].categories.join(' || ') + '</td>' +
 			'</tr>'
 			$('#insertProducts').append(test);
 		}
