@@ -356,7 +356,7 @@ let tiles2 = [
 // console.log(mapping(["a", "b", "c"]));
 // console.log(mapping(["a", "v", "y", "z"]));
 
-/** START HERE!!!
+/**
  * Can You Spare a Square?
  * Try to imagine a world in which you might have to stay home for 14 days at any given time. Do you have enough TP to make it through?
  *
@@ -376,13 +376,23 @@ let tiles2 = [
  * >> tpChecker({ people: 4, tp: 12 }) ➞ "Your TP will last 26 days, no need to panic!"
  */
 
-function tpChecker(){
-
-}
-
-console.log(tpChecker({people: 4, tp: 1}));
-console.log(tpChecker({people: 3, tp: 20}));
-console.log(tpChecker({people: 4, tp: 12}));
+// function tpChecker(obj){
+// 	let html = '';
+// 	let totalSheetsUsed = obj.people * 57;
+// 	let totalSheets = obj.tp * 500;
+// 	let numDaysTPLast = totalSheets/totalSheetsUsed;
+// 	if(numDaysTPLast > 14){
+// 		html += "Your TP will last " + Math.floor(numDaysTPLast) + " days, no need to panic!"
+// 		return html;
+// 	} else {
+// 		html += "Your TP will only last " + Math.floor(numDaysTPLast) + " days, buy more!"
+// 		return html;
+// 	}
+// }
+//
+// console.log(tpChecker({people: 4, tp: 1}));
+// console.log(tpChecker({people: 3, tp: 20}));
+// console.log(tpChecker({people: 4, tp: 12}));
 
 /**
  * Get Student Top Notes
