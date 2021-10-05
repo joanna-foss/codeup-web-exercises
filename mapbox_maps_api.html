@@ -38,9 +38,12 @@
         pitch: 50
     });
     
-    let markerRC = new mapboxgl.Marker(el)
-		.setLngLat([-88.93682, 30.4030])
-		.addTo(map);
+    let markerRC = new mapboxgl.Marker({color: 'yellow'}).setLngLat([-88.93682, 30.4030]).addTo(map);
+    
+    // markerRC.addEventListener('click', function(){
+	// 	window.alert(marker.properties.message);
+	// });
+    
     // reverse geocode method from mapbox-geocoder-utils.js
     // reverseGeocode({lng: -98.4861, lat: 29.4260}, accessToken).then(function(results) {
     //     // logs the address for The Alamo
