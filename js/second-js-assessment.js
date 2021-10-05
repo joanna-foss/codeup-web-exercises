@@ -43,18 +43,26 @@ console.log("test");
  * The original order must be maintained.
  */
 
-// function filterArray(array){
-// 	let newArr = array.filter(function(value){ //new variable that filters
-// 		if(typeof value !== 'string') { //checks value for type; if value NOT string
-// 			return value; //return value to the newArr
-// 		}
-// 	});
-// 	return newArr; //return all values of newArr
-// };
-//
-// console.log(filterArray([1, 2, "a", "b"]));
-// console.log(filterArray([1, "a", "b", 0, 15]));
-// console.log(filterArray([1, 2, "aasf", "1", "123", 123]));
+function filterArray(array){
+	// let newArr = array.filter(function(value){ //new variable that filters
+	// 	// console.log(value + typeof value);
+	// 	if(typeof value === "number") { //checks value for type; if value NOT string
+	// 		console.log(value + typeof value);
+	// 		return value; //return value to the newArr
+	// 	}
+	// }); ~~IN THE IMMORTAL WORDS OF SHANSHAN: "Filter too strong!"
+	let newArr = [];
+	array.forEach(function(element){
+		if(typeof element === 'number'){
+			newArr.push(element);
+		}
+	});
+	return newArr; //return all values of newArr
+};
+
+console.log(filterArray([1, 2, "a", "b"]));
+console.log(filterArray([1, "a", "b", 0, 15]));
+console.log(filterArray([1, 2, "aasf", "1", "123", 123]));
 
 /**
  * Is the Average of All Elements a Whole Number?
@@ -420,6 +428,37 @@ let tiles2 = [
  *    ]) ➞ [5, 5, 4]
  */
 
+function getStudentTopNotes(array){
+	let arr = [];
+
+	// array.forEach(function(elem, index){
+	// 	arr.push(Math.max(...array[index].notes));
+	// });
+
+	array.forEach(function(elem){
+		let newEl = Math.max(...elem.notes);
+		arr.push(newEl);
+	});
+	return arr;
+}
+
+console.log(getStudentTopNotes([
+	{
+		id: 1,
+		name: "Jacek",
+		notes: [5, 3, 4, 2, 5, 5]
+	},
+	{
+		id: 2,
+		name: "Ewa",
+		notes: [2, 3, 3, 3, 2, 5]
+	},
+	{
+		id: 3,
+		name: "Zygmunt",
+		notes: [2, 2, 4, 4, 3, 3]
+	}
+]));
 
 /**
  * The Frugal Gentleman
@@ -441,6 +480,24 @@ let tiles2 = [
  * All wines will be different prices, so there is no confusion in the ordering.
  */
 
+function chosenWine(array){
+	let newArr = array.sort(function(a, b){return a.price - b.price});
+
+	if(newArr.length === 0){
+		return null;
+	} else if(newArr.length > 1) {
+		return newArr[1].name;
+	}
+	return newArr[0].name;
+}
+
+console.log(chosenWine([
+	{name: "Wine A", price: 8.99},
+	{name: "Wine 32", price: 13.99},
+	{name: "Wine 9", price: 10.99}
+]));
+console.log(chosenWine([{name: "Wine A", price: 8.99}]));
+console.log(chosenWine([]));
 
 /**
  * Convert Address to Object
@@ -465,3 +522,19 @@ let tiles2 = [
  *       {name: 'Kenneth Howell', pets: 2}
  *    ]) ➞ 11
  */
+
+ function totalPets(array){
+ 	let sum = 0;
+
+ 	array.forEach(function(elem){
+ 		sum += elem.pets;
+ 	});
+
+ 	return sum;
+ }
+
+console.log(totalPets([
+	{name: 'Fernando Mendoza', pets: 1},
+	{name: 'Douglas Hirsh', pets: 8},
+	{name: 'Kenneth Howell', pets: 2}
+])); //11
