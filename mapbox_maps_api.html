@@ -14,19 +14,25 @@
 			height: 400px;
 		}
 		
-		#fly{
+		button {
 			font-family: monospace;
-			font-size: 2em;
+			font-size: 1em;
 		}
 	</style>
 </head>
 <body>
 <div class="container">
-	<h1 class="text-center">MAPBOX</h1>
+	<h1 class="text-center m-5">MAPBOX</h1>
 	
-	<div id='map' class="mx-auto"></div>
+	<div id="map" class="mx-auto"></div>
 	
-	<div class="text-center"><button id="fly" class="btn-dark w-75 m-5">Let's Fly!</button></div>
+	<div class="d-flex justify-content-center m-5"><button id="markers" class="btn-dark">Let's see some markers!</button></div>
+	
+	<div class="row m-5">
+		<button id="yumThai" class="btn-primary col-4">Yum Thai</button>
+		<button id="sucre" class="btn-primary col-4">Sucre</button>
+		<button id="rcKorean" class="btn-primary col-4">R&C Korean</button>
+	</div>
 </div>
 
 <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
@@ -36,84 +42,7 @@
         integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
         crossorigin="anonymous"></script>
 <!-- Custom JS -->
-<script>
+<script src="js/mapbox_maps_api_js.js"></script>
 
-geocode("Shreveport", mapboxAPIKey).then(function(e){
-	console.log(e);
-	
-	let start = [-98.7088, 29.4914]; //Yum Thai
-	let end = [-88.93682, 30.4030]; //R&C Korean
-	let isAtStart = true;
-	
-	let accessToken = mapboxAPIKey;
-	mapboxgl.accessToken = accessToken;
-	let map = new mapboxgl.Map({
-		container: 'map',
-		style: 'mapbox://styles/mapbox/outdoors-v11',
-		zoom: 10,
-		center: start,
-		pitch: 50
-	});
-	
-	let arrayOfFavs = [
-		{
-			name: "R&C Korean",
-			LngLat: [-88.93682, 30.4030],
-			addy: "",
-			info: "A Korean restaurant"
-		},
-		{
-			name: "Yum Thai",
-			LngLat: [-98.7088, 29.4914],
-			addy: "",
-			info: "A Thai restaurant"
-		},
-		{
-			name: "Sucre",
-			LngLat: [-90.0547, 30.0366],
-			addy: "",
-			info: "A sweet place"
-		}
-	]
-	
-	arrayOfFavs.forEach(function (elem) {
-		let pop = new mapboxgl.Popup(elem.name).setHTML("<h1>" + elem.name + "</h1>" + elem.info);
-		new mapboxgl.Marker({"color": 'pink'}).setLngLat(elem.LngLat).addTo(map).setPopup(pop);
-	});
-	
-	document.getElementById('fly').addEventListener('click', () => {
-		const target = function(){
-			if (isAtStart){
-				return end;
-			} return start;
-		}
-		
-		isAtStart = !isAtStart;
-		
-		map.flyTo({
-// These options control the ending camera position: centered at
-// the target, at zoom level 9, and north up.
-			center: target,
-			zoom: 9,
-			bearing: 0,
-
-// These options control the flight curve, making it move
-// slowly and zoom out almost completely before starting
-// to pan.
-			speed: 0.2, // make the flying slow
-			curve: 1, // change the speed at which it zooms out
-
-// This can be any easing function: it takes a number between
-// 0 and 1 and returns another number between 0 and 1.
-			easing: (t) => t,
-
-// this animation is considered essential with respect to prefers-reduced-motion
-			essential: true
-		});
-	})
-	
-});
-
-</script>
 </body>
 </html>
