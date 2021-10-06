@@ -15,16 +15,17 @@ console.log("test");
  * All test arrays will have at least one element and are valid.
  */
 
-// function minMax(array) {
-// 	array.sort(function(a, b){return a-b;}); //sorted from smallest to largest
-// 	let minAndMax = []; //empty array to push to
-// 	minAndMax.push(array[0], array[array.length-1]); //push first and last number of input array into empty array
-// 	return minAndMax;
-// };
+function minMax(array) {
+	array.sort(function(a, b){return a-b;}); //sorted from smallest to largest
+	let minAndMax = []; //empty array to push to
+	minAndMax.push(array[0], array[array.length-1]); //push first and last number of input array into empty array
+	return minAndMax;
+};
 
-// console.log(minMax([1, 2, 3, 4, 5]));
-// console.log(minMax([2334454, 5]));
-// console.log(minMax([1]));
+console.log("1. minMax()");
+console.log(minMax([1, 2, 3, 4, 5]));
+console.log(minMax([2334454, 5]));
+console.log(minMax([1]));
 
 /**
  * Filter out Strings from an Array
@@ -60,6 +61,7 @@ function filterArray(array){
 	return newArr; //return all values of newArr
 };
 
+console.log("2. filterArray()");
 console.log(filterArray([1, 2, "a", "b"]));
 console.log(filterArray([1, "a", "b", 0, 15]));
 console.log(filterArray([1, 2, "aasf", "1", "123", 123]));
@@ -77,17 +79,18 @@ console.log(filterArray([1, 2, "aasf", "1", "123", 123]));
  * >> isAvgWhole([9, 2, 2, 5]) ➞ false
  */
 
-// function isAvgWhole(array){
-// 	let addMach = function(prev, next){return prev + next;}; //this is the reducer that reduce() needs to calculate a total of all nums in array
-// 	let avgOfArr = array.reduce(addMach)/array.length; //sum of nums in array divided by num of nums in array
-// 	return Number.isInteger(avgOfArr); //checks for integer status & returns boolean
-// };
-//
-// console.log(isAvgWhole([1, 3]));
-// console.log(isAvgWhole([1, 2, 3, 4]));
-// console.log(isAvgWhole([1, 5, 6]));
-// console.log(isAvgWhole([1, 1, 1]));
-// console.log(isAvgWhole([9, 2, 2, 5]));
+function isAvgWhole(array){
+	let addMach = function(prev, next){return prev + next;}; //this is the reducer that reduce() needs to calculate a total of all nums in array
+	let avgOfArr = array.reduce(addMach)/array.length; //sum of nums in array divided by num of nums in array
+	return Number.isInteger(avgOfArr); //checks for integer status & returns boolean
+};
+
+console.log("3. isAvgWhole()");
+console.log(isAvgWhole([1, 3]));
+console.log(isAvgWhole([1, 2, 3, 4]));
+console.log(isAvgWhole([1, 5, 6]));
+console.log(isAvgWhole([1, 1, 1]));
+console.log(isAvgWhole([9, 2, 2, 5]));
 
 /**
  * Drink Sorting
@@ -104,17 +107,18 @@ console.log(filterArray([1, 2, "aasf", "1", "123", 123]));
  * >> sortDrinkByPrice(drinks) ➞ [{name: "lime", price: 10}, {name: "lemonade", price: 50}]
  */
 
-// let drinks = [
-// 	{name: "lemonade", price: 50},
-// 	{name: "lime", price:10}
-// ]
-//
-// function sortDrinkByPrice(array){
-// 	array.sort(function(a, b){return a.price - b.price});
-// 	return array;
-// };
-//
-// console.log(sortDrinkByPrice(drinks));
+let drinks = [
+	{name: "lemonade", price: 50},
+	{name: "lime", price:10}
+]
+
+function sortDrinkByPrice(array){
+	array.sort(function(a, b){return a.price - b.price});
+	return array;
+};
+
+console.log("4. sortDrinkByPrice()");
+console.log(sortDrinkByPrice(drinks));
 
 /**
  * Scrabble Hand
@@ -179,18 +183,17 @@ let tiles2 = [
 	{ tile: "U", score: 1 }
 ]
 
-//START FROM HERE!!!!!!!!!!!!!!!!!
+function maximumScore(arrTiles){
+	let total = 0;
+	for(let i = 0; i < arrTiles.length; i++){
+		total += arrTiles[i].score;
+	};
+	return total;
+}
 
-// function maximumScore(arrTiles){
-// 	let total = 0;
-// 	for(let i = 0; i < arrTiles.length; i++){
-// 		total += arrTiles[i].score;
-// 	};
-// 	return total;
-// }
-//
-// console.log(maximumScore(tiles1)); //28
-// console.log(maximumScore(tiles2)); //15
+console.log("5. maximumScore()");
+console.log(maximumScore(tiles1)); //28
+console.log(maximumScore(tiles2)); //15
 
 /**
  * Converting Objects to Arrays
@@ -206,19 +209,20 @@ let tiles2 = [
  * Return an empty array if the object is empty.
  */
 
-// function toArray(obj){
-// 	let newArr = new Array(0);
-// 	for(let [key, value] of Object.entries(obj)){
-// 		newArr.push([key, value]);
-// 	}
-// 	return newArr;
-// }
-//
-// //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/entries
-//
-// console.log(toArray({a: 1, b: 2}));
-// console.log(toArray({shrimp: 15, tots: 12}));
-// console.log(toArray({}));
+function toArray(obj){
+	let newArr = new Array(0);
+	for(let [key, value] of Object.entries(obj)){
+		newArr.push([key, value]);
+	}
+	return newArr;
+}
+
+//https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/entries
+
+console.log("6. toArray()");
+console.log(toArray({a: 1, b: 2}));
+console.log(toArray({shrimp: 15, tots: 12}));
+console.log(toArray({}));
 
 /**
  * Array of Multiples
@@ -235,17 +239,18 @@ let tiles2 = [
  */
 
 
-// function arrayOfMultiples(num, length){
-// 	let arr = [];
-// 	for(let i=1; i<=length; i++){
-// 		arr.push(num*i);
-// 	}
-// 	return arr;
-// }
-//
-// console.log(arrayOfMultiples(7, 5)); //[7, 14, 21, 28, 35]
-// console.log(arrayOfMultiples(12, 10)); //[12, 24, 36, 48, 60, 72, 84, 96, 108, 120]
-// console.log(arrayOfMultiples(17, 6)); //[17, 34, 51, 68, 85, 102]
+function arrayOfMultiples(num, length){
+	let arr = [];
+	for(let i=1; i<=length; i++){
+		arr.push(num*i);
+	}
+	return arr;
+}
+
+console.log("7. arrayOfMultiples()");
+console.log(arrayOfMultiples(7, 5)); //[7, 14, 21, 28, 35]
+console.log(arrayOfMultiples(12, 10)); //[12, 24, 36, 48, 60, 72, 84, 96, 108, 120]
+console.log(arrayOfMultiples(17, 6)); //[17, 34, 51, 68, 85, 102]
 
 /** DO THIS BEFORE THE ASSESSMENT
  * Get Sum of People's Budget
@@ -265,24 +270,25 @@ let tiles2 = [
  *    ]) ➞ 62600
  */
 
-// function getBudgets(arrOfObjs){
-// 	let pplsBudgets=0;
-// 	for(let i=0; i < arrOfObjs.length; i++){
-// 		pplsBudgets += arrOfObjs[i].budget;
-// 	}
-// 	return pplsBudgets
-// }
-//
-// console.log(getBudgets([
-// 	{name: "John", age: 21, budget: 23000},
-// 	{name: "Steve", age: 32, budget: 40000},
-// 	{name: "Martin", age: 16, budget: 2700}
-// ])); //65700
-// console.log(getBudgets([
-// 	{name: "John", age: 21, budget: 29000},
-// 	{name: "Steve", age: 32, budget: 32000},
-// 	{name: "Martin", age: 16, budget: 1600}
-// ])); //62600
+function getBudgets(arrOfObjs){
+	let pplsBudgets=0;
+	for(let i=0; i < arrOfObjs.length; i++){
+		pplsBudgets += arrOfObjs[i].budget;
+	}
+	return pplsBudgets
+}
+
+console.log("8. getBudgets()");
+console.log(getBudgets([
+	{name: "John", age: 21, budget: 23000},
+	{name: "Steve", age: 32, budget: 40000},
+	{name: "Martin", age: 16, budget: 2700}
+])); //65700
+console.log(getBudgets([
+	{name: "John", age: 21, budget: 29000},
+	{name: "Steve", age: 32, budget: 32000},
+	{name: "Martin", age: 16, budget: 1600}
+])); //62600
 
 /**
  * Special Arrays
@@ -299,19 +305,20 @@ let tiles2 = [
  *    // Index 3 has an even number 8.
  */
 
-// function isSpecialArray(array){
-// 	for(let i = 0; i < array.length; i++){
-// 		if((i + array[i]) % 2 === 0){
-// 			continue;
-// 		} else {
-// 			return false;
-// 		}
-// 	} return true;
-// }
-//
-// console.log(isSpecialArray([2, 7, 4, 9, 6, 1, 6, 3]));
-// console.log(isSpecialArray([2, 7, 9, 1, 6, 1, 6, 3]));
-// console.log(isSpecialArray([2, 7, 8, 8, 6, 1, 6, 3]));
+function isSpecialArray(array){
+	for(let i = 0; i < array.length; i++){
+		if((i + array[i]) % 2 === 0){
+			continue;
+		} else {
+			return false;
+		}
+	} return true;
+}
+
+console.log("9. isSpecialArray()");
+console.log(isSpecialArray([2, 7, 4, 9, 6, 1, 6, 3]));
+console.log(isSpecialArray([2, 7, 9, 1, 6, 1, 6, 3]));
+console.log(isSpecialArray([2, 7, 8, 8, 6, 1, 6, 3]));
 
 /**
  * Remove Duplicates from an Array
@@ -328,14 +335,15 @@ let tiles2 = [
  * Each array item is unique.
  */
 
-// function removeDuplicates(array){
-// 	let newArr = [...new Set(array)];
-// 	return newArr;
-// }
-//
-// console.log(removeDuplicates([1, 0, 1, 0]));
-// console.log(removeDuplicates(["The", "big", "cat"]));
-// console.log(removeDuplicates(["John", "Taylor", "John"]));
+function removeDuplicates(array){
+	let newArr = [...new Set(array)];
+	return newArr;
+}
+
+console.log("10. removeDuplicates()");
+console.log(removeDuplicates([1, 0, 1, 0]));
+console.log(removeDuplicates(["The", "big", "cat"]));
+console.log(removeDuplicates(["John", "Taylor", "John"]));
 
 /**
  * Lowercase and Uppercase Map
@@ -352,17 +360,18 @@ let tiles2 = [
  */
 // revisit this exercise!!!
 
-// function mapping(array){
-// 	let newObj = Object.fromEntries(array.map(function(key){
-// 		return [key, key.toUpperCase()]
-// 	}));
-// 	// let newObj = array.reduce((ac,a) => ({...ac,[a]:''}),{});
-// 	return newObj;
-// }
-//
-// console.log(mapping(["p", "s"]));
-// console.log(mapping(["a", "b", "c"]));
-// console.log(mapping(["a", "v", "y", "z"]));
+function mapping(array){
+	let newObj = Object.fromEntries(array.map(function(key){
+		return [key, key.toUpperCase()]
+	}));
+	// let newObj = array.reduce((ac,a) => ({...ac,[a]:''}),{});
+	return newObj;
+}
+
+console.log("11. mapping()");
+console.log(mapping(["p", "s"]));
+console.log(mapping(["a", "b", "c"]));
+console.log(mapping(["a", "v", "y", "z"]));
 
 /**
  * Can You Spare a Square?
@@ -384,23 +393,24 @@ let tiles2 = [
  * >> tpChecker({ people: 4, tp: 12 }) ➞ "Your TP will last 26 days, no need to panic!"
  */
 
-// function tpChecker(obj){
-// 	let html = '';
-// 	let totalSheetsUsed = obj.people * 57;
-// 	let totalSheets = obj.tp * 500;
-// 	let numDaysTPLast = totalSheets/totalSheetsUsed;
-// 	if(numDaysTPLast > 14){
-// 		html += "Your TP will last " + Math.floor(numDaysTPLast) + " days, no need to panic!"
-// 		return html;
-// 	} else {
-// 		html += "Your TP will only last " + Math.floor(numDaysTPLast) + " days, buy more!"
-// 		return html;
-// 	}
-// }
-//
-// console.log(tpChecker({people: 4, tp: 1}));
-// console.log(tpChecker({people: 3, tp: 20}));
-// console.log(tpChecker({people: 4, tp: 12}));
+function tpChecker(obj){
+	let html = '';
+	let totalSheetsUsed = obj.people * 57;
+	let totalSheets = obj.tp * 500;
+	let numDaysTPLast = totalSheets/totalSheetsUsed;
+	if(numDaysTPLast > 14){
+		html += "Your TP will last " + Math.floor(numDaysTPLast) + " days, no need to panic!"
+		return html;
+	} else {
+		html += "Your TP will only last " + Math.floor(numDaysTPLast) + " days, buy more!"
+		return html;
+	}
+}
+
+console.log("12. tpChecker()");
+console.log(tpChecker({people: 4, tp: 1}));
+console.log(tpChecker({people: 3, tp: 20}));
+console.log(tpChecker({people: 4, tp: 12}));
 
 /**
  * Get Student Top Notes
@@ -442,6 +452,7 @@ function getStudentTopNotes(array){
 	return arr;
 }
 
+console.log("13. getStudentTopNotes()");
 console.log(getStudentTopNotes([
 	{
 		id: 1,
@@ -491,6 +502,7 @@ function chosenWine(array){
 	return newArr[0].name;
 }
 
+console.log("14. chosenWine()");
 console.log(chosenWine([
 	{name: "Wine A", price: 8.99},
 	{name: "Wine 32", price: 13.99},
@@ -509,6 +521,23 @@ console.log(chosenWine([]));
  * >> convertAddressToObject('5408 Villa Nueva') ➞ {streetNumber: '5408', streetName: 'Villa Nueva'}
  */
 
+ function convertAddressToObject(address){
+ 	let property = {
+ 		streetNumber: '',
+ 		streetName: ''
+ 	}
+
+	address = address.split(' ');
+
+ 	property.streetNumber = address.shift();
+ 	property.streetName = address.join(" ");
+
+ 	return property;
+ }
+
+console.log("15. convertAddressToObject()");
+console.log(convertAddressToObject('8646 Sunny Oaks'));
+console.log(convertAddressToObject('5408 Villa Nueva'));
 
 /** DO THIS ONE BEFORE THE ASSESSMENT
  * Count total pets
@@ -533,6 +562,7 @@ console.log(chosenWine([]));
  	return sum;
  }
 
+console.log("16. totalPets()");
 console.log(totalPets([
 	{name: 'Fernando Mendoza', pets: 1},
 	{name: 'Douglas Hirsh', pets: 8},
