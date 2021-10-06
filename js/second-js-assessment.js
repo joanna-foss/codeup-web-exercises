@@ -568,3 +568,22 @@ console.log(totalPets([
 	{name: 'Douglas Hirsh', pets: 8},
 	{name: 'Kenneth Howell', pets: 2}
 ])); //11
+
+
+$('#functions').append(
+	'<div> 1. ' + minMax + '</div>' + '<br>' +
+	'<div> 2. ' + filterArray + '</div>' + '<br>' +
+	'<div> 3. ' + isAvgWhole + '</div>' + '<br>' +
+	'<div> 4. ' + sortDrinkByPrice + '</div>' + '<br>' +
+	'<div> 5. ' + maximumScore + '</div>' + '<br>' +
+	'<div> 6. ' + toArray + '</div>' + '<br>' +
+	'<div> 7. ' + arrayOfMultiples + '</div>' + '<br>' +
+	'<div> 8. ' + getBudgets + '</div>' + '<br>' +
+	'<div> 9. ' + isSpecialArray + '</div>' + '<br>' +
+	'<div> 10. ' + removeDuplicates + '</div>' + '<br>' +
+	'<div> 11. ' + mapping + '</div>' + '<br>' +
+	'<div> 12. ' + tpChecker + '</div>' + '<br>' +
+	'<div> 13. ' + getStudentTopNotes + '</div>' + '<br>' +
+	'<div> 14. ' + chosenWine + '</div>' + '<br>' +
+	'<div> 15. ' + convertAddressToObject + '</div>' + '<br>' +
+	'<div> 16. ' + totalPets + '</div>');
