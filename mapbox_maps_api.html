@@ -11,14 +11,12 @@
 	<style>
 		#map {
 			width: 85%;
-			height: 700px;
+			height: 400px;
 		}
 		
 		#fly{
-			/*width: 60%;*/
-			/*height: 3em;*/
-			/*background-color: black;*/
-			/*color: white;*/
+			font-family: monospace;
+			font-size: 2em;
 		}
 	</style>
 </head>
@@ -43,13 +41,17 @@
 geocode("Shreveport", mapboxAPIKey).then(function(e){
 	console.log(e);
 	
+	let start = [-98.7088, 29.4914]; //Yum Thai
+	let end = [-88.93682, 30.4030]; //R&C Korean
+	let isAtStart = true;
+	
 	let accessToken = mapboxAPIKey;
 	mapboxgl.accessToken = accessToken;
 	let map = new mapboxgl.Map({
 		container: 'map',
 		style: 'mapbox://styles/mapbox/outdoors-v11',
-		zoom: 5.2,
-		center: e,
+		zoom: 10,
+		center: start,
 		pitch: 50
 	});
 	
@@ -78,6 +80,37 @@ geocode("Shreveport", mapboxAPIKey).then(function(e){
 		let pop = new mapboxgl.Popup(elem.name).setHTML("<h1>" + elem.name + "</h1>" + elem.info);
 		new mapboxgl.Marker({"color": 'pink'}).setLngLat(elem.LngLat).addTo(map).setPopup(pop);
 	});
+	
+	document.getElementById('fly').addEventListener('click', () => {
+		const target = function(){
+			if (isAtStart){
+				return end;
+			} return start;
+		}
+		
+		isAtStart = !isAtStart;
+		
+		map.flyTo({
+// These options control the ending camera position: centered at
+// the target, at zoom level 9, and north up.
+			center: target,
+			zoom: 9,
+			bearing: 0,
+
+// These options control the flight curve, making it move
+// slowly and zoom out almost completely before starting
+// to pan.
+			speed: 0.2, // make the flying slow
+			curve: 1, // change the speed at which it zooms out
+
+// This can be any easing function: it takes a number between
+// 0 and 1 and returns another number between 0 and 1.
+			easing: (t) => t,
+
+// this animation is considered essential with respect to prefers-reduced-motion
+			essential: true
+		});
+	})
 	
 });
 
