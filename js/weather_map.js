@@ -1,9 +1,5 @@
 "use strict";
 
-// $(document).ready(function(elem){
-//     console.log("ready");
-// });
-
 let accessToken = mapboxAPIKey;
 mapboxgl.accessToken = accessToken;
 let map = new mapboxgl.Map({
@@ -54,7 +50,7 @@ $.get("https://api.openweathermap.org/data/2.5/onecall", {
 
 });
 
-function convertToDayTime(dt){ //data.current.dt
+function convertToDayTime(dt){
     let date = new Date(dt*1000);
     let months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
     let year = date.getFullYear();
@@ -64,3 +60,31 @@ function convertToDayTime(dt){ //data.current.dt
     dayTime = month + ' ' + day + ', ' + year;
     return dayTime;
 }
+
+map.on('click', function(e){
+    let marker = new mapboxgl.Marker({draggable: true})
+        .setLngLat([e.lngLat.lng, e.lngLat.lat])
+        .addTo(map);
+});
+
+// function onDrag(){
+//
+// }
+
+// var marker = new mapboxgl.Marker()
+// .setLngLat([-98.4916, 29.4260])
+// .addTo(map);
+//
+// const marker = new mapboxgl.Marker({
+// draggable: true
+// })
+// .setLngLat([0, 0])
+// .addTo(map);
+//
+// function onDragEnd() {
+// const lngLat = marker.getLngLat();
+// coordinates.style.display = 'block';
+// coordinates.innerHTML = `Longitude: ${lngLat.lng}<br />Latitude: ${lngLat.lat}`;
+// }
+//
+// marker.on('dragend', onDragEnd);
