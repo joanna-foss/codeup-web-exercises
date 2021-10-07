@@ -15,7 +15,6 @@ let map = new mapboxgl.Map({
 });
 
 let defaultCity = {};
-let cityDeets = '';
 let dayTime = '';
 
 $.get("https://api.openweathermap.org/data/2.5/onecall", {
@@ -34,12 +33,24 @@ $.get("https://api.openweathermap.org/data/2.5/onecall", {
     defaultCity.date = convertToDayTime(data.current.dt);
 
     reverseGeocode(defaultCity, mapboxAPIKey).then(function(data){
-        cityDeets = data;
-        console.log(cityDeets);
-        $('#city').html('<strong>Your Location</strong>:<br>' + cityDeets);
+        $('#city').html('<strong>Your Location</strong>:<br>' + data);
         $('#time').html('<strong>Today\'s Date</strong>:<br>' + dayTime);
-        $('#temp').html('<strong>Today\'s Temperature</strong>: <br>' + defaultCity.temp + ' °F');
+        $('#temp').html('<strong>Current Temperature</strong>: <br>' + parseInt(defaultCity.temp) + ' °F');
+        $('#city-coords').html(defaultCity.lat + ', ' + defaultCity.lng);
     });
+
+    for(let i = 1; i <=5; i++){
+        let days = ['#day1','#day2','#day3','#day4','#day5'];
+        let html =
+            '<h6 class="card-header">' + convertToDayTime(data.daily[i].dt) + '</h6>' +
+            '<div class=\"card-text p-3\">' + '<strong>High / Low:</strong><br>' + data.daily[i].temp.max + '°F / ' + data.daily[i].temp.min + '°F <br>' + '<img src="http://openweathermap.org/img/wn/' + data.daily[i].weather[0].icon + '@2x.png\">' + '</div>' +
+            '<div class=\"card-text p-1\"><strong>Description:</strong><br>' + data.daily[i].weather[0].description + '</div>' +
+            '<div class=\"card-text p-1\">' + '<strong>Humidity:</strong><br>' + data.daily[i].humidity + ' %</div>' +
+            '<div class=\"card-text p-1\">' + '<strong>Wind Speed:</strong><br>' + data.daily[i].wind_speed + '</div>' +
+            '<div class=\"card-text p-1\">' + '<strong>Pressure:</strong><br>' + data.daily[i].pressure + '</div>'
+        $(days[i-1]).html(html);
+    }
+
 
 });
 
@@ -51,4 +62,5 @@ function convertToDayTime(dt){ //data.current.dt
     let day = date.getDate();
 
     dayTime = month + ' ' + day + ', ' + year;
+    return dayTime;
 }
