@@ -1,6 +1,6 @@
 "use strict"
 
-let start = [-98.7088, 29.4914]; //Yum Thai
+// let start = [-98.7088, 29.4914]; //Yum Thai
 // let end = [-88.93682, 30.4030]; //R&C Korean
 // let isAtStart = true;
 
@@ -10,7 +10,8 @@ let map = new mapboxgl.Map({
 	container: 'map',
 	style: 'mapbox://styles/mapbox/outdoors-v11',
 	center: [-90.96, -0.47],
-	pitch: 50
+	pitch: 50,
+	zoom: 3
 });
 
 let arrayOfFavs = [

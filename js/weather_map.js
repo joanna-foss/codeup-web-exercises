@@ -4,6 +4,16 @@
 //     console.log("ready");
 // });
 
+let accessToken = mapboxAPIKey;
+mapboxgl.accessToken = accessToken;
+let map = new mapboxgl.Map({
+	container: 'map',
+	style: 'mapbox://styles/mapbox/outdoors-v11',
+	center: [-98.49, 29.4230],
+	pitch: 50,
+	zoom: 10,
+});
+
 let defaultCity = {};
 let cityDeets = '';
 let dayTime = '';
@@ -26,13 +36,12 @@ $.get("https://api.openweathermap.org/data/2.5/onecall", {
     reverseGeocode(defaultCity, mapboxAPIKey).then(function(data){
         cityDeets = data;
         console.log(cityDeets);
-        $('#city').html('<strong>Your City</strong>:<br>' + cityDeets);
+        $('#city').html('<strong>Your Location</strong>:<br>' + cityDeets);
         $('#time').html('<strong>Today\'s Date</strong>:<br>' + dayTime);
         $('#temp').html('<strong>Today\'s Temperature</strong>: <br>' + defaultCity.temp + ' °F');
     });
 
 });
-
 
 function convertToDayTime(dt){ //data.current.dt
     let date = new Date(dt*1000);
