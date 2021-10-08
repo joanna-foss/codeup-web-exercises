@@ -30,7 +30,7 @@ $.get("https://api.openweathermap.org/data/2.5/onecall", {
 
     reverseGeocode(defaultCity, mapboxAPIKey).then(function(data){
         $('#city').html('<strong>Your Location</strong>:<br>' + data);
-        $('#date').html('<strong>Today\'s Date</strong>:<br>' + dayTime);
+        $('#date').html('<strong>Today\'s Date</strong>:<br>' + defaultCity.date);
         $('#temp').html('<strong>Current Temperature</strong>: <br>' + parseInt(defaultCity.temp) + ' °F');
         $('.city-coords').html(defaultCity.lat + ', ' + defaultCity.lng);
     });
@@ -90,5 +90,9 @@ map.on('click', function(e){
 // marker.on('dragend', onDragEnd);
 
 document.getElementById('new-city-please').addEventListener('click', function(e){
-    console.log($('#new-city-form').html());
+    let streetInput = document.querySelector("#new-city-form input:nth-child(2)").value;
+    let cityInput = document.querySelector("#new-city-form input:nth-child(3)").value;
+    let stateInput = document.querySelector("#new-city-form input:nth-child(4)").value;
+
+
 })
