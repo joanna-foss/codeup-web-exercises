@@ -30,13 +30,13 @@ $.get("https://api.openweathermap.org/data/2.5/onecall", {
 
     reverseGeocode(defaultCity, mapboxAPIKey).then(function(data){
         $('#city').html('<strong>Your Location</strong>:<br>' + data);
-        $('#time').html('<strong>Today\'s Date</strong>:<br>' + dayTime);
+        $('#date').html('<strong>Today\'s Date</strong>:<br>' + dayTime);
         $('#temp').html('<strong>Current Temperature</strong>: <br>' + parseInt(defaultCity.temp) + ' °F');
-        $('#city-coords').html(defaultCity.lat + ', ' + defaultCity.lng);
+        $('.city-coords').html(defaultCity.lat + ', ' + defaultCity.lng);
     });
 
     for(let i = 1; i <=5; i++){
-        let days = ['#day1','#day2','#day3','#day4','#day5'];
+        let days = ['.day1','.day2','.day3','.day4','.day5'];
         let html =
             '<h6 class="card-header">' + convertToDayTime(data.daily[i].dt) + '</h6>' +
             '<div class=\"card-text p-3\">' + '<strong>High / Low:</strong><br>' + data.daily[i].temp.max + '°F / ' + data.daily[i].temp.min + '°F <br>' + '<img src="http://openweathermap.org/img/wn/' + data.daily[i].weather[0].icon + '@2x.png\">' + '</div>' +
@@ -88,3 +88,7 @@ map.on('click', function(e){
 // }
 //
 // marker.on('dragend', onDragEnd);
+
+document.getElementById('new-city-please').addEventListener('click', function(e){
+    console.log($('#new-city-form').html());
+})
