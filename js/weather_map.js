@@ -25,18 +25,19 @@ $.get("https://api.openweathermap.org/data/2.5/onecall", {
 
 	defaultCity.lat = data.lat;
 	defaultCity.lng = data.lon;
-	defaultCity.temp = data.current.temp;
+	defaultCity.temp = parseInt(data.current.temp);
 	defaultCity.date = convertToDayTime(data.current.dt);
-	// defaultCity.high = data.daily.temp.max;
-	// defaultCity.low = data.daily.temp.min;
+	defaultCity.high = data.daily[0].temp.max;
+	defaultCity.low = data.daily[0].temp.min;
+	defaultCity.iconURL = '<img src="http://openweathermap.org/img/wn/' + data.current.weather[0].icon + '@2x.png\">';
 
-	// console.log(data.daily.temp.max);
 
 	reverseGeocode(defaultCity, mapboxAPIKey).then(function(data){
 		$('#city').html('<strong>Your Location</strong>:<br>' + data);
+		$('#currIcon').html(defaultCity.iconURL);
 		$('#date').html('<strong>Today\'s Date</strong>:<br>' + defaultCity.date);
-		$('#temp').html('<strong>Current Temperature</strong>: <br>' + parseInt(defaultCity.temp) + ' °F');
-		// $('#highs-lows').html('<strong>Today\'s High / Low</strong>: <br>' + parseInt(defaultCity.high) + ' °F / ' + parseInt(defaultCity.low) + ' °F');
+		$('#temp').html('<strong>Current Temperature</strong>: <br>' + defaultCity.temp + ' °F');
+		$('#highs-lows').html('<strong>Today\'s High / Low</strong>: <br>' + parseInt(defaultCity.high) + ' °F / ' + parseInt(defaultCity.low) + ' °F');
 		$('.city-coords').html(defaultCity.lat + ', ' + defaultCity.lng);
 	});
 
