@@ -34,7 +34,7 @@ const users = [
   }
 ];
 
-console.log(users);
+// console.log(users);
 
 // TODO: fill in your name and email and add some programming languages you know
 // to the languages array
@@ -94,8 +94,7 @@ let list = '<ul>';
 // TODO: rewrite the following loop to use a for..of loop
 for(const element of developers){
   // TODO: rewrite the assignment below to use template strings
-  list += `<li> ${element} </li>
-`;
+  list += `<li> ${element} </li>`;
 };
 list += '</ul>';
 
