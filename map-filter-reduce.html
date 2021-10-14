@@ -132,9 +132,26 @@ console.log(reducedNums);
 
 //TODO Together: Let's take a step a bit deeper with .reduce() - .reduce()'s output can take many forms and shapes. For example, let's say we wanted to have a little Javascript that would count the length of the strings in an array and return that info back to us in an object. For example: ["Codeup", "San", Antonio", "Dallas", "Quasar", Cohort", "ES6"] would get us: Object { Codeup: 6, San: 3, Antonio: 7, Dallas: 6, Quasar: 6, Cohort: 6, ES6: 3 }
 let stringArr = ["Codeup", "San", "Antonio", "Dallas", "Quasar", "Cohort", "ES6"];
-
+let strLengthObj = stringArr.reduce(function(objProp, element){
+	objProp[element] = element.length; //assign the length as a value of the property named element {elementName: elementLength}
+	return objProp;
+}, {});
+console.log(strLengthObj);
 
 //TODO: Let's make a new array of objects to use - make an array of objects [{},{},{}] consisting of a number of family members as objects with their name and ages as properties. Use .reduce() to sum up the age of those family members and see what it is! e.g. [{name: "Thurston Howell III", age: 50}, {name: "William Dean Howells", age: 83}] would be 133 by adding those two age properties together (50 + 83).
+let familyMems = [
+	{
+		name: "Thurston Howell III",
+		age: 50
+	},
+	{
+		name: "William Dean Howells",
+		age: 83
+	}]
+	
+let totalYears = familyMems.reduce((total, familyMem) => total += familyMem.age, 0);
+
+console.log(totalYears);
 </script>
 </body>
 </html>
