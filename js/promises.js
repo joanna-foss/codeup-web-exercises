@@ -16,7 +16,14 @@ pokemonAPI.then(function(results){
 	console.log(results);
 	// results.text().then((text) => console.log(text)); //returns the text of the results
 	results.json().then((results) => console.log(results));	//returns the json
+}).catch(function(error){
+	console.log(error);
 });
+
+fetch('https://pokeapi.co/api/v2/pokemon')
+	.then((response) => response.json())
+	.then((jsonData) => jsonData.results)
+	.then((results) => results.forEach((result) => console.log(result.name)));
 
 /*********************************************
  *              CHAINING PROMISES
