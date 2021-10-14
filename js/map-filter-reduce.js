@@ -82,17 +82,14 @@ let theInstructors = users.reduce((prev, curr, ind, arr) => {
 // console.log(theInstructors);
 
 //BONUS
-let theUniqueLangs = users.reduce((prev, curr, ind, arr) => {
+let theUniqueLangs = users.reduce((prev, curr) => {
         let currLangs = curr.languages;
         for(let i=0; i<currLangs.length; i++){
-            console.log(currLangs[i]);
             if (!prev.includes(currLangs[i])){
-                prev + currLangs[i];
-                console.log(prev);
-            }
+                prev.push(currLangs[i]);
+            } else
+                continue;
         }
-        return prev
-}, '');
-
-console.log(users);
-console.log(theUniqueLangs);
+        return prev;
+}, []);
+// console.log(theUniqueLangs);
