@@ -8,13 +8,15 @@ var pokemonAPI = fetch('https://pokeapi.co/api/v2/pokemon');
 // return of fetch request is a Promise object
 
 //TODO: console log the results of the above Promise. What is the result?
-
+console.log(pokemonAPI);
 //TODO: add a method that runs if the Promise resolves successfully
-
 //TODO: add a method that runs if the Promise fails
-
 //TODO: In the callback function of the .then method, parse the response into JSON
-
+pokemonAPI.then(function(results){
+	console.log(results);
+	// results.text().then((text) => console.log(text)); //returns the text of the results
+	results.json().then((results) => console.log(results));	//returns the json
+});
 
 /*********************************************
  *              CHAINING PROMISES
