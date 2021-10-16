@@ -51,8 +51,8 @@
 
 // TODO: Demonstrate Promise.all and Promise.race BONUS LESSON ONLY
 
-let pokemonAPI = fetch('https://pokeapi.co/api/v2/pokemon');
-let starWarsAPI = fetch('https://swapi.dev/api/films');
+// let pokemonAPI = fetch('https://pokeapi.co/api/v2/pokemon');
+// let starWarsAPI = fetch('https://swapi.dev/api/films');
 
 // Promise.all([pokemonAPI, starWarsAPI])
 // 	.then((responses)=>{
@@ -69,7 +69,83 @@ let starWarsAPI = fetch('https://swapi.dev/api/films');
 // 		console.log(parsedResults);
 // 	});
 
-Promise.race([pokemonAPI, starWarsAPI]) // .race ONLY comes back with the fetch request that responds FIRST
-	.then((response)=>{
-		console.log(response);
-	})
+// Promise.race([pokemonAPI, starWarsAPI]) // .race ONLY comes back with the fetch request that responds FIRST
+// 	.then((response)=>{
+// 		console.log(response);
+// 	})
+
+//RESTFUL APIs
+
+const API_URL = "https://vagabond-glacier-verse.glitch.me/dogs";
+
+//Have 2 different options here: either fetch or return promise
+function getDogs(){
+	return fetch(API_URL)
+		.then(response => response.json());
+}
+
+// getDogs().then(dogs=>console.log(dogs));
+
+function getDog(id){
+	return fetch(`${API_URL}/${id}`)
+		.then(response => response.json());
+}
+
+// getDog(14).then(dog=>console.log(dog));
+
+//EDIT A DOG BY ID.
+
+function editDog(dog){
+	let options= {
+		method: 'PUT', //modifies existing data
+		headers: { //what does this do????
+			'Content-Type': 'application/json'
+		},
+		body: JSON.stringify(dog) //
+	}
+	return fetch(`${API_URL}/${dog.id}`, options)
+		.then(data=>data.json())
+}
+
+let newSparkles = {
+	name: 'Sparkles',
+	isGoodDog: false,
+	id: 14,
+	age: 500
+}
+
+// editDog(sparkles).then(data=>console.log(data));
+// editDog(newSparkles).then(data=>console.log(data));
+
+//DELETE DOG BY ID.
+
+function deleteDog(id){
+	let options = {
+		method: 'DELETE',
+		headers: {
+			'Content-Type': 'application/json'
+		}
+	}
+	return fetch(`${API_URL}/${dog.id}`, options).then(response=>console.log("deleted dog with id " + id, response));
+}
+
+function addDog(dogObj){
+	let options = {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json'
+		},
+		body: JSON.stringify(dogObj)
+	}
+
+	return fetch(API_URL, options).then(response=>console.log("added dog: " + dogObj, response));
+}
+
+let SandCastle = {
+	name: 'Sandcastle',
+	isGoodDog: true,
+	id: 50,
+	age: .1
+}
+
+// addDog(SandCastle);
